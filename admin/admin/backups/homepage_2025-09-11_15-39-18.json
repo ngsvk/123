@@ -1,0 +1,249 @@
+{
+    "hero": {
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "background_video_url": "https:\/\/www.youtube.com\/watch?v=baFVOCdRa-s",
+        "buttons": [],
+        "cta_text": "",
+        "cta_link": "",
+        "buttons[0]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        },
+        "buttons[1]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        },
+        "buttons[2]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        },
+        "buttons[3]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        }
+    },
+    "welcome": {
+        "subtitle": "ABOUT US1",
+        "title": "Welcome to <span class=",
+        "description": "Our school is dedicated to fostering Education in Human Values. Today's education system often prioritizes intellectual and skill development while neglecting the cultivation of good character. We believe that true education extends beyond academics to encompass moral and spiritual growth. Our mission is to nurture students who not only excel academically but also possess compassion, humility, and a sense of service towards society.",
+        "logo_url": "assets\/logo\/school-logo.png"
+    },
+    "founder": {
+        "background_image": "assets\/baba\/bhajan-hall.png",
+        "founder1": {
+            "tag": "founder president",
+            "name": "Late Smt Sunandamma",
+            "description": "Deeply influenced by the Bhagvn Sri Satya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru on 1957...",
+            "image_url": "assets\/baba\/sunandamma.png",
+            "read_more_link": "#"
+        },
+        "founder2": {
+            "tag": "blessings",
+            "name": "Bhagawan Sri Sathya Sai Baba",
+            "description": "Bhagawan Sri Sathya Sai Baba was incarnated in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh in the year 23-11-1926...",
+            "image_url": "assets\/baba\/baba-chair.jpg",
+            "read_more_link": "#"
+        }
+    },
+    "updates": {
+        "title": "Updates",
+        "subtitle": "Stay updated with the latest happenings, breakthroughs, and events at SSSBPUC.",
+        "cards": [
+            {
+                "type": "News",
+                "date": "Feb 20, 2025",
+                "title": "Campus Renovation Completed",
+                "description": "Major renovation of classrooms and labs completed successfully.",
+                "image_url": "assets\/photos\/DSC_4054.jpg",
+                "link": "#"
+            },
+            {
+                "type": "Event",
+                "date": "Jan 15, 2025",
+                "title": "Annual Sports Day Highlights",
+                "description": "Students showcasing their athletic talents and team spirit.",
+                "image_url": "assets\/photos\/DSC_4033.jpg",
+                "link": "#"
+            },
+            {
+                "type": "Achievement",
+                "date": "Dec 10, 2024",
+                "title": "Academic Excellence Awards",
+                "description": "Our students excel in state-level competitions.",
+                "image_url": "assets\/photos\/DSC_4038.jpg",
+                "link": "#"
+            },
+            {
+                "type": "Community",
+                "date": "Nov 25, 2024",
+                "title": "Community Service Initiative",
+                "description": "Students participate in local community development.",
+                "image_url": "assets\/photos\/DSC_4006.jpg",
+                "link": "#"
+            }
+        ],
+        "cards[0]": {
+            "type": "News",
+            "date": "Feb 20, 2025",
+            "title": "Campus Renovation Completed",
+            "description": "Major renovation of classrooms and labs completed successfully.",
+            "image_url": "assets\/photos\/DSC_4054.jpg",
+            "link": "#"
+        },
+        "cards[1]": {
+            "type": "Event",
+            "date": "Jan 15, 2025",
+            "title": "Annual Sports Day Highlights",
+            "description": "Students showcasing their athletic talents and team spirit.",
+            "image_url": "assets\/photos\/DSC_4033.jpg",
+            "link": "#"
+        },
+        "cards[2]": {
+            "type": "Achievement",
+            "date": "Dec 10, 2024",
+            "title": "Academic Excellence Awards",
+            "description": "Our students excel in state-level competitions.",
+            "image_url": "assets\/photos\/DSC_4038.jpg",
+            "link": "#"
+        },
+        "cards[3]": {
+            "type": "Community",
+            "date": "Nov 25, 2024",
+            "title": "Community Service Initiative",
+            "description": "Students participate in local community development.",
+            "image_url": "assets\/photos\/DSC_4006.jpg",
+            "link": "#"
+        }
+    },
+    "facilities": {
+        "title": "Our Facilities",
+        "subtitle": "World-class infrastructure designed for holistic development",
+        "items": [
+            {
+                "name": "Modern Classrooms",
+                "description": "Smart classrooms equipped with latest technology to enhance the learning experience.",
+                "icon": "ri-presentation-line",
+                "image_url": "assets\/campus\/campus4.jpg"
+            },
+            {
+                "name": "Science Laboratories",
+                "description": "Well-equipped labs for physics, chemistry, biology, and computer science.",
+                "icon": "ri-flask-line",
+                "image_url": "assets\/photos\/DSC_4038.jpg"
+            },
+            {
+                "name": "Sports Complex",
+                "description": "Comprehensive sports facilities including courts, fields, and fitness equipment.",
+                "icon": "ri-football-line",
+                "image_url": "assets\/photos\/DSC_4054.jpg"
+            },
+            {
+                "name": "Library & Resources",
+                "description": "Extensive collection of books, digital resources, and quiet study spaces.",
+                "icon": "ri-book-open-line",
+                "image_url": "assets\/campus\/campus3.jpg"
+            }
+        ],
+        "items[0]": {
+            "name": "Modern Classrooms",
+            "description": "Smart classrooms equipped with latest technology to enhance the learning experience.",
+            "icon": "ri-presentation-line",
+            "image_url": "assets\/campus\/campus4.jpg"
+        },
+        "items[1]": {
+            "name": "Science Laboratories",
+            "description": "Well-equipped labs for physics, chemistry, biology, and computer science.",
+            "icon": "ri-flask-line",
+            "image_url": "assets\/photos\/DSC_4038.jpg"
+        },
+        "items[2]": {
+            "name": "Sports Complex",
+            "description": "Comprehensive sports facilities including courts, fields, and fitness equipment.",
+            "icon": "ri-football-line",
+            "image_url": "assets\/photos\/DSC_4054.jpg"
+        },
+        "items[3]": {
+            "name": "Library & Resources",
+            "description": "Extensive collection of books, digital resources, and quiet study spaces.",
+            "icon": "ri-book-open-line",
+            "image_url": "assets\/campus\/campus3.jpg"
+        }
+    },
+    "campus_life": {
+        "title": "Campus Life Gallery",
+        "images": [
+            {
+                "url": "assets\/photos\/DSC_4033.jpg",
+                "title": "Annual Sports Day",
+                "description": "Students participating in various sporting events"
+            },
+            {
+                "url": "assets\/photos\/DSC_4038.jpg",
+                "title": "Cultural Celebration",
+                "description": "Students showcasing their cultural talents"
+            },
+            {
+                "url": "assets\/photos\/DSC_4015.jpg",
+                "title": "Academic Excellence",
+                "description": "Celebrating student achievements"
+            },
+            {
+                "url": "assets\/photos\/DSC_4006.jpg",
+                "title": "Science Exhibition",
+                "description": "Innovation and research showcase"
+            }
+        ],
+        "images[0]": {
+            "url": "assets\/photos\/DSC_4033.jpg",
+            "title": "Annual Sports Day",
+            "description": "Students participating in various sporting events"
+        },
+        "images[1]": {
+            "url": "assets\/photos\/DSC_4038.jpg",
+            "title": "Cultural Celebration",
+            "description": "Students showcasing their cultural talents"
+        },
+        "images[2]": {
+            "url": "assets\/photos\/DSC_4015.jpg",
+            "title": "Academic Excellence",
+            "description": "Celebrating student achievements"
+        },
+        "images[3]": {
+            "url": "assets\/photos\/DSC_4006.jpg",
+            "title": "Science Exhibition",
+            "description": "Innovation and research showcase"
+        }
+    },
+    "sister_institutes": {
+        "title": "Sister Institutes",
+        "subtitle": "Part of the larger Sai educational family",
+        "institutes": [
+            {
+                "name": "Sri Sathya Sai Higher Secondary School",
+                "location": "Puttaparthi",
+                "image_url": "assets\/sister\/College.jpg",
+                "link": "#"
+            }
+        ],
+        "institutes[0]": {
+            "name": "Sri Sathya Sai Higher Secondary School",
+            "location": "Puttaparthi",
+            "image_url": "assets\/sister\/College.jpg",
+            "link": "#"
+        }
+    }
+}
