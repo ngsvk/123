@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "title": "Academic Excellence",
+    "subtitle": "Empowering students through comprehensive education and holistic development",
+    "background_image": "assets/campus/campus4.jpg",
+    "cta_text": "Explore Programs",
+    "cta_link": "#programs"
+  },
+  "programs": {
+    "title": "Academic Programs",
+    "subtitle": "Comprehensive educational pathways designed to nurture intellectual growth and character development",
+    "items": [
+      {
+        "name": "High School (8th - 10th Grade)",
+        "description": "Foundation program focusing on core subjects and character development. Students develop strong academic fundamentals while exploring their interests and talents.",
+        "image_url": "assets/academics/high-school.jpg",
+        "features": [
+          "CBSE Curriculum",
+          "Integrated Value Education",
+          "Co-curricular Activities",
+          "Individual Attention",
+          "Character Building Programs"
+        ],
+        "eligibility": "Completion of 7th grade",
+        "subjects": [
+          "English",
+          "Hindi", 
+          "Kannada",
+          "Mathematics",
+          "Science",
+          "Social Studies",
+          "Value Education",
+          "Physical Education"
+        ]
+      },
+      {
+        "name": "Pre-University College (11th - 12th Grade)",
+        "description": "Advanced preparation for higher education with specialized streams. Students choose their career path while maintaining focus on moral and ethical development.",
+        "image_url": "assets/academics/pre-university.jpg",
+        "features": [
+          "Science Stream (PCM, PCB)",
+          "Commerce Stream",
+          "Arts Stream",
+          "Career Guidance",
+          "University Preparation",
+          "Competitive Exam Training"
+        ],
+        "eligibility": "Completion of 10th grade with minimum 60%",
+        "streams": [
+          {
+            "name": "Science (PCM)",
+            "subjects": ["Physics", "Chemistry", "Mathematics", "English", "Kannada/Hindi"]
+          },
+          {
+            "name": "Science (PCB)", 
+            "subjects": ["Physics", "Chemistry", "Biology", "English", "Kannada/Hindi"]
+          },
+          {
+            "name": "Commerce",
+            "subjects": ["Accountancy", "Business Studies", "Economics", "English", "Kannada/Hindi"]
+          }
+        ]
+      }
+    ]
+  },
+  "curriculum": {
+    "title": "Our Curriculum Approach",
+    "subtitle": "Holistic education that balances academic rigor with character development",
+    "features": [
+      {
+        "title": "Academic Excellence",
+        "description": "Rigorous academic standards aligned with CBSE curriculum to ensure comprehensive learning.",
+        "icon": "ri-book-open-line"
+      },
+      {
+        "title": "Value Education",
+        "description": "Integrated moral and spiritual education based on Sai principles for character development.",
+        "icon": "ri-heart-line"
+      },
+      {
+        "title": "Practical Learning",
+        "description": "Hands-on laboratory work, projects, and real-world applications of theoretical knowledge.",
+        "icon": "ri-flask-line"
+      },
+      {
+        "title": "Creative Arts",
+        "description": "Music, dance, drama, and visual arts to nurture creativity and cultural appreciation.",
+        "icon": "ri-palette-line"
+      }
+    ]
+  },
+  "faculty": {
+    "title": "Expert Faculty",
+    "subtitle": "Dedicated educators committed to student success and character development",
+    "description": "Our experienced faculty members bring passion, expertise, and dedication to the classroom. They are committed to nurturing both academic excellence and character development in every student.",
+    "stats": [
+      {
+        "number": "25+",
+        "label": "Experienced Teachers"
+      },
+      {
+        "number": "15:1",
+        "label": "Student-Teacher Ratio"
+      },
+      {
+        "number": "10+",
+        "label": "Years Average Experience"
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Academic Achievements",
+    "subtitle": "Celebrating excellence in academics and beyond",
+    "items": [
+      {
+        "year": "2024",
+        "achievement": "100% Pass Rate in CBSE 10th Board Exams",
+        "description": "All students successfully passed with flying colors"
+      },
+      {
+        "year": "2024",
+        "achievement": "State Level Science Exhibition Winners",
+        "description": "Our students won multiple awards in state competitions"
+      },
+      {
+        "year": "2023",
+        "achievement": "Excellence in PU Board Results",
+        "description": "Outstanding performance with 95% first class results"
+      }
+    ]
+  },
+  "admission_info": {
+    "title": "Admission Information",
+    "description": "Join our academic community and embark on a journey of excellence and character development.",
+    "cta_text": "Apply for Admission",
+    "cta_link": "admissions.html"
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Admin Dashboard</title>
+</head>
+<body>
+    <h1>Testing Admin Dashboard JavaScript</h1>
+    <div id="test-output"></div>
+    
+    <!-- Required elements -->
+    <div style="display: none;">
+        <div id="section-editor-modal">
+            <span id="section-editor-title"></span>
+            <span id="section-editor-icon"></span>
+            <div id="section-editor-form"></div>
+            <button id="close-section-editor"></button>
+            <button id="cancel-section-edit"></button>
+            <button id="save-section-edit"></button>
+        </div>
+        <div id="total-pages">0</div>
+        <div id="total-files">0</div>
+        <div id="media-count">0</div>
+        <div id="last-updated">Never</div>
+    </div>
+    
+    <script src="scripts/enhanced-admin.js"></script>
+    <script>
+        const testOutput = document.getElementById('test-output');
+        
+        // Test if script loads
+        testOutput.innerHTML += '<p>✅ Script tag loaded</p>';
+        
+        // Test if EnhancedAdmin class exists
+        if (typeof EnhancedAdmin !== 'undefined') {
+            testOutput.innerHTML += '<p>✅ EnhancedAdmin class found</p>';
+            
+            // Test if initEnhancedAdmin function exists
+            if (typeof initEnhancedAdmin !== 'undefined') {
+                testOutput.innerHTML += '<p>✅ initEnhancedAdmin function found</p>';
+                
+                // Try to initialize
+                try {
+                    initEnhancedAdmin();
+                    testOutput.innerHTML += '<p>✅ initEnhancedAdmin called successfully</p>';
+                } catch (error) {
+                    testOutput.innerHTML += `<p>❌ initEnhancedAdmin failed: ${error.message}</p>`;
+                    console.error('Init error:', error);
+                }
+            } else {
+                testOutput.innerHTML += '<p>❌ initEnhancedAdmin function not found</p>';
+            }
+        } else {
+            testOutput.innerHTML += '<p>❌ EnhancedAdmin class not found</p>';
+        }
+        
+        // Test if window.enhancedAdmin exists after initialization
+        setTimeout(() => {
+            if (window.enhancedAdmin) {
+                testOutput.innerHTML += '<p>✅ window.enhancedAdmin created</p>';
+            } else {
+                testOutput.innerHTML += '<p>❌ window.enhancedAdmin not created</p>';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

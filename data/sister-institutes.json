@@ -1,0 +1,155 @@
+{
+    "success": true,
+    "data": {
+        "institutes": [
+            {
+                "id": 1,
+                "name": "Sri Sathya Sai School",
+                "location": "Alike, Karnataka",
+                "description": "A prestigious educational institution following the principles of Education in Human Values",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Alike.jpg?raw=true",
+                "website": "https:\/\/www.ssschool-alike.org",
+                "established": "1985",
+                "type": "School & PU College",
+                "is_active": true,
+                "display_order": 1
+            },
+            {
+                "id": 2,
+                "name": "Sri Sathya Sai School",
+                "location": "Dharwad, Karnataka",
+                "description": "Educational excellence with moral and spiritual development",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Dharwad%202.jpg?raw=true",
+                "website": "https:\/\/www.ssschool-dharwad.org",
+                "established": "1978",
+                "type": "School",
+                "is_active": true,
+                "display_order": 2
+            },
+            {
+                "id": 3,
+                "name": "Sri Sathya Sai PU College",
+                "location": "Mysuru, Karnataka",
+                "description": "The main institution providing quality education with human values",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/College%20Photos\/College.jpg?raw=true",
+                "website": "#",
+                "established": "1957",
+                "type": "School & PU College",
+                "is_active": true,
+                "display_order": 3
+            },
+            {
+                "id": 4,
+                "name": "Sri Sathya Sai School",
+                "location": "Bangalore, Karnataka",
+                "description": "Urban campus focusing on holistic education and character development",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Alike.jpg?raw=true",
+                "website": "https:\/\/www.ssschool-bangalore.org",
+                "established": "1990",
+                "type": "School",
+                "is_active": true,
+                "display_order": 4
+            },
+            {
+                "id": 5,
+                "name": "Sri Sathya Sai School",
+                "location": "Chennai, Tamil Nadu",
+                "description": "Southern regional campus with strong emphasis on Tamil culture and values",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Dharwad%202.jpg?raw=true",
+                "website": "https:\/\/www.ssschool-chennai.org",
+                "established": "1995",
+                "type": "School & PU College",
+                "is_active": true,
+                "display_order": 5
+            }
+        ],
+        "last_updated": 1736636400
+    },
+    "institutes": [
+        {
+            "id": 1,
+            "name": "Sri Sathya Sai School ALIKE",
+            "location": "Alike, Karnataka",
+            "description": "Educational institution in Alike",
+            "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Alike.jpg?raw=true",
+            "website": "#",
+            "established": "",
+            "type": "Sister Institute",
+            "display_order": 1,
+            "is_active": true,
+            "created_at": 1757616138,
+            "updated_at": 1757616563
+        },
+        {
+            "id": 2,
+            "name": "Sri Sathya Sai School DHARWAD",
+            "location": "Dharwad, Karnataka",
+            "description": "Educational institution in Dharwad",
+            "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Dharwad%202.jpg?raw=true",
+            "website": "#",
+            "established": "",
+            "type": "Sister Institute",
+            "display_order": 2,
+            "is_active": true,
+            "created_at": 1757616138,
+            "updated_at": 1757616563
+        },
+        {
+            "id": 3,
+            "name": "Sri Sathya Sai PU College MYSURU",
+            "location": "Mysuru, Karnataka",
+            "description": "Main college campus",
+            "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/College%20Photos\/College.jpg?raw=true",
+            "website": "https:\/\/satyamurthi.github.io\/SSSB",
+            "established": "",
+            "type": "Main Institute",
+            "display_order": 3,
+            "is_active": true,
+            "created_at": 1757616138,
+            "updated_at": 1757616563
+        },
+        {
+            "id": 4,
+            "name": "Sri Sathya Sai School",
+            "location": "Bangalore, Karnataka",
+            "description": "Educational institution in Bangalore",
+            "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Bangalore.jpg?raw=true",
+            "website": "#",
+            "established": "",
+            "type": "Sister Institute",
+            "display_order": 4,
+            "is_active": true,
+            "created_at": 1757616138,
+            "updated_at": 1757616563
+        },
+        {
+            "id": 5,
+            "name": "Sri Sathya Sai School",
+            "location": "Chennai, Tamil Nadu",
+            "description": "Educational institution in Chennai",
+            "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Chennai.jpg?raw=true",
+            "website": "#",
+            "established": "",
+            "type": "Sister Institute",
+            "display_order": 5,
+            "is_active": true,
+            "created_at": 1757616138,
+            "updated_at": 1757616563
+        },
+        {
+            "id": 6,
+            "name": "New Institute",
+            "location": "Location",
+            "description": "",
+            "image": "https:\/\/via.placeholder.com\/300x200",
+            "website": "#",
+            "established": "",
+            "type": "Sister Institute",
+            "display_order": 6,
+            "is_active": true,
+            "created_at": 1757616138,
+            "updated_at": 1757616563
+        }
+    ],
+    "last_updated": 1757616563
+}

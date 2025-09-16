@@ -1,0 +1,63 @@
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100" data-id="main-navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="nav-container">
+    <div class="flex justify-between items-center h-16" data-id="nav-content">                                                                                                              
+                                                                                                                                                                                            
+      <!-- LEFT SECTION: Hamburger + Left Logo -->                                                                                                                                          
+      <div class="flex items-center space-x-4" data-id="nav-left">                                                                                                                          
+        <!-- Hamburger for Mobile -->
+        <div class="md:hidden" data-id="mobile-menu-wrapper">
+          <button id="mobile-menu-toggle" class="text-gray-700 focus:outline-none" data-id="mobile-menu-toggle">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" data-id="hamburger-icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        <!-- Left Logo -->
+        <a href="index.html" data-id="nav-left-logo">
+          <img src="assets/logo/sai-baba-logo.png" style="height: 50px;" data-id="left-logo-img">
+        </a>
+      </div>
+
+      <!-- CENTER (Only visible on desktop) -->
+      <div class="hidden md:flex space-x-8 items-center" data-id="nav-center">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors" data-id="nav-home">Home</a>
+        <a href="academics.html" class="nav-link text-gray-700 hover:text-primary transition-colors" data-id="nav-academics">Academics</a>
+        <a href="gallery.html" class="nav-link text-gray-700 hover:text-primary transition-colors" data-id="nav-gallery">Gallery</a>
+        <a href="campus-life.html" class="nav-link text-gray-700 hover:text-primary transition-colors" data-id="nav-campus-life">Campus Life</a>
+        <a href="about.html" class="nav-link text-gray-700 hover:text-primary transition-colors" data-id="nav-about">About</a>
+        <a href="#" data-id="nav-admission-link">
+          <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="nav-admission-btn">
+            FOR ADMISSIONS
+          </button>
+        </a>
+      </div>
+
+      <!-- RIGHT SECTION: Right Logo -->
+      <div class="flex items-center" data-id="nav-right">
+        <a href="about.html" data-id="nav-right-logo">
+          <img src="assets/logo/school-logo.png" style="height: 50px;" data-id="right-logo-img">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-1/2 h-1/2 bg-white z-40 shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden rounded-br-2xl border-r border-b" data-id="mobile-menu">
+    <div class="flex flex-col p-4 space-y-4 h-full" data-id="mobile-menu-content">
+      <!-- Close Button -->
+      <button id="close-mobile-menu" class="self-end text-gray-600 text-2xl font-bold" data-id="close-mobile-menu">×</button>
+      
+      <!-- Links -->
+      <a href="index.html" class="text-gray-700 hover:text-primary" data-id="mobile-nav-home">Home</a>
+      <a href="academics.html" class="text-gray-700 hover:text-primary" data-id="mobile-nav-academics">Academics</a>
+      <a href="gallery.html" class="text-gray-700 hover:text-primary" data-id="mobile-nav-gallery">Gallery</a>
+      <a href="campus-life.html" class="text-gray-700 hover:text-primary" data-id="mobile-nav-campus-life">Campus Life</a>
+      <a href="about.html" class="text-gray-700 hover:text-primary" data-id="mobile-nav-about">About</a>
+      <a href="#" data-id="mobile-nav-admission-link">
+        <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="mobile-nav-admission-btn">
+          FOR ADMISSIONS
+        </button>
+      </a>
+    </div>
+  </div>
+</nav>

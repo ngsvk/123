@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="assets/logo/school-logo.png">
+  <title>About - Sri Sathya Sai Baba School & Pre-University College</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Client-side API -->
+  <script src="scripts/client-api.js"></script>
+  
+  <!-- Dynamic Content Management -->
+  <script src="scripts/dynamic-content.js"></script>
+  
+  
+  <!-- Admin Content Manager -->
+  <script src="scripts/admin-content-manager.js"></script>
+
+  
+  <!-- Enhanced Navigation -->
+  <script src="scripts/enhanced-navigation.js"></script>
+  
+  <!-- Dynamic Navigation Loader -->
+  <script src="scripts/dynamic-navigation-netlify.js"></script>
+  <script src="scripts/dynamic-footer-netlify.js"></script>
+  
+  <!-- Enhanced Navigation Styles -->
+  <link rel="stylesheet" href="styles/enhanced-navigation.css">
+</head>
+<body class="bg-white">
+
+  <!-- Navigation -->
+    <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+    <!-- College Name Header with Logos -->
+    <div class="bg-white py-3 px-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+        <!-- Left Logo -->
+        <div class="absolute left-0 flex items-center">
+          <img src="assets/logo/sai-baba-logo.png" style="height: 45px;" class="hidden md:block" alt="Sai Baba Logo">
+        </div>
+        
+        <!-- Centered College Name -->
+        <div class="text-center">
+          <h1 class="text-lg md:text-xl font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+          <p class="text-xs md:text-sm text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        
+        <!-- Right Logo -->
+        <div class="absolute right-0 flex items-center">
+          <img src="assets/logo/school-logo.png" style="height: 45px;" class="hidden md:block" alt="School Logo">
+        </div>
+        
+        <!-- Mobile Logos (Centered with Name) -->
+        <div class="md:hidden absolute -top-1 left-1/2 transform -translate-x-1/2 -translate-y-full flex space-x-4">
+          <img src="assets/logo/sai-baba-logo.png" style="height: 35px;" alt="Sai Baba Logo">
+          <img src="assets/logo/school-logo.png" style="height: 35px;" alt="School Logo">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu Bar -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle text-gray-700 hover:text-primary focus:outline-none p-2 transition-all duration-300">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Centered Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-center w-full">
+            <div id="desktop-menu-container" class="flex space-x-8 items-center">
+              <!-- Navigation items will be loaded dynamically by navigation-loader.js -->
+              <!-- Fallback static navigation -->
+              <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Home</a>
+              <a href="academics.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Academics</a>
+              <a href="gallery.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Gallery</a>
+              <a href="campus-life.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Campus Life</a>
+              <a href="about.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">About</a>
+              <a href="admissions.html">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium shadow-sm hover:shadow-lg hover:scale-105">
+                  FOR ADMISSIONS
+                </button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation Toggle Space -->
+          <div class="md:hidden w-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="absolute top-full left-0 right-0 bg-white shadow-lg border-t opacity-0 invisible transition-all duration-300 md:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="text-center mb-4 pb-4 border-b border-gray-100">
+          <div class="flex items-center justify-center space-x-3 mb-2">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 32px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 32px;" alt="School Logo">
+          </div>
+          <h2 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h2>
+          <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        <div id="mobile-menu-container" class="space-y-3">
+          <!-- Mobile navigation items will be loaded dynamically by navigation-loader.js -->
+          <!-- Fallback static navigation -->
+          <a href="index.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-home-line mr-3"></i>Home
+          </a>
+          <a href="academics.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-book-open-line mr-3"></i>Academics
+          </a>
+          <a href="gallery.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-gallery-line mr-3"></i>Gallery
+          </a>
+          <a href="campus-life.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-building-line mr-3"></i>Campus Life
+          </a>
+          <a href="about.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-information-line mr-3"></i>About
+          </a>
+          <a href="admissions.html" class="mobile-menu-item block mt-4">
+            <button class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-primary/90 font-medium transition-all duration-300 hover:scale-105">
+              <i class="ri-graduation-cap-line mr-2"></i>FOR ADMISSIONS
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16" data-id="about-main">
+    
+    <!-- Hero Section -->
+    <section class="relative h-[500px] flex items-center overflow-hidden" data-id="about-hero">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" data-id="about-hero-overlay"></div>
+      <div class="absolute inset-0" data-id="about-hero-bg">
+        <img src="assets/baba/bhajan-hall.png" class="w-full h-full object-cover" alt="About Background">
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-id="about-hero-content">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6" data-id="about-hero-title">About Us</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-id="about-hero-subtitle">
+          Discover our rich heritage, values-based education, and commitment to holistic development
+        </p>
+      </div>
+    </section>
+    
+    <!-- Welcome Section -->
+    <section class="about-section" data-id="welcome-section">
+      <div class="about-container" data-id="welcome-container">
+        <div class="logo" data-id="welcome-logo">
+          <img src="assets/logo/school-logo.png" alt="School Logo" data-id="welcome-logo-img" />
+        </div>
+        <div class="about-text" data-id="welcome-text">
+          <h4 class="section-title" data-id="welcome-subtitle">ABOUT US</h4>
+          <h1 data-id="welcome-title">Welcome to <span class="highlight-orange">Sri Sathya Sai School & PU College Mysuru</span></h1>
+          <p data-id="welcome-description">
+            Our institution is dedicated to fostering Education in Human Values. Today's education system often prioritizes intellectual and skill development while neglecting the cultivation of good character. We believe that true education extends beyond academics to encompass moral and spiritual growth. Our mission is to nurture students who not only excel academically but also possess compassion, humility, and a sense of service towards society.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="hero" style="background-image:url(assets/baba/bhajan-hall.png)" data-id="founder-section">
+      <div class="hero__bg" data-id="founder-bg">
+        <div class="container" data-id="founder-container">
+          <div class="row" data-id="founder-row">
+            <div class="columns large-6" data-id="founder-col-1">
+              <div class="hero__single" data-id="founder-card-1">
+                <div class="hero__img" data-id="founder-img-1">
+                  <img src="assets/baba/sunandamma.png" alt="Founder President" data-id="founder-photo-1">
+                </div>
+                <div class="hero__content" data-id="founder-content-1">
+                  <span class="hero__tag" data-id="founder-tag-1">founder president</span>
+                  <h4 class="hero__title" data-id="founder-title-1">
+                    <a href="#" data-id="founder-link-1">Late Smt Sunandamma</a>
+                  </h4>
+                  <p class="hero__desc" data-id="founder-desc-1">
+                    Deeply influenced by the Bhagvn Sri Satya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru on 1957...
+                    <a href="#" class="read-more" data-id="founder-readmore-1">Read more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="columns large-6" data-id="founder-col-2">
+              <div class="hero__single" data-id="founder-card-2">
+                <div class="hero__img" data-id="founder-img-2">
+                  <img src="assets/baba/baba-chair.jpg" alt="Bhagawan Sri Sathya Sai Baba" data-id="founder-photo-2">
+                </div>
+                <div class="hero__content" data-id="founder-content-2">
+                  <span class="hero__tag" data-id="founder-tag-2">blessings</span>
+                  <h4 class="hero__title" data-id="founder-title-2">
+                    <a href="#" data-id="founder-link-2">Bhagawan Sri Sathya Sai Baba</a>
+                  </h4>
+                  <p class="hero__desc" data-id="founder-desc-2">
+                    Bhagawan Sri Sathya Sai Baba was incarnated in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh in the year 23-11-1926...
+                    <a href="#" class="read-more" data-id="founder-readmore-2">Read more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white" data-id="mission-vision-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="mission-vision-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" data-id="mission-vision-grid">
+          <!-- Mission -->
+          <div class="bg-gray-50 rounded-xl p-8" data-id="mission-card">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6" data-id="mission-icon">
+              <i class="ri-target-line text-2xl text-white"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-6" data-id="mission-title">Our Mission</h3>
+            <p class="text-gray-600 text-lg leading-relaxed" data-id="mission-description">
+              To provide holistic education that develops the mind, body, and spirit of every student. We aim to cultivate young minds with strong moral values, academic excellence, and a deep sense of social responsibility, preparing them to become compassionate leaders of tomorrow.
+            </p>
+          </div>
+          
+          <!-- Vision -->
+          <div class="bg-gray-50 rounded-xl p-8" data-id="vision-card">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6" data-id="vision-icon">
+              <i class="ri-eye-line text-2xl text-white"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-6" data-id="vision-title">Our Vision</h3>
+            <p class="text-gray-600 text-lg leading-relaxed" data-id="vision-description">
+              To be recognized as a premier educational institution that seamlessly integrates academic excellence with human values education. We envision creating a generation of students who are intellectually competent, emotionally balanced, spiritually grounded, and socially committed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Core Values -->
+    <section class="py-20 bg-gray-50" data-id="values-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="values-container">
+        <div class="text-center mb-16" data-id="values-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" data-id="values-title">Our Core Values</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-id="values-subtitle">
+            The five human values that form the foundation of our educational philosophy
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8" data-id="values-grid">
+          <!-- Truth -->
+          <div class="text-center" data-id="value-1">
+            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6" data-id="value-1-icon">
+              <i class="ri-check-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4" data-id="value-1-title">Truth (Sathya)</h3>
+            <p class="text-gray-600" data-id="value-1-description">Honesty in thought, word, and action</p>
+          </div>
+          
+          <!-- Right Conduct -->
+          <div class="text-center" data-id="value-2">
+            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6" data-id="value-2-icon">
+              <i class="ri-scales-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4" data-id="value-2-title">Right Conduct (Dharma)</h3>
+            <p class="text-gray-600" data-id="value-2-description">Acting with integrity and righteousness</p>
+          </div>
+          
+          <!-- Peace -->
+          <div class="text-center" data-id="value-3">
+            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6" data-id="value-3-icon">
+              <i class="ri-leaf-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4" data-id="value-3-title">Peace (Shanti)</h3>
+            <p class="text-gray-600" data-id="value-3-description">Inner harmony and tranquility of mind</p>
+          </div>
+          
+          <!-- Love -->
+          <div class="text-center" data-id="value-4">
+            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6" data-id="value-4-icon">
+              <i class="ri-heart-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4" data-id="value-4-title">Love (Prema)</h3>
+            <p class="text-gray-600" data-id="value-4-description">Unconditional compassion for all beings</p>
+          </div>
+          
+          <!-- Non-violence -->
+          <div class="text-center" data-id="value-5">
+            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6" data-id="value-5-icon">
+              <i class="ri-hand-heart-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4" data-id="value-5-title">Non-violence (Ahimsa)</h3>
+            <p class="text-gray-600" data-id="value-5-description">Respect for all life and peaceful coexistence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- History & Heritage -->
+    <section class="py-20 bg-white" data-id="history-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="history-container">
+        <div class="text-center mb-16" data-id="history-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" data-id="history-title">Our Heritage</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-id="history-subtitle">
+            67 years of excellence in education and character building
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-8 lg:p-12" data-id="history-content">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-id="history-grid">
+            <div data-id="history-text">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Established in 1957</h3>
+              <p class="text-gray-600 mb-6">
+                Our institution was founded in 1957 by the late Smt. Sunandamma, who was deeply inspired by the teachings and philosophy of Bhagawan Sri Sathya Sai Baba. What began as a small school with a handful of students has grown into a respected educational institution serving hundreds of families in Mysuru and surrounding areas.
+              </p>
+              <p class="text-gray-600 mb-6">
+                Over the decades, we have remained committed to our founding principles of integrating academic excellence with moral and spiritual education. Our alumni have gone on to become successful professionals, entrepreneurs, and leaders in various fields, carrying forward the values they learned within these walls.
+              </p>
+              <div class="grid grid-cols-2 gap-6" data-id="history-stats">
+                <div class="text-center" data-id="stat-years">
+                  <div class="text-3xl font-bold text-primary mb-2">67+</div>
+                  <div class="text-gray-600">Years of Service</div>
+                </div>
+                <div class="text-center" data-id="stat-alumni">
+                  <div class="text-3xl font-bold text-primary mb-2">5000+</div>
+                  <div class="text-gray-600">Alumni Worldwide</div>
+                </div>
+              </div>
+            </div>
+            <div data-id="history-image">
+              <img src="assets/campus/campus3.jpg" alt="Historical Campus" class="w-full h-80 object-cover rounded-lg shadow-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Leadership Team -->
+    <section class="py-20 bg-primary text-white" data-id="leadership-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="leadership-container">
+        <div class="text-center mb-16" data-id="leadership-header">
+          <h2 class="text-4xl font-bold mb-4" data-id="leadership-title">Our Leadership</h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto" data-id="leadership-subtitle">
+            Experienced educators and administrators dedicated to student success
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-id="leadership-grid">
+          <div class="text-center" data-id="leader-1">
+            <div class="w-32 h-32 bg-white/10 rounded-full mx-auto mb-6 flex items-center justify-center" data-id="leader-1-photo">
+              <i class="ri-user-line text-4xl text-white/70"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2" data-id="leader-1-name">Principal</h3>
+            <p class="text-white/80 mb-4" data-id="leader-1-title">Educational Leadership</p>
+            <p class="text-white/70" data-id="leader-1-description">Leading our institution with vision, wisdom, and unwavering commitment to educational excellence.</p>
+          </div>
+          
+          <div class="text-center" data-id="leader-2">
+            <div class="w-32 h-32 bg-white/10 rounded-full mx-auto mb-6 flex items-center justify-center" data-id="leader-2-photo">
+              <i class="ri-user-line text-4xl text-white/70"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2" data-id="leader-2-name">Vice Principal</h3>
+            <p class="text-white/80 mb-4" data-id="leader-2-title">Academic Affairs</p>
+            <p class="text-white/70" data-id="leader-2-description">Overseeing curriculum development and ensuring high standards of academic delivery.</p>
+          </div>
+          
+          <div class="text-center" data-id="leader-3">
+            <div class="w-32 h-32 bg-white/10 rounded-full mx-auto mb-6 flex items-center justify-center" data-id="leader-3-photo">
+              <i class="ri-user-line text-4xl text-white/70"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2" data-id="leader-3-name">Dean of Students</h3>
+            <p class="text-white/80 mb-4" data-id="leader-3-title">Student Affairs</p>
+            <p class="text-white/70" data-id="leader-3-description">Supporting student development and fostering a positive campus environment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="dynamic-footer" data-dynamic="true">
+    <!-- Footer content will be loaded dynamically by dynamic-footer-netlify.js -->
+    <!-- Loading placeholder -->
+    <div class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-gray-400">Loading footer...</div>
+      </div>
+    </div>
+  </footer>
+
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const closeBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (toggleBtn && closeBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => mobileMenu.classList.remove('-translate-x-full'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.add('-translate-x-full'));
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+

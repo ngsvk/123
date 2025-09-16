@@ -1,0 +1,244 @@
+{
+  "hero": {
+    "title": "About Us",
+    "subtitle": "Dedicated to fostering Education in Human Values for over six decades",
+    "background_image": "assets/baba/bhajan-hall.png"
+  },
+  "overview": {
+    "title": "Sri Sathya Sai Baba PU College Mysuru",
+    "subtitle": "Excellence in Education with Character Development",
+    "description": "Established in 1957, Sri Sathya Sai Baba PU College Mysuru has been a beacon of holistic education, nurturing students not just academically but also morally and spiritually. Under the divine guidance of Bhagawan Sri Sathya Sai Baba, our institution has consistently strived to create citizens of exemplary character.",
+    "founding_year": "1957",
+    "location": "Mysuru, Karnataka",
+    "affiliations": ["CBSE", "Karnataka State Board"]
+  },
+  "mission_vision": {
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide holistic education that develops the head, heart, and hands of every student, creating individuals who excel academically while being grounded in moral and spiritual values."
+    },
+    "vision": {
+      "title": "Our Vision", 
+      "description": "To be a leading educational institution that transforms students into responsible global citizens who contribute positively to society through service, love, and wisdom."
+    },
+    "values": {
+      "title": "Core Values",
+      "items": [
+        {
+          "name": "Truth (Sathya)",
+          "description": "Honesty in thought, word, and deed",
+          "icon": "ri-honor-line"
+        },
+        {
+          "name": "Right Conduct (Dharma)",
+          "description": "Ethical behavior and moral integrity",
+          "icon": "ri-scales-line"
+        },
+        {
+          "name": "Peace (Shanthi)",
+          "description": "Inner harmony and tranquility",
+          "icon": "ri-leaf-line"
+        },
+        {
+          "name": "Love (Prema)",
+          "description": "Unconditional love and compassion",
+          "icon": "ri-heart-line"
+        },
+        {
+          "name": "Non-Violence (Ahimsa)",
+          "description": "Respect for all life and peaceful coexistence",
+          "icon": "ri-hand-heart-line"
+        }
+      ]
+    }
+  },
+  "history": {
+    "title": "Our Heritage",
+    "subtitle": "Six decades of educational excellence and service",
+    "milestones": [
+      {
+        "year": "1957",
+        "title": "Foundation",
+        "description": "Late Smt. Sunandamma, deeply inspired by Bhagawan Sri Sathya Sai Baba, established the school with a vision of value-based education."
+      },
+      {
+        "year": "1970",
+        "title": "CBSE Affiliation",
+        "description": "The school received CBSE affiliation, expanding its reach and standardizing its academic excellence."
+      },
+      {
+        "year": "1985",
+        "title": "Pre-University College",
+        "description": "Added Pre-University programs to provide complete secondary education under one roof."
+      },
+      {
+        "year": "2000",
+        "title": "Infrastructure Expansion",
+        "description": "Major infrastructure development including modern laboratories, library, and sports facilities."
+      },
+      {
+        "year": "2015",
+        "title": "Digital Integration",
+        "description": "Introduction of smart classrooms and digital learning resources for enhanced education delivery."
+      },
+      {
+        "year": "2020",
+        "title": "Pandemic Response",
+        "description": "Successful transition to online learning during COVID-19, ensuring uninterrupted education for all students."
+      }
+    ]
+  },
+  "founder": {
+    "title": "Our Inspiration",
+    "founder_president": {
+      "name": "Late Smt. Sunandamma",
+      "title": "Founder President",
+      "description": "A devoted follower of Bhagawan Sri Sathya Sai Baba, Smt. Sunandamma dedicated her life to establishing an educational institution that would nurture both academic excellence and moral values. Her vision of holistic education continues to guide our institution today.",
+      "image_url": "assets/baba/sunandamma.png",
+      "legacy": "Her unwavering commitment to value-based education has shaped thousands of students who have gone on to serve society with integrity and compassion."
+    },
+    "divine_inspiration": {
+      "name": "Bhagawan Sri Sathya Sai Baba",
+      "title": "Divine Guide",
+      "description": "Born in Puttaparthi, Andhra Pradesh, in 1926, Bhagawan Sri Sathya Sai Baba was a spiritual teacher and humanitarian whose teachings on love, service, and human values form the foundation of our educational philosophy.",
+      "image_url": "assets/baba/baba-chair.jpg",
+      "teachings": "His emphasis on 'Education in Human Values' and the development of the human personality continues to inspire our curriculum and approach to education."
+    }
+  },
+  "academics": {
+    "title": "Academic Excellence",
+    "subtitle": "Comprehensive education programs for holistic development",
+    "programs": [
+      {
+        "name": "High School (8th-10th)",
+        "description": "Foundation program with CBSE curriculum integrated with value education",
+        "highlights": ["100% pass rate", "Strong foundation in core subjects", "Character development focus"]
+      },
+      {
+        "name": "Pre-University (11th-12th)",
+        "description": "Specialized streams preparing students for higher education",
+        "highlights": ["Science, Commerce streams", "University preparation", "Career guidance"]
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Academic Performance",
+        "description": "Consistently high pass rates and excellent board results"
+      },
+      {
+        "title": "State Recognition",
+        "description": "Multiple awards for educational excellence and student achievements"
+      },
+      {
+        "title": "Alumni Success",
+        "description": "Graduates excelling in various fields while maintaining strong moral values"
+      }
+    ]
+  },
+  "facilities": {
+    "title": "World-Class Facilities",
+    "subtitle": "Modern infrastructure supporting comprehensive education",
+    "items": [
+      {
+        "name": "Smart Classrooms",
+        "description": "Technology-enabled learning environments with interactive boards and audio-visual systems",
+        "icon": "ri-presentation-line",
+        "image_url": "assets/facilities/classroom.jpg"
+      },
+      {
+        "name": "Science Laboratories",
+        "description": "Well-equipped labs for Physics, Chemistry, Biology, and Computer Science",
+        "icon": "ri-flask-line",
+        "image_url": "assets/facilities/laboratory.jpg"
+      },
+      {
+        "name": "Library & Digital Resources",
+        "description": "Extensive collection of books, journals, and digital learning materials",
+        "icon": "ri-book-open-line",
+        "image_url": "assets/facilities/library.jpg"
+      },
+      {
+        "name": "Sports Complex",
+        "description": "Indoor and outdoor sports facilities including courts and playgrounds",
+        "icon": "ri-football-line",
+        "image_url": "assets/facilities/sports.jpg"
+      },
+      {
+        "name": "Auditorium",
+        "description": "Modern auditorium for assemblies, cultural programs, and events",
+        "icon": "ri-mic-line",
+        "image_url": "assets/facilities/auditorium.jpg"
+      },
+      {
+        "name": "Health Center",
+        "description": "Medical facility with qualified nursing staff for student welfare",
+        "icon": "ri-hospital-line",
+        "image_url": "assets/facilities/health-center.jpg"
+      }
+    ]
+  },
+  "faculty": {
+    "title": "Dedicated Faculty",
+    "subtitle": "Experienced educators committed to student success",
+    "description": "Our faculty comprises dedicated professionals who bring both academic expertise and moral guidance to the classroom. They are committed to nurturing each student's potential and character development.",
+    "stats": [
+      {
+        "number": "35+",
+        "label": "Qualified Teachers"
+      },
+      {
+        "number": "12+",
+        "label": "Average Years Experience"
+      },
+      {
+        "number": "15:1",
+        "label": "Student-Teacher Ratio"
+      },
+      {
+        "number": "100%",
+        "label": "Post-Graduate Qualified"
+      }
+    ]
+  },
+  "community": {
+    "title": "Community Impact",
+    "subtitle": "Serving society through education and service",
+    "initiatives": [
+      {
+        "name": "Rural Education Support",
+        "description": "Supporting education in nearby villages through teaching and resource provision",
+        "icon": "ri-school-line"
+      },
+      {
+        "name": "Health Awareness Programs",
+        "description": "Conducting health camps and awareness programs in local communities",
+        "icon": "ri-heart-pulse-line"
+      },
+      {
+        "name": "Environmental Conservation",
+        "description": "Tree plantation drives and environmental awareness campaigns",
+        "icon": "ri-plant-line"
+      },
+      {
+        "name": "Cultural Preservation",
+        "description": "Promoting local culture and traditions through various programs",
+        "icon": "ri-ancient-gate-line"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "address": {
+      "street": "46, 4th Main Rd, 3rd Block",
+      "area": "Jayalakshmipuram",
+      "city": "Mysuru",
+      "state": "Karnataka",
+      "pincode": "570012",
+      "country": "India"
+    },
+    "phone": "0821 2410856",
+    "email": "info@sssbpuc.edu.in",
+    "website": "www.sssbpuc.edu.in",
+    "office_hours": "Monday to Friday: 9:00 AM - 5:00 PM, Saturday: 9:00 AM - 1:00 PM"
+  }
+}

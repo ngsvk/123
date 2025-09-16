@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax Test</title>
+</head>
+<body>
+    <h1>Testing JavaScript Syntax</h1>
+    <div id="test-result"></div>
+    
+    <!-- Required elements for the admin dashboard -->
+    <div id="total-pages">0</div>
+    <div id="total-files">0</div>
+    <div id="media-count">0</div>
+    <div id="last-updated">Never</div>
+    
+    <!-- Required modal elements for the admin dashboard -->
+    <div id="section-editor-modal" style="display: none;">
+        <span id="section-editor-title"></span>
+        <span id="section-editor-icon"></span>
+        <div id="section-editor-form"></div>
+        <button id="close-section-editor"></button>
+        <button id="cancel-section-edit"></button>
+        <button id="save-section-edit"></button>
+    </div>
+    
+    <script src="scripts/enhanced-admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testResult = document.getElementById('test-result');
+            
+            try {
+                console.log('Testing JavaScript syntax...');
+                
+                // Test if the class can be instantiated
+                const admin = new EnhancedAdmin();
+                
+                testResult.innerHTML = '<p style="color: green;">✅ JavaScript syntax is correct! No errors found.</p>';
+                console.log('✅ Enhanced Admin Dashboard loaded successfully');
+                
+            } catch (error) {
+                testResult.innerHTML = `<p style="color: red;">❌ JavaScript error found:</p><pre>${error.message}\n${error.stack}</pre>`;
+                console.error('❌ JavaScript error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

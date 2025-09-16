@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                                                                                                                                                                                      
+  <meta charset="UTF-8">                                                                                                                                                                    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                                                    
+  <link rel="shortcut icon" type="x-icon" href="assets/logo/school-logo.png">
+  <title>Sri Sathya Sai Baba School & Pre-University College</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sister-institutes-simple.css">
+  
+  <!-- Client-side API -->
+  <script src="scripts/client-api.js"></script>
+  
+  <!-- Dynamic Content Management -->
+  <script src="scripts/dynamic-content.js"></script>
+  
+  <!-- Animated Statistics -->
+  <script src="scripts/animated-stats.js"></script>
+  
+  <!-- Sister Institutes Management -->
+  <script src="scripts/sister-institutes.js"></script>
+  
+  <!-- Enhanced Navigation (handles mobile menu interactions) -->
+  <script src="scripts/enhanced-navigation.js"></script>
+  
+  <!-- Dynamic Navigation Loader (loads navigation from API) -->
+  <script src="scripts/dynamic-navigation-netlify.js"></script>
+  
+  <!-- Dynamic Footer Loader -->
+  <script src="scripts/dynamic-footer-netlify.js"></script>
+  
+  <!-- Content Visibility Styles -->
+  <style>
+    /* Show all sections by default - let dynamic content manage visibility */
+    [data-id="hero-content"],
+    [data-id="welcome-section"],
+    [data-id="founder-section"],
+    [data-id="updates-section"],
+    [data-id="stats-section"],
+    [data-id="facilities-section"],
+    [data-id="campus-life-section"],
+    [data-id="sister-institutes-section"] {
+      display: block !important;
+      visibility: visible !important;
+    }
+    
+    /* Keep video container and overlay always visible */
+    [data-id="video-container"],
+    [data-id="hero-section"],
+    [data-id="hero-overlay"] {
+      display: block !important;
+    }
+    
+    /* Statistics Section Debug Styles */
+    [data-id="stats-section"] {
+      background-color: #1B3764 !important;
+      color: white !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: relative !important;
+      z-index: 1 !important;
+    }
+    
+    [data-id="stats-section"] * {
+      color: white !important;
+    }
+    
+    [data-id="stats-section"] .stats-counter {
+      color: white !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+    }
+    
+    [data-id^="stat-"][data-id$="-number"] {
+      color: white !important;
+      font-size: 2.25rem !important;
+      font-weight: bold !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 3rem !important;
+      transition: all 0.3s ease;
+    }
+    
+    /* Enhanced Statistics Animation Styles */
+    .stats-counter.animating {
+      animation: statsPulse 2.5s ease-in-out;
+    }
+    
+    .stats-counter [data-id$="-number"].completed {
+      animation: statsGlow 1s ease-out;
+    }
+    
+    @keyframes statsPulse {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes statsGlow {
+      0% { 
+        box-shadow: none;
+        text-shadow: none;
+      }
+      50% { 
+        box-shadow: 0 0 20px rgba(218, 165, 32, 0.5);
+        text-shadow: 0 0 10px rgba(218, 165, 32, 0.7);
+      }
+      100% { 
+        box-shadow: none;
+        text-shadow: none;
+      }
+    }
+    
+    /* Statistics section entrance animation */
+    [data-id="stats-section"] {
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Enhanced Desktop Navigation Animations */
+    .nav-link {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .nav-link:hover::before {
+      left: 100%;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #1B3764, #DAA520);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      transform: translateY(-2px);
+      color: #DAA520 !important;
+    }
+    
+    /* Navigation container animation */
+    nav {
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    
+    /* Mobile Menu Animations */
+    #mobile-menu {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    #mobile-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    #mobile-menu .mobile-menu-item {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease;
+    }
+    
+    #mobile-menu.show .mobile-menu-item {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    #mobile-menu.show .mobile-menu-item:nth-child(1) { transition-delay: 0.1s; }
+    #mobile-menu.show .mobile-menu-item:nth-child(2) { transition-delay: 0.15s; }
+    #mobile-menu.show .mobile-menu-item:nth-child(3) { transition-delay: 0.2s; }
+    #mobile-menu.show .mobile-menu-item:nth-child(4) { transition-delay: 0.25s; }
+    #mobile-menu.show .mobile-menu-item:nth-child(5) { transition-delay: 0.3s; }
+    #mobile-menu.show .mobile-menu-item:nth-child(6) { transition-delay: 0.35s; }
+    #mobile-menu.show .mobile-menu-item:nth-child(7) { transition-delay: 0.4s; }
+    
+    /* Mobile menu toggle animation */
+    .mobile-menu-toggle {
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu-toggle.active {
+      transform: rotate(90deg);
+    }
+    
+    /* Sister Institutes Carousel - Simple Approach */
+    [data-id="sister-institutes-carousel-wrapper"] {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: white;
+    }
+    
+    [data-id="sister-institutes-overflow"] {
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    #sister-institutes-slider {
+      display: flex !important;
+      transition: transform 0.8s ease-in-out;
+      will-change: transform;
+    }
+    
+    #sister-institutes-slider .slide {
+      flex: 0 0 auto !important;
+      display: block !important;
+      visibility: visible !important;
+      box-sizing: border-box;
+    }
+    
+    /* Desktop: 3 cards visible, each card is 33.333% */
+    @media (min-width: 1024px) {
+      #sister-institutes-slider .slide {
+        width: 33.333%;
+      }
+    }
+    
+    /* Mobile: 1 card visible, each card is 100% */
+    @media (max-width: 1023px) {
+      #sister-institutes-slider .slide {
+        width: 100%;
+      }
+    }
+    
+    /* Mobile Layout Improvements */
+    @media (max-width: 768px) {
+      .mobile-header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .mobile-logos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      .mobile-college-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 5px 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  </style>
+</head>
+<body class="bg-white">
+  
+  <!-- Navigation -->
+  <nav id="desktop-navigation" class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+    <!-- College Name Header with Logos -->
+    <div class="bg-white py-3 px-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+        <!-- Desktop Layout -->
+        <div class="hidden md:flex items-center justify-center w-full relative">
+          <!-- Left Logo -->
+          <div class="absolute left-0 flex items-center">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 45px;" alt="Sai Baba Logo">
+          </div>
+          
+          <!-- Centered College Name -->
+          <div class="text-center">
+            <h1 class="text-lg md:text-xl font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+            <p class="text-xs md:text-sm text-gray-600">Mysuru, Karnataka</p>
+          </div>
+          
+          <!-- Right Logo -->
+          <div class="absolute right-0 flex items-center">
+            <img src="assets/logo/school-logo.png" style="height: 45px;" alt="School Logo">
+          </div>
+        </div>
+        
+        <!-- Mobile Layout -->
+        <div class="md:hidden mobile-header w-full">
+          <div class="mobile-logos relative">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 40px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 40px;" alt="School Logo">
+            
+            <!-- College Name Between Logos -->
+            <div class="mobile-college-name">
+              <h1 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+              <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu Bar -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle text-gray-700 hover:text-primary focus:outline-none p-2 transition-all duration-300" aria-label="Open mobile menu" title="Open mobile menu">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Centered Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-center w-full">
+            <div id="desktop-menu-container" class="flex space-x-8 items-center">
+              <!-- Navigation items will be loaded dynamically by navigation-loader.js -->
+              <!-- Fallback static navigation -->
+              <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Home</a>
+              <a href="academics.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Academics</a>
+              <a href="gallery.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Gallery</a>
+              <a href="campus-life.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Campus Life</a>
+              <a href="about.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">About</a>
+              <a href="admissions.html">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium shadow-sm hover:shadow-lg hover:scale-105">
+                  FOR ADMISSIONS
+                </button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation Toggle Space -->
+          <div class="md:hidden w-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-navigation" class="absolute top-full left-0 right-0 bg-white shadow-lg border-t opacity-0 invisible transition-all duration-300 md:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="text-center mb-4 pb-4 border-b border-gray-100">
+          <div class="flex items-center justify-center space-x-3 mb-2">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 32px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 32px;" alt="School Logo">
+          </div>
+          <h2 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h2>
+          <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        <div id="mobile-menu-container" class="space-y-3">
+          <!-- Mobile navigation items will be loaded dynamically by navigation-loader.js -->
+          <!-- Fallback static navigation -->
+          <a href="index.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-home-line mr-3"></i>Home
+          </a>
+          <a href="academics.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-book-open-line mr-3"></i>Academics
+          </a>
+          <a href="gallery.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-gallery-line mr-3"></i>Gallery
+          </a>
+          <a href="campus-life.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-building-line mr-3"></i>Campus Life
+          </a>
+          <a href="about.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-information-line mr-3"></i>About
+          </a>
+          <a href="admissions.html" class="mobile-menu-item block mt-4">
+            <button class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-primary/90 font-medium transition-all duration-300 hover:scale-105">
+              <i class="ri-graduation-cap-line mr-2"></i>FOR ADMISSIONS
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-32 md:pt-36" data-id="main-content">
+    
+    <!-- Hero Video Section -->
+    <section class="relative h-[600px] flex items-center overflow-hidden" data-id="hero-section">
+      <div id="video-container" class="absolute inset-0 w-full h-full -z-10" data-id="video-container"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent" data-id="hero-overlay"></div>
+      
+      <!-- Hero Content (Dynamic) -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden" data-id="hero-content">
+        <div class="max-w-3xl" data-id="hero-text">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" data-id="hero-title">
+            <!-- Title will be populated dynamically -->
+          </h1>
+          <p class="text-xl md:text-2xl text-white/90 mb-4" data-id="hero-subtitle">
+            <!-- Subtitle will be populated dynamically -->
+          </p>
+          <p class="text-lg text-white/80 mb-8 leading-relaxed" data-id="hero-description">
+            <!-- Description will be populated dynamically -->
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 hidden" data-id="hero-actions">
+            <a href="admissions.html" class="inline-flex items-center justify-center px-8 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-colors" data-id="hero-cta">
+              <span data-id="hero-cta-text"><!-- CTA text will be populated dynamically --></span>
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+            <a href="about.html" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="about-section" data-id="welcome-section">
+      <div class="about-container" data-id="welcome-container">
+        <div class="logo" data-id="welcome-logo">
+          <img src="assets/logo/school-logo.png" alt="School Logo" data-id="welcome-logo-img" />
+        </div>
+        <div class="about-text" data-id="welcome-text">
+          <h4 class="section-title" data-id="welcome-subtitle">ABOUT US</h4>
+          <h1 data-id="welcome-title">Welcome to <span class="highlight-orange">Sri Sathya Sai School & PU College Mysuru</span></h1>
+          <p data-id="welcome-description">
+            Our school is dedicated to fostering Education in Human Values. Today's education system often prioritizes intellectual and skill development while neglecting the cultivation of good character. We believe that true education extends beyond academics to encompass moral and spiritual growth. Our mission is to nurture students who not only excel academically but also possess compassion, humility, and a sense of service towards society.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="hero" style="background-image:url(assets/baba/bhajan-hall.png)" data-id="founder-section">
+      <div class="hero__bg" data-id="founder-bg">
+        <div class="container" data-id="founder-container">
+          <div class="row" data-id="founder-row">
+            <div class="columns large-6" data-id="founder-col-1">
+              <div class="hero__single" data-id="founder-card-1">
+                <div class="hero__img" data-id="founder-img-1">
+                  <img src="assets/baba/sunandamma.png" alt="Founder President" data-id="founder-photo-1" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; object-fit: cover; width: 180px; height: 220px; margin: 0 auto; display: block;">
+                </div>
+                <div class="hero__content" data-id="founder-content-1">
+                  <span class="hero__tag" data-id="founder-tag-1">founder president</span>
+                  <h4 class="hero__title" data-id="founder-title-1">
+                    <a href="#" data-id="founder-link-1">Late Smt Sunandamma</a>
+                  </h4>
+                  <p class="hero__desc" data-id="founder-desc-1" data-full-text="Deeply influenced by the Bhagawan Sri Sathya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru in 1957. She was a devoted teacher and administrator who believed in the philosophy of Education in Human Values. Her vision was to create an institution that would nurture not just academic excellence but also character development and spiritual growth. Under her guidance, the school started as a small institution and gradually expanded to become one of the most respected educational centers in Mysuru. Her dedication to students and unwavering faith in Bhagawan's teachings laid the foundation for what the institution represents today. She passed away in 1985, but her legacy continues to inspire generations of students and faculty members.">
+                    Deeply influenced by the Bhagvn Sri Satya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru on 1957...
+                    <a href="#" class="read-more" data-id="founder-readmore-1">Read more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="columns large-6" data-id="founder-col-2">
+              <div class="hero__single" data-id="founder-card-2">
+                <div class="hero__img" data-id="founder-img-2">
+                  <img src="assets/baba/baba-chair.jpg" alt="Bhagawan Sri Sathya Sai Baba" data-id="founder-photo-2">
+                </div>
+                <div class="hero__content" data-id="founder-content-2">
+                  <span class="hero__tag" data-id="founder-tag-2">blessings</span>
+                  <h4 class="hero__title" data-id="founder-title-2">
+                    <a href="#" data-id="founder-link-2">Bhagawan Sri Sathya Sai Baba</a>
+                  </h4>
+                  <p class="hero__desc" data-id="founder-desc-2" data-full-text="Bhagawan Sri Sathya Sai Baba was born in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh on 23-11-1926. He declared His mission as the Avatar of the Age at the tender age of 14. His teachings emphasized the unity of all religions and the importance of Education in Human Values - Truth (Sathya), Righteousness (Dharma), Peace (Shanti), Love (Prema), and Non-violence (Ahimsa). Bhagawan established educational institutions from primary to university level, providing free education to thousands of students. His philosophy of 'Love All, Serve All' and 'Help Ever, Hurt Never' became the guiding principles for millions of devotees worldwide. He left His physical form on 24th April 2011, but His teachings and love continue to transform lives across the globe. Our institution is blessed to follow His divine guidance in nurturing future generations.">
+                    Bhagawan Sri Sathya Sai Baba was incarnated in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh in the year 23-11-1926...
+                    <a href="#" class="read-more" data-id="founder-readmore-2">Read more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section class="bg-white py-20" data-id="updates-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="updates-container">
+        <div class="text-center mb-16" data-id="updates-header">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4" data-id="updates-title">Updates</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto" data-id="updates-subtitle">
+            Stay updated with the latest happenings, breakthroughs, and events at SSSBPUC.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" data-id="updates-grid">
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="update-card-0">
+            <img class="w-full h-48 object-cover" src="assets/photos/DSC_4054.jpg" alt="Campus Renovation" data-id="update-0-image" />
+            <div class="p-6" data-id="update-0-content">
+              <div class="flex items-center mb-4" data-id="update-0-meta">
+                <span class="text-sm text-primary font-medium" data-id="update-0-type">News</span>
+                <span class="mx-2">•</span>
+                <span class="text-sm text-gray-500" data-id="update-0-date">Feb 20, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="update-0-title">Campus Renovation Completed</h3>
+              <p class="text-gray-600 mb-4" data-id="update-0-description">Major renovation of classrooms and labs completed successfully.</p>
+              <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors" data-id="update-0-link">Read More →</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="update-card-1">
+            <img class="w-full h-48 object-cover" src="assets/photos/DSC_4033.jpg" alt="Annual Day" data-id="update-1-image" />
+            <div class="p-6" data-id="update-1-content">
+              <div class="flex items-center mb-4" data-id="update-1-meta">
+                <span class="text-sm text-primary font-medium" data-id="update-1-type">Events</span>
+                <span class="mx-2">•</span>
+                <span class="text-sm text-gray-500" data-id="update-1-date">Feb 15, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="update-1-title">Annual Day Highlights</h3>
+              <p class="text-gray-600 mb-4" data-id="update-1-description">A wonderful celebration of talent and achievement across the campus.</p>
+              <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors" data-id="update-1-link">Read More →</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="update-card-2">
+            <img class="w-full h-48 object-cover" src="assets/photos/DSC_4015.jpg" alt="New Lab Equipment" data-id="update-2-image" />
+            <div class="p-6" data-id="update-2-content">
+              <div class="flex items-center mb-4" data-id="update-2-meta">
+                <span class="text-sm text-primary font-medium" data-id="update-2-type">Academics</span>
+                <span class="mx-2">•</span>
+                <span class="text-sm text-gray-500" data-id="update-2-date">Feb 12, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="update-2-title">New Lab Equipment</h3>
+              <p class="text-gray-600 mb-4" data-id="update-2-description">State-of-the-art equipment added to our science labs.</p>
+              <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors" data-id="update-2-link">Read More →</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-id="update-card-3">
+            <img class="w-full h-48 object-cover" src="assets/photos/DSC_4038.jpg" alt="Sports Meet" data-id="update-3-image" />
+            <div class="p-6" data-id="update-3-content">
+              <div class="flex items-center mb-4" data-id="update-3-meta">
+                <span class="text-sm text-primary font-medium" data-id="update-3-type">Campus Life</span>
+                <span class="mx-2">•</span>
+                <span class="text-sm text-gray-500" data-id="update-3-date">Feb 10, 2025</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="update-3-title">Sports Meet 2025</h3>
+              <p class="text-gray-600 mb-4" data-id="update-3-description">Students showcased excellent sportsmanship and team spirit.</p>
+              <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors" data-id="update-3-link">Read More →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12" data-id="updates-cta">
+          <button class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition-colors" data-id="view-all-news-btn">
+            View All News
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-primary text-white" data-id="stats-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="stats-container">
+        <div class="text-center mb-16" data-id="stats-header">
+          <h2 class="text-3xl font-bold mb-4" data-id="stats-title">By the Numbers</h2>
+          <p class="text-white/80 max-w-2xl mx-auto" data-id="stats-subtitle">
+            Our impact in numbers reflects our commitment to excellence in education and research.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-id="stats-grid">
+          <div class="text-center stats-counter" data-id="stat-students">
+            <div class="text-4xl font-bold mb-2 text-white" data-target="25000" data-id="stat-students-number" style="min-height: 3rem; display: flex; align-items: center; justify-content: center;">0</div>
+            <p class="text-white/80" data-id="stat-students-label">Students Enrolled</p>
+          </div>
+          <div class="text-center stats-counter" data-id="stat-faculty">
+            <div class="text-4xl font-bold mb-2 text-white" data-target="70" data-id="stat-faculty-number" style="min-height: 3rem; display: flex; align-items: center; justify-content: center;">0</div>
+            <p class="text-white/80" data-id="stat-faculty-label">Faculty Members</p>
+          </div>
+          <div class="text-center stats-counter" data-id="stat-programs">
+            <div class="text-4xl font-bold mb-2 text-white" data-target="4" data-id="stat-programs-number" style="min-height: 3rem; display: flex; align-items: center; justify-content: center;">0</div>
+            <p class="text-white/80" data-id="stat-programs-label">Academic Programs</p>
+          </div>
+          <div class="text-center stats-counter" data-id="stat-passing">
+            <div class="text-4xl font-bold mb-2 text-white" data-target="100" data-id="stat-passing-number" style="min-height: 3rem; display: flex; align-items: center; justify-content: center;">0</div>
+            <p class="text-white/80" data-id="stat-passing-label">Passing Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="bg-white py-20" data-id="facilities-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="facilities-container">
+        <div class="text-center mb-16" data-id="facilities-header">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4" data-id="facilities-title">Our Facilities</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto" data-id="facilities-subtitle">
+            Discover our most popular and innovative academic programs designed to prepare you for success.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-id="facilities-grid">
+          <div class="program-card bg-white rounded-lg overflow-hidden shadow-sm" data-id="facility-physics-lab">
+            <img id="slide-physics-lab" src="assets/photos/DSC_4033.jpg" class="w-full h-48 object-cover" alt="Physics Lab" data-id="facility-physics-lab-image">
+            <div class="p-6" data-id="facility-physics-lab-content">
+              <div class="flex items-center mb-4" data-id="facility-physics-lab-tag">
+                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Physics Lab</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="facility-physics-lab-title">🌈⃤ Physics Lab ⚛️</h3>
+              <p class="text-gray-600 mb-4" data-id="facility-physics-lab-description">Equipped with advanced apparatus for hands-on experiments.</p>
+              <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="facility-physics-lab-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="program-card bg-white rounded-lg overflow-hidden shadow-sm" data-id="facility-chemistry-lab">
+            <img id="slide-chemistry-lab" src="assets/photos/DSC_4038.jpg" class="w-full h-48 object-cover" alt="Chemistry Lab" data-id="facility-chemistry-lab-image">
+            <div class="p-6" data-id="facility-chemistry-lab-content">
+              <div class="flex items-center mb-4" data-id="facility-chemistry-lab-tag">
+                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Chemistry Lab</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="facility-chemistry-lab-title">🧪 Chemistry Lab 👨🏻‍🔬</h3>
+              <p class="text-gray-600 mb-4" data-id="facility-chemistry-lab-description">Designed for safe and effective chemical experiments.</p>
+              <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="facility-chemistry-lab-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="program-card bg-white rounded-lg overflow-hidden shadow-sm" data-id="facility-biology-lab">
+            <img id="slide-biology-lab" src="assets/photos/DSC_4015.jpg" class="w-full h-48 object-cover" alt="Biology Lab" data-id="facility-biology-lab-image">
+            <div class="p-6" data-id="facility-biology-lab-content">
+              <div class="flex items-center mb-4" data-id="facility-biology-lab-tag">
+                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Biology Lab</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="facility-biology-lab-title">🌱 Biology Lab 🫁</h3>
+              <p class="text-gray-600 mb-4" data-id="facility-biology-lab-description">Modern tools for studying life sciences.</p>
+              <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="facility-biology-lab-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="program-card bg-white rounded-lg overflow-hidden shadow-sm" data-id="facility-computer-lab">
+            <img id="slide-computer-lab" src="assets/photos/DSC_4006.jpg" class="w-full h-48 object-cover" alt="Computer Lab" data-id="facility-computer-lab-image">
+            <div class="p-6" data-id="facility-computer-lab-content">
+              <div class="flex items-center mb-4" data-id="facility-computer-lab-tag">
+                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Computer Lab</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="facility-computer-lab-title">💻 Computer Science Lab 🌐</h3>
+              <p class="text-gray-600 mb-4" data-id="facility-computer-lab-description">Modern computing facilities for digital learning.</p>
+              <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="facility-computer-lab-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="program-card bg-white rounded-lg overflow-hidden shadow-sm" data-id="facility-library">
+            <img id="slide-library" src="assets/photos/DSC_4054.jpg" class="w-full h-48 object-cover" alt="Library" data-id="facility-library-image">
+            <div class="p-6" data-id="facility-library-content">
+              <div class="flex items-center mb-4" data-id="facility-library-tag">
+                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Library</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="facility-library-title">📚 Library 📖</h3>
+              <p class="text-gray-600 mb-4" data-id="facility-library-description">Extensive collection of books and digital resources.</p>
+              <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="facility-library-btn">Learn More</button>
+            </div>
+          </div>
+          <div class="program-card bg-white rounded-lg overflow-hidden shadow-sm" data-id="facility-classrooms">
+            <img id="slide-classrooms" src="assets/photos/DSC_4054.jpg" class="w-full h-48 object-cover" alt="Classrooms" data-id="facility-classrooms-image">
+            <div class="p-6" data-id="facility-classrooms-content">
+              <div class="flex items-center mb-4" data-id="facility-classrooms-tag">
+                <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Classrooms</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2" data-id="facility-classrooms-title">👨🏻‍🏫 Class Rooms 👩‍🏫</h3>
+              <p class="text-gray-600 mb-4" data-id="facility-classrooms-description">Modern, well-equipped classrooms.</p>
+              <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors" data-id="facility-classrooms-btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Life Section -->
+    <section class="py-20 bg-gray-50" data-id="campus-life-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="campus-life-container">
+        <div class="text-center mb-16" data-id="campus-life-header">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4" data-id="campus-life-title">Campus Life</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto" data-id="campus-life-subtitle">
+            Experience the vibrant and diverse community at SSSBPUC.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-id="campus-life-grid">
+          <div class="relative group overflow-hidden rounded-lg" data-id="campus-image-0">
+            <img src="assets/campus/campus3.jpg" alt="Campus View" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" data-id="campus-img-0">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" data-id="campus-overlay-0">
+              <p class="text-white text-center px-4" data-id="campus-title-0">Campus View</p>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg" data-id="campus-image-1">
+            <img src="assets/campus/campus4.jpg" alt="Campus Event" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" data-id="campus-img-1">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" data-id="campus-overlay-1">
+              <p class="text-white text-center px-4" data-id="campus-title-1">Campus Event</p>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg" data-id="campus-image-2">
+            <img src="assets/photos/DSC_4054.jpg" alt="Library" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" data-id="campus-img-2">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" data-id="campus-overlay-2">
+              <p class="text-white text-center px-4" data-id="campus-title-2">Library</p>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-lg" data-id="campus-image-3">
+            <img src="assets/photos/DSC_4038.jpg" alt="Lab" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" data-id="campus-img-3">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" data-id="campus-overlay-3">
+              <p class="text-white text-center px-4" data-id="campus-title-3">Lab</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sister Institutes Section -->
+    <section class="py-20 bg-white" data-id="sister-institutes-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="sister-institutes-container">
+        <div class="text-center mb-16" data-id="sister-institutes-header">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4" data-id="sister-institutes-title">
+            Sister Institutes
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto" data-id="sister-institutes-subtitle">
+            Part of the larger Sai educational family
+          </p>
+        </div>
+        
+        <!-- Simple Visible Grid First -->
+        <div class="relative" data-id="sister-institutes-carousel-wrapper">
+          <div class="overflow-hidden" data-id="sister-institutes-overflow">
+            <div 
+              id="sister-institutes-slider" 
+              class="flex" 
+              data-id="sister-institutes-slider"
+            >
+              <!-- Loading placeholder -->
+              <div class="slide loading-placeholder">
+                <div class="relative overflow-hidden rounded-lg shadow-lg bg-gray-100 mx-3 animate-pulse">
+                  <div class="w-full h-64 bg-gray-200"></div>
+                  <div class="absolute inset-0 flex items-end">
+                    <div class="p-6">
+                      <div class="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+                      <div class="h-3 bg-gray-300 rounded w-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sister institutes will be loaded dynamically here -->
+            </div>
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <button 
+            id="sister-prev-btn" 
+            class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center text-primary z-10 transition-all duration-300 hover:scale-110 hover:shadow-xl" 
+            aria-label="Previous Sister Institute"
+            data-id="sister-prev-btn"
+          >
+            <i class="ri-arrow-left-s-line text-2xl"></i>
+          </button>
+          <button 
+            id="sister-next-btn" 
+            class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center text-primary z-10 transition-all duration-300 hover:scale-110 hover:shadow-xl" 
+            aria-label="Next Sister Institute"
+            data-id="sister-next-btn"
+          >
+            <i class="ri-arrow-right-s-line text-2xl"></i>
+          </button>
+        </div>
+        
+        <!-- View More Button -->
+        <div class="text-center mt-12">
+          <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors font-medium shadow-sm hover:shadow-lg">
+            Learn More About Our Network
+          </button>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="dynamic-footer" data-dynamic="true">
+    <!-- Footer content will be loaded dynamically by dynamic-footer-netlify.js -->
+    <!-- Loading placeholder -->
+    <div class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-gray-400">Loading footer...</div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script>
+    // Initialize mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const closeBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-navigation');
+      if (toggleBtn && closeBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+          mobileMenu.classList.remove('-translate-x-full');
+        });
+        closeBtn.addEventListener('click', () => {
+          mobileMenu.classList.add('-translate-x-full');
+        });
+      }
+      
+      // Sister Institutes Carousel - Dynamic Loading
+      const initSisterInstitutesCarousel = async () => {
+        console.log('🏢 Sister Institutes: Starting dynamic carousel...');
+        
+        const slider = document.getElementById('sister-institutes-slider');
+        const prevBtn = document.getElementById('sister-prev-btn');
+        const nextBtn = document.getElementById('sister-next-btn');
+        
+        if (!slider || !prevBtn || !nextBtn) {
+          console.error('❌ Missing carousel elements');
+          return;
+        }
+        
+        let institutes = [];
+        let totalSlides = 0;
+        let currentIndex = 0;
+        let autoSlideTimer = null;
+        
+        // Load sister institutes data from API
+        const loadInstituteData = async () => {
+          try {
+            console.log('💬 Loading sister institutes from API...');
+            // Use the client API to make the call with proper authentication
+            let result;
+            if (window.clientAPI?.get) {
+              result = await window.clientAPI.get('get-sister-institutes');
+            } else {
+              const response = await fetch(`${window.clientAPI?.baseURL ?? '/.netlify/functions/api'}?endpoint=get-sister-institutes`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              });
+              result = await response.json();
+            }
+            
+            if (result.success && result.data && result.data.institutes) {
+              institutes = result.data.institutes.filter(inst => inst.is_active !== false);
+              console.log(`✅ Loaded ${institutes.length} active institutes`);
+              return true;
+            } else {
+              throw new Error('Invalid API response');
+            }
+          } catch (error) {
+            console.warn('⚠️ Failed to load from API, using fallback data:', error);
+            // Fallback data if API fails
+            institutes = [
+              {
+                name: 'Sri Sathya Sai School',
+                location: 'Alike, Karnataka',
+                image: 'https://github.com/Satyamurthi/mbw-Photos/blob/main/Sister%20Institutes/Alike.jpg?raw=true',
+                type: 'Sister Institute'
+              },
+              {
+                name: 'Sri Sathya Sai School', 
+                location: 'Dharwad, Karnataka',
+                image: 'https://github.com/Satyamurthi/mbw-Photos/blob/main/Sister%20Institutes/Dharwad%202.jpg?raw=true',
+                type: 'Sister Institute'
+              },
+              {
+                name: 'Sri Sathya Sai PU College',
+                location: 'Mysuru, Karnataka', 
+                image: 'https://github.com/Satyamurthi/mbw-Photos/blob/main/College%20Photos/College.jpg?raw=true',
+                type: 'Main Institute'
+              }
+            ];
+            return false;
+          }
+        };
+        
+        // Generate slide HTML
+        const createSlideHTML = (institute) => {
+          const typeLabel = institute.type || 'Sister Institute';
+          const websiteUrl = institute.website && institute.website !== '#' ? institute.website : '#';
+          const isClickable = websiteUrl !== '#';
+          
+          return `
+            <div class="slide">
+              <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white mx-3 ${isClickable ? 'cursor-pointer' : ''}" 
+                   ${isClickable ? `onclick="window.open('${websiteUrl}', '_blank')"` : ''}
+                   title="${isClickable ? 'Click to visit ' + institute.name : institute.location}">
+                <img 
+                  src="${institute.image}" 
+                  alt="${institute.name}" 
+                  class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" 
+                  onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMjAgODBIMTgwVjEyMEgxMjBWODBaIiBmaWxsPSIjRDFENURCIi8+CjxwYXRoIGQ9Ik0xNDAgMTAwSDE2MFYxMjBIMTQwVjEwMFoiIGZpbGw9IiNEOUQ5RDkiLz4KPC9zdmc+'"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div class="text-white p-6">
+                    <h3 class="text-xl font-bold mb-2">${institute.name}</h3>
+                    <div class="flex items-center justify-between">
+                      <p class="text-sm text-white/90">${institute.location}</p>
+                      ${isClickable ? '<i class="ri-external-link-line text-white/90 text-sm ml-2" title="Visit Website"></i>' : ''}
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  ${typeLabel}
+                </div>
+                ${isClickable ? '<div class="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i class="ri-cursor-line mr-1"></i>Click to visit</div>' : ''}
+              </div>
+            </div>
+          `;
+        };
+        
+        // Render slides in carousel
+        const renderSlides = () => {
+          if (institutes.length === 0) {
+            slider.innerHTML = '<div class="slide"><div class="text-center py-8 text-gray-500">No sister institutes available</div></div>';
+            return;
+          }
+          
+          slider.innerHTML = institutes.map(institute => createSlideHTML(institute)).join('');
+          totalSlides = institutes.length;
+          console.log(`🎭 Rendered ${totalSlides} slides`);
+        };
+        
+        // Get current viewport setting
+        const isMobile = () => window.innerWidth < 1024;
+        
+        // Calculate transform position
+        const updateCarousel = (animate = true) => {
+          if (totalSlides === 0) return;
+          
+          if (animate) {
+            slider.style.transition = 'transform 0.8s ease-in-out';
+          } else {
+            slider.style.transition = 'none';
+          }
+          
+          let translateX;
+          if (isMobile()) {
+            // Mobile: 1 card at a time, move by 100% per slide
+            translateX = currentIndex * 100;
+          } else {
+            // Desktop: 3 cards at a time, move by 33.333% per slide
+            translateX = currentIndex * 33.333;
+          }
+          
+          slider.style.transform = `translateX(-${translateX}%)`;
+          console.log(`🎯 Index ${currentIndex}/${totalSlides}, translateX: -${translateX}%`);
+        };
+        
+        // Next slide
+        const nextSlide = () => {
+          if (totalSlides === 0) return;
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateCarousel();
+          console.log(`➡️ Next: ${currentIndex}`);
+        };
+        
+        // Previous slide
+        const prevSlide = () => {
+          if (totalSlides === 0) return;
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+          console.log(`⬅️ Prev: ${currentIndex}`);
+        };
+        
+        // Auto-slide
+        const startAutoSlide = () => {
+          if (autoSlideTimer || totalSlides === 0) return;
+          autoSlideTimer = setInterval(nextSlide, 10000);
+          console.log('▶️ Auto-slide started (10s)');
+        };
+        
+        const stopAutoSlide = () => {
+          if (autoSlideTimer) {
+            clearInterval(autoSlideTimer);
+            autoSlideTimer = null;
+            console.log('⏸️ Auto-slide stopped');
+          }
+        };
+        
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+          stopAutoSlide();
+          nextSlide();
+          startAutoSlide();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+          stopAutoSlide();
+          prevSlide();
+          startAutoSlide();
+        });
+        
+        // Pause on hover
+        const container = document.querySelector('[data-id="sister-institutes-carousel-wrapper"]');
+        if (container) {
+          container.addEventListener('mouseenter', stopAutoSlide);
+          container.addEventListener('mouseleave', startAutoSlide);
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+          updateCarousel(false);
+        });
+        
+        // Initialize carousel
+        await loadInstituteData();
+        renderSlides();
+        currentIndex = 0;
+        updateCarousel(false);
+        startAutoSlide();
+        
+        console.log('✅ Dynamic Sister Institutes Carousel Ready!');
+      };
+      
+      // Initialize carousel after DOM is loaded
+      setTimeout(() => {
+        console.log('⏰ Sister Institutes: Starting initialization timer...');
+        initSisterInstitutesCarousel();
+      }, 500);
+    });
+  </script>
+  <script type="module">
+    import { initializeHome } from './scripts/pages/home.js';
+    // Initialize page-specific functionality
+    initializeHome();
+    // Initialize icons
+    if (window.lucide && typeof lucide.createIcons === 'function') { lucide.createIcons(); }
+  </script>
+
+  <!-- YouTube API for video -->
+  <script async src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

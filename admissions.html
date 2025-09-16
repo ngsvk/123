@@ -1,0 +1,785 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="assets/logo/school-logo.png">
+  <title>Admissions - Sri Sathya Sai Baba School & Pre-University College</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Client-side API -->
+  <script src="scripts/client-api.js"></script>
+  
+  <!-- Dynamic Content Management -->
+  <script src="scripts/dynamic-content.js"></script>
+  
+  
+  <!-- Admin Content Manager -->
+  <script src="scripts/admin-content-manager.js"></script>
+
+  
+  <!-- Enhanced Navigation -->
+  <script src="scripts/enhanced-navigation.js"></script>
+  
+  <!-- Dynamic Navigation Loader -->
+  <script src="scripts/dynamic-navigation-netlify.js"></script>
+  <script src="scripts/dynamic-footer-netlify.js"></script>
+  
+  <!-- Enhanced Navigation Styles -->
+  <link rel="stylesheet" href="styles/enhanced-navigation.css">
+  
+  <!-- Dynamic Layout Manager -->
+  <script src="scripts/dynamic-layout.js"></script>
+</head>
+<body class="bg-white">
+
+  <!-- Navigation -->
+    <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+    <!-- College Name Header with Logos -->
+    <div class="bg-white py-3 px-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+        <!-- Left Logo -->
+        <div class="absolute left-0 flex items-center">
+          <img src="assets/logo/sai-baba-logo.png" style="height: 45px;" class="hidden md:block" alt="Sai Baba Logo">
+        </div>
+        
+        <!-- Centered College Name -->
+        <div class="text-center">
+          <h1 class="text-lg md:text-xl font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+          <p class="text-xs md:text-sm text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        
+        <!-- Right Logo -->
+        <div class="absolute right-0 flex items-center">
+          <img src="assets/logo/school-logo.png" style="height: 45px;" class="hidden md:block" alt="School Logo">
+        </div>
+        
+        <!-- Mobile Logos (Centered with Name) -->
+        <div class="md:hidden absolute -top-1 left-1/2 transform -translate-x-1/2 -translate-y-full flex space-x-4">
+          <img src="assets/logo/sai-baba-logo.png" style="height: 35px;" alt="Sai Baba Logo">
+          <img src="assets/logo/school-logo.png" style="height: 35px;" alt="School Logo">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu Bar -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle text-gray-700 hover:text-primary focus:outline-none p-2 transition-all duration-300">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Centered Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-center w-full">
+            <div id="desktop-menu-container" class="flex space-x-8 items-center">
+              <!-- Navigation items will be loaded dynamically by navigation-loader.js -->
+              <!-- Fallback static navigation -->
+              <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Home</a>
+              <a href="academics.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Academics</a>
+              <a href="gallery.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Gallery</a>
+              <a href="campus-life.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Campus Life</a>
+              <a href="about.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">About</a>
+              <a href="admissions.html">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium shadow-sm hover:shadow-lg hover:scale-105">
+                  FOR ADMISSIONS
+                </button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation Toggle Space -->
+          <div class="md:hidden w-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="absolute top-full left-0 right-0 bg-white shadow-lg border-t opacity-0 invisible transition-all duration-300 md:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="text-center mb-4 pb-4 border-b border-gray-100">
+          <div class="flex items-center justify-center space-x-3 mb-2">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 32px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 32px;" alt="School Logo">
+          </div>
+          <h2 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h2>
+          <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        <div id="mobile-menu-container" class="space-y-3">
+          <!-- Mobile navigation items will be loaded dynamically by navigation-loader.js -->
+          <!-- Fallback static navigation -->
+          <a href="index.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-home-line mr-3"></i>Home
+          </a>
+          <a href="academics.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-book-open-line mr-3"></i>Academics
+          </a>
+          <a href="gallery.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-gallery-line mr-3"></i>Gallery
+          </a>
+          <a href="campus-life.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-building-line mr-3"></i>Campus Life
+          </a>
+          <a href="about.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-information-line mr-3"></i>About
+          </a>
+          <a href="admissions.html" class="mobile-menu-item block mt-4">
+            <button class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-primary/90 font-medium transition-all duration-300 hover:scale-105">
+              <i class="ri-graduation-cap-line mr-2"></i>FOR ADMISSIONS
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-16" data-id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="relative h-[500px] flex items-center overflow-hidden" data-id="admissions-hero">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" data-id="admissions-hero-overlay"></div>
+      <div class="absolute inset-0" data-id="admissions-hero-bg">
+        <img id="hero-bg-image" class="w-full h-full object-cover" alt="Admissions Background">
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-id="admissions-hero-content">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6" id="hero-title">Admissions</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" id="hero-subtitle">
+          Join the SSSBPUC Family
+        </p>
+        <p class="text-lg mb-8 max-w-2xl mx-auto" id="hero-description">
+          Begin your journey of academic excellence and character development with us.
+        </p>
+        <button class="bg-white text-primary px-8 py-3 rounded-button font-semibold hover:bg-gray-100 transition-colors">
+          Apply Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Admission Overview -->
+    <section class="py-20 bg-white" data-id="overview-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="overview-container">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12" data-id="overview-grid">
+          <div class="lg:col-span-2" data-id="overview-content">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6" id="overview-title">Admission Overview</h2>
+            <p class="text-lg text-gray-600 mb-8" id="overview-description">
+              We welcome students who are eager to learn, grow, and contribute positively to society.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-8" data-id="overview-info">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Quick Info</h3>
+            <div class="space-y-4">
+              <div>
+                <span class="text-gray-500">Academic Year:</span>
+                <span class="ml-2 font-semibold" id="academic-year">2025-2026</span>
+              </div>
+              <div>
+                <span class="text-gray-500">Application Deadline:</span>
+                <span class="ml-2 font-semibold text-red-600" id="application-deadline">March 15, 2025</span>
+              </div>
+              <div>
+                <span class="text-gray-500">Results Announcement:</span>
+                <span class="ml-2 font-semibold" id="announcement-date">April 15, 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Programs -->
+    <section class="py-20 bg-gray-50" data-id="programs-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="programs-container">
+        <div class="text-center mb-16" data-id="programs-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" id="programs-title">Available Programs</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" id="programs-subtitle">
+            Choose the path that aligns with your aspirations
+          </p>
+        </div>
+        
+        <div class="space-y-8" id="programs-list">
+          <!-- Programs will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="py-20 bg-white" data-id="process-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="process-container">
+        <div class="text-center mb-16" data-id="process-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" id="process-title">Admission Process</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" id="process-subtitle">
+            Simple steps to join our institution
+          </p>
+        </div>
+        
+        <div class="relative" data-id="process-timeline">
+          <div class="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-primary/20 hidden lg:block"></div>
+          <div class="space-y-8" id="process-steps">
+            <!-- Process steps will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fee Structure -->
+    <section class="py-20 bg-gray-50" data-id="fee-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="fee-container">
+        <div class="text-center mb-16" data-id="fee-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" id="fee-title">Fee Structure</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" id="fee-subtitle">Academic Year 2025-2026</p>
+          <p class="text-sm text-gray-500 mt-2" id="fee-note">
+            Fees are subject to revision. Scholarships available for meritorious students.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="fee-structure">
+          <!-- Fee structure will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Scholarships -->
+    <section class="py-20 bg-white" data-id="scholarships-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="scholarships-container">
+        <div class="text-center mb-16" data-id="scholarships-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" id="scholarships-title">Scholarships & Financial Aid</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" id="scholarships-subtitle">
+            Supporting deserving students in their educational journey
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="scholarships-list">
+          <!-- Scholarships will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="py-20 bg-primary text-white" data-id="dates-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="dates-container">
+        <div class="text-center mb-16" data-id="dates-header">
+          <h2 class="text-4xl font-bold mb-4" id="dates-title">Important Dates</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="important-dates">
+          <!-- Important dates will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50" data-id="faq-section">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-id="faq-container">
+        <div class="text-center mb-16" data-id="faq-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" id="faq-title">Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="space-y-4" id="faq-list">
+          <!-- FAQ items will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white" data-id="contact-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="contact-container">
+        <div class="text-center mb-16" data-id="contact-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" id="contact-title">Admissions Contact</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" id="contact-subtitle">
+            Get in touch for any admission-related queries
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="contact-details">
+          <!-- Contact details will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="py-20 bg-gray-50" data-id="application-form-section">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-id="application-form-container">
+        <div class="text-center mb-16" data-id="application-form-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Online Application Form</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Begin your journey with us by filling out this application form
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8" data-id="application-form-card">
+          <form id="admission-form" class="space-y-8">
+            <!-- Personal Information -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-4">Personal Information</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                  <input type="text" id="first-name" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                  <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                  <input type="text" id="last-name" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="date-of-birth" class="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
+                  <input type="date" id="date-of-birth" name="dateOfBirth" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                  <label for="gender" class="block text-sm font-medium text-gray-700 mb-2">Gender *</label>
+                  <select id="gender" name="gender" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                  <label for="parent-phone" class="block text-sm font-medium text-gray-700 mb-2">Parent/Guardian Phone *</label>
+                  <input type="tel" id="parent-phone" name="parentPhone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+              </div>
+            </div>
+
+            <!-- Academic Information -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-4">Academic Information</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="applying-for" class="block text-sm font-medium text-gray-700 mb-2">Applying For *</label>
+                  <select id="applying-for" name="applyingFor" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <option value="">Select Program</option>
+                    <option value="high-school-8">High School - Grade 8</option>
+                    <option value="high-school-9">High School - Grade 9</option>
+                    <option value="high-school-10">High School - Grade 10</option>
+                    <option value="pu-science-pcm">PU - Science (PCM)</option>
+                    <option value="pu-science-pcb">PU - Science (PCB)</option>
+                    <option value="pu-commerce">PU - Commerce</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="previous-school" class="block text-sm font-medium text-gray-700 mb-2">Previous School/Institution *</label>
+                  <input type="text" id="previous-school" name="previousSchool" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="last-grade-completed" class="block text-sm font-medium text-gray-700 mb-2">Last Grade Completed *</label>
+                  <select id="last-grade-completed" name="lastGradeCompleted" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <option value="">Select Grade</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10 (SSLC)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="percentage" class="block text-sm font-medium text-gray-700 mb-2">Percentage/Grade Obtained *</label>
+                  <input type="text" id="percentage" name="percentage" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="e.g., 85% or A1">
+                </div>
+              </div>
+            </div>
+
+            <!-- Address Information -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-4">Address Information</h3>
+              
+              <div>
+                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Full Address *</label>
+                <textarea id="address" name="address" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label for="city" class="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                  <input type="text" id="city" name="city" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                  <label for="state" class="block text-sm font-medium text-gray-700 mb-2">State *</label>
+                  <input type="text" id="state" name="state" required value="Karnataka" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                  <label for="pincode" class="block text-sm font-medium text-gray-700 mb-2">PIN Code *</label>
+                  <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" id="submit-application" class="bg-primary text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 focus:ring-4 focus:ring-primary/20 transition-all">
+                <span id="submit-text">Submit Application</span>
+                <i class="ri-loader-4-line animate-spin hidden ml-2" id="submit-spinner"></i>
+              </button>
+              <p class="mt-4 text-sm text-gray-600">
+                After submitting, you will receive a confirmation email with further instructions.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="dynamic-footer" data-dynamic="true">
+    <!-- Footer content will be loaded dynamically by dynamic-footer-netlify.js -->
+    <!-- Loading placeholder -->
+    <div class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-gray-400">Loading footer...</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const closeBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (toggleBtn && closeBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => mobileMenu.classList.remove('-translate-x-full'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.add('-translate-x-full'));
+      }
+
+      // Load dynamic content
+      loadAdmissionsContent();
+    });
+
+    // Load dynamic content from JSON
+    function loadAdmissionsContent() {
+      fetch('data/admissions.json')
+        .then(response => response.json())
+        .then(data => {
+          // Load hero section
+          document.getElementById('hero-title').textContent = data.hero.title;
+          document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
+          document.getElementById('hero-description').textContent = data.hero.description;
+          document.getElementById('hero-bg-image').src = data.hero.background_image;
+
+          // Load overview
+          document.getElementById('overview-title').textContent = data.overview.title;
+          document.getElementById('overview-description').textContent = data.overview.description;
+          document.getElementById('academic-year').textContent = data.overview.academic_year;
+          document.getElementById('application-deadline').textContent = data.overview.application_deadline;
+          document.getElementById('announcement-date').textContent = data.overview.announcement_date;
+
+          // Load programs
+          document.getElementById('programs-title').textContent = data.programs.title;
+          document.getElementById('programs-subtitle').textContent = data.programs.subtitle;
+          loadPrograms(data.programs.items);
+
+          // Load admission process
+          document.getElementById('process-title').textContent = data.admission_process.title;
+          document.getElementById('process-subtitle').textContent = data.admission_process.subtitle;
+          loadAdmissionProcess(data.admission_process.steps);
+
+          // Load fee structure
+          document.getElementById('fee-title').textContent = data.fee_structure.title;
+          document.getElementById('fee-subtitle').textContent = data.fee_structure.subtitle;
+          document.getElementById('fee-note').textContent = data.fee_structure.note;
+          loadFeeStructure(data.fee_structure.categories);
+
+          // Load scholarships
+          document.getElementById('scholarships-title').textContent = data.scholarships.title;
+          document.getElementById('scholarships-subtitle').textContent = data.scholarships.subtitle;
+          loadScholarships(data.scholarships.programs);
+
+          // Load important dates
+          document.getElementById('dates-title').textContent = data.important_dates.title;
+          loadImportantDates(data.important_dates.dates);
+
+          // Load FAQ
+          document.getElementById('faq-title').textContent = data.faq.title;
+          loadFAQ(data.faq.items);
+
+          // Load contact
+          document.getElementById('contact-title').textContent = data.contact.title;
+          document.getElementById('contact-subtitle').textContent = data.contact.subtitle;
+          loadContact(data.contact.details);
+        })
+        .catch(error => console.error('Error loading admissions content:', error));
+    }
+
+    function loadPrograms(programs) {
+      const container = document.getElementById('programs-list');
+      container.innerHTML = programs.map(program => `
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="md:flex">
+            <div class="md:w-1/3">
+              <img src="${program.image_url}" alt="${program.name}" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-2/3 p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">${program.name}</h3>
+              <p class="text-gray-600 mb-4">${program.description}</p>
+              <div class="mb-4">
+                <span class="text-sm font-semibold text-primary">Eligibility: </span>
+                <span class="text-gray-600">${program.eligibility}</span>
+              </div>
+              ${program.subjects ? `
+                <div class="mb-4">
+                  <span class="text-sm font-semibold text-primary">Subjects: </span>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    ${program.subjects.map(subject => `
+                      <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">${subject}</span>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+              ${program.streams ? `
+                <div class="mb-4">
+                  <span class="text-sm font-semibold text-primary">Available Streams:</span>
+                  <div class="mt-2 space-y-2">
+                    ${program.streams.map(stream => `
+                      <div class="bg-gray-50 p-3 rounded-lg">
+                        <h4 class="font-semibold">${stream.name}</h4>
+                        <p class="text-sm text-gray-600">${stream.subjects.join(', ')}</p>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+              <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90 transition-colors">
+                Apply Now
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadAdmissionProcess(steps) {
+      const container = document.getElementById('process-steps');
+      container.innerHTML = steps.map((step, index) => `
+        <div class="flex items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}">
+          <div class="flex-1 ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  ${step.step}
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">${step.title}</h3>
+                  <i class="${step.icon} text-primary text-lg"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">${step.description}</p>
+              <div>
+                <span class="text-sm font-semibold text-primary">Required Documents:</span>
+                <ul class="mt-2 space-y-1">
+                  ${step.documents.map(doc => `<li class="text-sm text-gray-600">â€¢ ${doc}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="w-4 h-4 bg-primary rounded-full relative z-10 hidden lg:block"></div>
+          <div class="flex-1"></div>
+        </div>
+      `).join('');
+    }
+
+    function loadFeeStructure(categories) {
+      const container = document.getElementById('fee-structure');
+      container.innerHTML = categories.map(category => `
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <h3 class="text-xl font-semibold text-gray-900 mb-6">${category.program}</h3>
+          <div class="space-y-4">
+            ${category.fees.map(fee => `
+              <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                <span class="text-gray-600">${fee.item}</span>
+                <span class="font-semibold text-gray-900">${fee.amount}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadScholarships(programs) {
+      const container = document.getElementById('scholarships-list');
+      container.innerHTML = programs.map(program => `
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">${program.name}</h3>
+          <p class="text-gray-600 mb-4">${program.description}</p>
+          <div class="space-y-2">
+            <div>
+              <span class="text-sm font-semibold text-primary">Criteria: </span>
+              <span class="text-gray-600">${program.criteria}</span>
+            </div>
+            <div>
+              <span class="text-sm font-semibold text-primary">Benefit: </span>
+              <span class="text-green-600 font-semibold">${program.benefit}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadImportantDates(dates) {
+      const container = document.getElementById('important-dates');
+      container.innerHTML = dates.map(date => `
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <h3 class="font-semibold text-white mb-2">${date.event}</h3>
+          <p class="text-white/80">${date.date}</p>
+        </div>
+      `).join('');
+    }
+
+    function loadFAQ(items) {
+      const container = document.getElementById('faq-list');
+      container.innerHTML = items.map((item, index) => `
+        <div class="bg-white rounded-lg shadow-sm">
+          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(${index})">
+            <span class="font-semibold text-gray-900">${item.question}</span>
+            <i class="ri-add-line text-gray-400 transition-transform" id="faq-icon-${index}"></i>
+          </button>
+          <div class="px-6 pb-4 hidden" id="faq-answer-${index}">
+            <p class="text-gray-600">${item.answer}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadContact(details) {
+      const container = document.getElementById('contact-details');
+      container.innerHTML = details.map(detail => `
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="${detail.icon} text-2xl text-white"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">${detail.type}</h3>
+          <p class="text-gray-600">${detail.info}</p>
+        </div>
+      `).join('');
+    }
+
+    function toggleFAQ(index) {
+      const answer = document.getElementById(`faq-answer-${index}`);
+      const icon = document.getElementById(`faq-icon-${index}`);
+      
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.classList.add('rotate-45');
+      } else {
+        answer.classList.add('hidden');
+        icon.classList.remove('rotate-45');
+      }
+    }
+
+    // Admission form handling
+    document.getElementById('admission-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-application');
+      const submitText = document.getElementById('submit-text');
+      const submitSpinner = document.getElementById('submit-spinner');
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitText.textContent = 'Submitting...';
+      submitSpinner.classList.remove('hidden');
+      
+      // Collect form data
+      const formData = new FormData(this);
+      const applicationData = {};
+      
+      for (let [key, value] of formData.entries()) {
+        applicationData[key] = value;
+      }
+      
+      // Add timestamp and ID
+      applicationData.submittedAt = new Date().toISOString();
+      applicationData.applicationId = 'APP-' + Date.now();
+      
+      // Simulate form submission (replace with actual API call)
+      setTimeout(() => {
+        // Here you would normally send to your backend
+        console.log('Application Data:', applicationData);
+        
+        // Save to localStorage for demonstration
+        let applications = JSON.parse(localStorage.getItem('applications') || '[]');
+        applications.push(applicationData);
+        localStorage.setItem('applications', JSON.stringify(applications));
+        
+        // Show success message
+        alert(`Application submitted successfully!\n\nYour Application ID: ${applicationData.applicationId}\n\nWe will contact you within 2-3 business days with further instructions.`);
+        
+        // Reset form
+        this.reset();
+        
+        // Reset button state
+        submitBtn.disabled = false;
+        submitText.textContent = 'Submit Application';
+        submitSpinner.classList.add('hidden');
+        
+      }, 2000); // Simulate network delay
+    });
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,239 @@
+{
+  "hero": {
+    "title": "Campus Life",
+    "subtitle": "Where learning meets life, and friendships are forged for a lifetime",
+    "background_image": "assets/campus/campus3.jpg"
+  },
+  "overview": {
+    "title": "Life at SSSBPUC",
+    "subtitle": "A vibrant community where students thrive academically, socially, and spiritually",
+    "description": "Our campus is a place where education extends beyond textbooks. Students engage in diverse activities that nurture their talents, build character, and create lasting memories. From morning assemblies inspired by Sai values to evening cultural programs, every moment is an opportunity for growth and learning.",
+    "highlights": [
+      {
+        "title": "Value-Based Education",
+        "description": "Daily moral classes and spiritual activities based on Sai teachings",
+        "icon": "ri-heart-line"
+      },
+      {
+        "title": "Cultural Activities",
+        "description": "Regular cultural programs, festivals, and artistic expressions",
+        "icon": "ri-music-line"
+      },
+      {
+        "title": "Sports & Recreation",
+        "description": "Comprehensive sports programs and recreational activities",
+        "icon": "ri-football-line"
+      },
+      {
+        "title": "Community Service",
+        "description": "Regular service activities to develop social responsibility",
+        "icon": "ri-hand-heart-line"
+      }
+    ]
+  },
+  "daily_life": {
+    "title": "A Day in the Life",
+    "subtitle": "Experience the rhythm of our campus from dawn to dusk",
+    "schedule": [
+      {
+        "time": "7:30 AM",
+        "activity": "Morning Assembly",
+        "description": "Start the day with prayers, values, and inspiring thoughts"
+      },
+      {
+        "time": "8:00 AM",
+        "activity": "Academic Classes",
+        "description": "Engaging lessons across all subjects with interactive learning"
+      },
+      {
+        "time": "10:30 AM",
+        "activity": "Mid-Morning Break",
+        "description": "Healthy refreshments and social interaction time"
+      },
+      {
+        "time": "12:30 PM",
+        "activity": "Lunch Break",
+        "description": "Nutritious meals and recreational activities"
+      },
+      {
+        "time": "1:30 PM",
+        "activity": "Afternoon Session",
+        "description": "Laboratory work, practical sessions, and specialized classes"
+      },
+      {
+        "time": "3:30 PM",
+        "activity": "Co-curricular Activities",
+        "description": "Sports, arts, music, and club activities"
+      },
+      {
+        "time": "5:00 PM",
+        "activity": "Study Time",
+        "description": "Supervised study and assignment completion"
+      }
+    ]
+  },
+  "activities": {
+    "title": "Student Activities",
+    "subtitle": "Diverse opportunities for personal growth and talent development",
+    "categories": [
+      {
+        "name": "Cultural Activities",
+        "description": "Express your creativity through various artistic forms",
+        "icon": "ri-palette-line",
+        "items": [
+          "Classical and Folk Dance",
+          "Music - Vocal and Instrumental",
+          "Drama and Theatre",
+          "Art and Craft Workshops",
+          "Literary Events and Debates",
+          "Annual Cultural Festival"
+        ],
+        "image_url": "assets/activities/cultural.jpg"
+      },
+      {
+        "name": "Sports & Games",
+        "description": "Build fitness, teamwork, and competitive spirit",
+        "icon": "ri-trophy-line",
+        "items": [
+          "Cricket and Football",
+          "Basketball and Volleyball", 
+          "Table Tennis and Badminton",
+          "Athletics and Track Events",
+          "Yoga and Physical Fitness",
+          "Inter-house Sports Competition"
+        ],
+        "image_url": "assets/activities/sports.jpg"
+      },
+      {
+        "name": "Academic Clubs",
+        "description": "Enhance learning through specialized interest groups",
+        "icon": "ri-microscope-line",
+        "items": [
+          "Science Club and Experiments",
+          "Mathematics Olympiad Training",
+          "Computer Programming Club",
+          "English Literary Society",
+          "Quiz and General Knowledge Club",
+          "Environmental Science Club"
+        ],
+        "image_url": "assets/activities/academic.jpg"
+      },
+      {
+        "name": "Community Service",
+        "description": "Develop social responsibility and compassion",
+        "icon": "ri-community-line",
+        "items": [
+          "Village Adoption Programs",
+          "Teaching Underprivileged Children",
+          "Environmental Conservation",
+          "Old Age Home Visits",
+          "Blood Donation Camps",
+          "Disaster Relief Activities"
+        ],
+        "image_url": "assets/activities/service.jpg"
+      }
+    ]
+  },
+  "events": {
+    "title": "Annual Events",
+    "subtitle": "Celebrating traditions and creating memorable moments",
+    "items": [
+      {
+        "name": "Guru Poornima",
+        "date": "July",
+        "description": "Honoring teachers and the guru-disciple tradition with special programs and reverence.",
+        "image_url": "assets/events/guru-poornima.jpg"
+      },
+      {
+        "name": "Independence Day",
+        "date": "August 15",
+        "description": "Patriotic celebration with flag hoisting, cultural programs, and national pride.",
+        "image_url": "assets/events/independence-day.jpg"
+      },
+      {
+        "name": "Teachers' Day",
+        "date": "September 5",
+        "description": "Students organize special programs to appreciate and honor their teachers.",
+        "image_url": "assets/events/teachers-day.jpg"
+      },
+      {
+        "name": "Annual Sports Day",
+        "date": "November",
+        "description": "Inter-house competitions, athletic events, and celebration of sportsmanship.",
+        "image_url": "assets/events/sports-day.jpg"
+      },
+      {
+        "name": "Annual Cultural Festival",
+        "date": "December",
+        "description": "Grand showcase of student talents in music, dance, drama, and arts.",
+        "image_url": "assets/events/cultural-festival.jpg"
+      },
+      {
+        "name": "Graduation Ceremony",
+        "date": "March",
+        "description": "Celebrating academic achievements and bidding farewell to graduating students.",
+        "image_url": "assets/events/graduation.jpg"
+      }
+    ]
+  },
+  "student_voices": {
+    "title": "Student Voices",
+    "subtitle": "Hear from our students about their campus life experience",
+    "testimonials": [
+      {
+        "name": "Priya S.",
+        "class": "12th Grade Science",
+        "quote": "The values I've learned here have shaped not just my academics but my entire character. The teachers are like family.",
+        "image_url": "assets/students/student1.jpg"
+      },
+      {
+        "name": "Rohit K.",
+        "class": "10th Grade",
+        "quote": "From cricket to cultural programs, there's always something exciting happening. I've discovered so many of my hidden talents here.",
+        "image_url": "assets/students/student2.jpg"
+      },
+      {
+        "name": "Ananya M.",
+        "class": "11th Commerce",
+        "quote": "The community service programs have taught me the joy of giving back. It's amazing how much we can contribute to society.",
+        "image_url": "assets/students/student3.jpg"
+      }
+    ]
+  },
+  "facilities": {
+    "title": "Campus Facilities",
+    "subtitle": "Modern infrastructure supporting holistic development",
+    "items": [
+      {
+        "name": "Smart Classrooms",
+        "description": "Technology-enabled learning environments",
+        "icon": "ri-presentation-line"
+      },
+      {
+        "name": "Science Laboratories",
+        "description": "Well-equipped labs for practical learning",
+        "icon": "ri-flask-line"
+      },
+      {
+        "name": "Library & Digital Resources",
+        "description": "Extensive books and online learning materials",
+        "icon": "ri-book-open-line"
+      },
+      {
+        "name": "Sports Complex",
+        "description": "Indoor and outdoor sports facilities",
+        "icon": "ri-football-line"
+      },
+      {
+        "name": "Auditorium",
+        "description": "Modern venue for events and assemblies",
+        "icon": "ri-mic-line"
+      },
+      {
+        "name": "Health Center",
+        "description": "Medical facility with qualified nursing staff",
+        "icon": "ri-hospital-line"
+      }
+    ]
+  }
+}

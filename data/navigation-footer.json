@@ -1,0 +1,43 @@
+{
+  "navigation": {
+    "quick_links": [
+      {
+        "name": "About Us",
+        "url": "about.html"
+      },
+      {
+        "name": "Academics", 
+        "url": "academics.html"
+      },
+      {
+        "name": "Gallery",
+        "url": "gallery.html"
+      },
+      {
+        "name": "Campus Life",
+        "url": "campus-life.html"
+      },
+      {
+        "name": "Admissions",
+        "url": "admissions.html"
+      }
+    ]
+  },
+  "contact_info": [
+    {
+      "type": "address",
+      "icon": "ri-map-pin-line", 
+      "text": "Sri Sathya Sai Baba PU College, 46, 4th Main Rd, 3rd Block, Jayalakshmipuram, Mysuru, Karnataka 570012"
+    },
+    {
+      "type": "phone", 
+      "icon": "ri-phone-line",
+      "text": "0821 2418856"
+    },
+    {
+      "type": "email",
+      "icon": "ri-mail-line", 
+      "text": "sssbpucnn0385@gmail.com"
+    }
+  ]
+}

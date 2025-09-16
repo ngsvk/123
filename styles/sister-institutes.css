@@ -1,0 +1,365 @@
+/* Simple Sister Institutes Carousel - Matches Reference Design */
+
+.sister-institutes-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.activities-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.slide {
+  flex-shrink: 0;
+}
+
+/* Navigation arrows */
+.sister-institutes-slider-wrapper .prev,
+.sister-institutes-slider-wrapper .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1B3764;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sister-institutes-slider-wrapper .prev:hover,
+.sister-institutes-slider-wrapper .next:hover {
+  background: #ffffff;
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sister-institutes-slider-wrapper .prev {
+  left: 1rem;
+}
+
+.sister-institutes-slider-wrapper .next {
+  right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sister-institutes-slider-wrapper .prev,
+  .sister-institutes-slider-wrapper .next {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .sister-institutes-slider-wrapper .prev {
+    left: 0.5rem;
+  }
+  
+  .sister-institutes-slider-wrapper .next {
+    right: 0.5rem;
+  }
+}
+
+.sister-institute-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sister-institute-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.institute-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 16rem; /* 64 * 0.25rem = 16rem */
+}
+
+.institute-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sister-institute-card:hover .institute-image {
+  transform: scale(1.1);
+}
+
+.institute-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sister-institute-card:hover .institute-overlay {
+  opacity: 1;
+}
+
+.institute-overlay-content {
+  text-align: center;
+  transform: translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sister-institute-card:hover .institute-overlay-content {
+  transform: translateY(0);
+}
+
+.institute-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.institute-description {
+  font-size: 0.875rem;
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  max-width: 18rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visit-website-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #93c5fd;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.visit-website-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #dbeafe;
+  transform: translateY(-2px);
+}
+
+.institute-footer {
+  padding: 1rem;
+  background: #ffffff;
+  border-top: 1px solid rgba(229, 231, 235, 0.3);
+}
+
+.institute-short-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.institute-location {
+  font-size: 0.875rem;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.sister-institute-card:hover .institute-short-name {
+  color: #3b82f6;
+}
+
+.sister-institute-card:hover .institute-location {
+  color: #1f2937;
+}
+
+/* Navigation Arrows */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-nav-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-nav-btn.prev {
+  left: 1rem;
+}
+
+.carousel-nav-btn.next {
+  right: 1rem;
+}
+
+.carousel-nav-btn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.institute-loading {
+  background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .sister-institutes-slider-wrapper {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+  
+  .carousel-nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .carousel-nav-btn.prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-nav-btn.next {
+    right: 0.5rem;
+  }
+  
+  .institute-image-container {
+    height: 12rem;
+  }
+  
+  .institute-name {
+    font-size: 1.125rem;
+  }
+  
+  .institute-description {
+    font-size: 0.8rem;
+    max-width: 16rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .institute-image-container {
+    height: 14rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .institute-image-container {
+    height: 18rem;
+  }
+  
+  .institute-name {
+    font-size: 1.375rem;
+  }
+}
+
+/* Focus states for accessibility */
+.sister-institute-card:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.carousel-nav-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  .sister-institutes-slider {
+    transition: none;
+  }
+  
+  .sister-institute-card {
+    transition: none;
+  }
+  
+  .institute-image {
+    transition: none;
+  }
+  
+  .institute-overlay {
+    transition: none;
+  }
+  
+  .carousel-nav-btn {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .sister-institute-card {
+    border: 2px solid #000000;
+  }
+  
+  .institute-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .carousel-nav-btn {
+    border: 2px solid #000000;
+    background: #ffffff;
+  }
+}

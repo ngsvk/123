@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Debug - SSSBPUC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1B3764',
+                        secondary: '#DAA520'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Dynamic Navigation -->
+    <script src="scripts/dynamic-navigation-netlify.js"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="desktop-navigation" class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+        <!-- Navigation will be loaded dynamically -->
+        <div class="max-w-7xl mx-auto px-4 py-4 text-center">
+            <div class="text-gray-500">Loading navigation...</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 py-12">
+            
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">🔧 Navigation Debug</h1>
+                <p class="text-xl text-gray-600">Test and debug navigation cache and refresh</p>
+            </div>
+
+            <!-- Debug Controls -->
+            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-2xl font-semibold mb-6">Debug Controls</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <button id="clear-cache" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                        <i class="ri-delete-bin-line mr-2"></i>Clear Navigation Cache
+                    </button>
+                    
+                    <button id="force-refresh" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">
+                        <i class="ri-refresh-line mr-2"></i>Force Refresh Navigation
+                    </button>
+                    
+                    <button id="check-api" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="ri-api-line mr-2"></i>Test API Call
+                    </button>
+                    
+                    <button id="reload-page" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                        <i class="ri-restart-line mr-2"></i>Reload Page
+                    </button>
+                </div>
+                
+                <div id="debug-output" class="bg-gray-100 p-4 rounded-lg text-sm font-mono max-h-96 overflow-y-auto">
+                    <div class="text-gray-600">Debug output will appear here...</div>
+                </div>
+            </div>
+
+            <!-- Cache Status -->
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-semibold mb-6">Cache Status</h2>
+                
+                <div id="cache-status" class="space-y-4">
+                    <div>
+                        <strong>Navigation Cache:</strong> 
+                        <span id="nav-cache-status" class="text-gray-600">Checking...</span>
+                    </div>
+                    
+                    <div>
+                        <strong>Force Refresh Flag:</strong> 
+                        <span id="force-flag-status" class="text-gray-600">Checking...</span>
+                    </div>
+                    
+                    <div>
+                        <strong>Last Updated:</strong> 
+                        <span id="last-updated-status" class="text-gray-600">Checking...</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold mb-3">Raw Cache Data:</h3>
+                    <pre id="raw-cache-data" class="bg-gray-100 p-4 rounded-lg text-xs overflow-auto max-h-64"></pre>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        function log(message) {
+            const output = document.getElementById('debug-output');
+            const timestamp = new Date().toLocaleTimeString();
+            output.innerHTML += `<div class="text-blue-600">[${timestamp}] ${message}</div>`;
+            output.scrollTop = output.scrollHeight;
+            console.log(message);
+        }
+
+        function updateCacheStatus() {
+            const navCache = localStorage.getItem('sssbpuc_navigation_cache');
+            const forceFlag = localStorage.getItem('forceContentRefresh');
+            
+            document.getElementById('nav-cache-status').textContent = navCache ? 'Present' : 'Not found';
+            document.getElementById('force-flag-status').textContent = forceFlag || 'Not set';
+            
+            if (navCache) {
+                try {
+                    const data = JSON.parse(navCache);
+                    const lastUpdated = new Date(data.navigation?.last_updated || 0);
+                    document.getElementById('last-updated-status').textContent = lastUpdated.toLocaleString();
+                    document.getElementById('raw-cache-data').textContent = JSON.stringify(data, null, 2);
+                } catch (error) {
+                    document.getElementById('last-updated-status').textContent = 'Error parsing cache';
+                    document.getElementById('raw-cache-data').textContent = 'Error: ' + error.message;
+                }
+            } else {
+                document.getElementById('last-updated-status').textContent = 'No cache data';
+                document.getElementById('raw-cache-data').textContent = 'No cache data available';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🚀 Debug page loaded');
+            
+            // Initial cache status update
+            updateCacheStatus();
+            
+            // Update cache status every 2 seconds
+            setInterval(updateCacheStatus, 2000);
+            
+            // Clear cache button
+            document.getElementById('clear-cache').addEventListener('click', function() {
+                localStorage.removeItem('sssbpuc_navigation_cache');
+                localStorage.removeItem('sssbpuc_footer_cache');
+                log('🗑️ Cleared navigation and footer cache');
+                updateCacheStatus();
+            });
+            
+            // Force refresh button
+            document.getElementById('force-refresh').addEventListener('click', function() {
+                localStorage.setItem('forceContentRefresh', 'true');
+                log('🔄 Set force refresh flag');
+                
+                if (window.navigationLoader) {
+                    window.navigationLoader.refreshNavigation();
+                    log('📡 Triggered navigation refresh');
+                } else {
+                    log('❌ Navigation loader not found');
+                }
+                updateCacheStatus();
+            });
+            
+            // Test API call
+            document.getElementById('check-api').addEventListener('click', async function() {
+                log('🌐 Testing API call...');
+                
+                try {
+                    const response = await fetch('/.netlify/functions/api?endpoint=get-navigation&_t=' + Date.now());
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        log('✅ API call successful');
+                        log(`📊 Data timestamp: ${new Date(data.data.last_updated).toLocaleString()}`);
+                        log(`📝 College name: ${data.data.branding?.college_name}`);
+                        log(`🔗 Menu items: ${data.data.menu_items?.length || 0}`);
+                    } else {
+                        log('❌ API returned error: ' + data.error);
+                    }
+                } catch (error) {
+                    log('❌ API call failed: ' + error.message);
+                }
+            });
+            
+            // Reload page button
+            document.getElementById('reload-page').addEventListener('click', function() {
+                log('🔄 Reloading page...');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 500);
+            });
+            
+            log('🎛️ Debug controls ready');
+        });
+    </script>
+
+</body>
+</html>

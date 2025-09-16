@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>                                                                                                                                                                                      
+  <meta charset="UTF-8">                                                                                                                                                                    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                                                    
+  <link rel="shortcut icon" type="x-icon" href="assets/logo/school-logo.png">
+  <title>Academics - Sri Sathya Sai Baba School & Pre-University College</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Client-side API -->
+  <script src="scripts/client-api.js"></script>
+  
+  <!-- Dynamic Content Management -->
+  <script src="scripts/dynamic-content.js"></script>
+  
+  
+  <!-- Admin Content Manager -->
+  <script src="scripts/admin-content-manager.js"></script>
+  
+  <!-- Enhanced Navigation -->
+  <script src="scripts/enhanced-navigation.js"></script>
+  
+  <!-- Dynamic Navigation Loader -->
+  <script src="scripts/dynamic-navigation-netlify.js"></script>
+  <script src="scripts/dynamic-footer-netlify.js"></script>
+  
+  <!-- Enhanced Navigation Styles -->
+  <link rel="stylesheet" href="styles/enhanced-navigation.css">
+</head>
+<body class="bg-white">
+  
+  <!-- Navigation -->
+    <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+    <!-- College Name Header with Logos -->
+    <div class="bg-white py-3 px-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+        <!-- Desktop Layout -->
+        <div class="hidden md:flex items-center justify-center w-full relative">
+          <!-- Left Logo -->
+          <div class="absolute left-0 flex items-center">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 45px;" alt="Sai Baba Logo">
+          </div>
+          
+          <!-- Centered College Name -->
+          <div class="text-center">
+            <h1 class="text-lg md:text-xl font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+            <p class="text-xs md:text-sm text-gray-600">Mysuru, Karnataka</p>
+          </div>
+          
+          <!-- Right Logo -->
+          <div class="absolute right-0 flex items-center">
+            <img src="assets/logo/school-logo.png" style="height: 45px;" alt="School Logo">
+          </div>
+        </div>
+        
+        <!-- Mobile Layout -->
+        <div class="md:hidden mobile-header w-full">
+          <div class="mobile-logos relative">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 40px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 40px;" alt="School Logo">
+            
+            <!-- College Name Between Logos -->
+            <div class="mobile-college-name">
+              <h1 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+              <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu Bar -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle text-gray-700 hover:text-primary focus:outline-none p-2 transition-all duration-300">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Centered Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-center w-full">
+            <div id="desktop-menu-container" class="flex space-x-8 items-center">
+              <!-- Navigation items will be loaded dynamically by navigation-loader.js -->
+              <!-- Fallback static navigation -->
+              <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Home</a>
+              <a href="academics.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Academics</a>
+              <a href="gallery.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Gallery</a>
+              <a href="campus-life.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Campus Life</a>
+              <a href="about.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">About</a>
+              <a href="admissions.html">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium shadow-sm hover:shadow-lg hover:scale-105">
+                  FOR ADMISSIONS
+                </button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation Toggle Space -->
+          <div class="md:hidden w-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="absolute top-full left-0 right-0 bg-white shadow-lg border-t opacity-0 invisible transition-all duration-300 md:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="text-center mb-4 pb-4 border-b border-gray-100">
+          <div class="flex items-center justify-center space-x-3 mb-2">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 32px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 32px;" alt="School Logo">
+          </div>
+          <h2 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h2>
+          <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        <div id="mobile-menu-container" class="space-y-3">
+          <!-- Mobile navigation items will be loaded dynamically by navigation-loader.js -->
+          <!-- Fallback static navigation -->
+          <a href="index.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-home-line mr-3"></i>Home
+          </a>
+          <a href="academics.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-book-open-line mr-3"></i>Academics
+          </a>
+          <a href="gallery.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-gallery-line mr-3"></i>Gallery
+          </a>
+          <a href="campus-life.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-building-line mr-3"></i>Campus Life
+          </a>
+          <a href="about.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-information-line mr-3"></i>About
+          </a>
+          <a href="admissions.html" class="mobile-menu-item block mt-4">
+            <button class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-primary/90 font-medium transition-all duration-300 hover:scale-105">
+              <i class="ri-graduation-cap-line mr-2"></i>FOR ADMISSIONS
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-32 md:pt-36" data-id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="relative h-[500px] flex items-center overflow-hidden" data-id="academics-hero">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" data-id="academics-hero-overlay"></div>
+      <div class="absolute inset-0" data-id="academics-hero-bg">
+        <img src="assets/campus/campus4.jpg" class="w-full h-full object-cover" alt="Academic Background">
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-id="academics-hero-content">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6" data-id="academics-hero-title">Academic Excellence</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-id="academics-hero-subtitle">
+          Empowering students through comprehensive education and holistic development
+        </p>
+        <button class="bg-white text-primary px-8 py-3 rounded-button font-semibold hover:bg-gray-100 transition-colors" data-id="academics-cta-btn">
+          Explore Programs
+        </button>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="py-20 bg-white" data-id="programs-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="programs-container">
+        <div class="text-center mb-16" data-id="programs-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" data-id="programs-title">Academic Programs</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-id="programs-subtitle">
+            Comprehensive educational pathways designed to nurture intellectual growth and character development
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-id="programs-grid">
+          <!-- High School Program -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-id="program-high-school">
+            <img src="assets/academics/high-school.jpg" alt="High School Program" class="w-full h-48 object-cover" data-id="program-high-school-image">
+            <div class="p-8" data-id="program-high-school-content">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4" data-id="program-high-school-title">High School (8th - 10th Grade)</h3>
+              <p class="text-gray-600 mb-6" data-id="program-high-school-description">Foundation program focusing on core subjects and character development. Students develop strong academic fundamentals while exploring their interests and talents.</p>
+              <ul class="space-y-2 mb-6" data-id="program-high-school-features">
+                <li class="flex items-center text-gray-700" data-id="program-high-school-feature-0">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  CBSE Curriculum
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-high-school-feature-1">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Integrated Value Education
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-high-school-feature-2">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Co-curricular Activities
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-high-school-feature-3">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Individual Attention
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-high-school-feature-4">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Character Building Programs
+                </li>
+              </ul>
+              <button class="w-full bg-primary text-white py-3 px-6 rounded-button hover:bg-primary/90 transition-colors font-semibold" data-id="program-high-school-btn">
+                Learn More
+              </button>
+            </div>
+          </div>
+          
+          <!-- Pre-University Program -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-id="program-pre-university">
+            <img src="assets/academics/pre-university.jpg" alt="Pre-University College Program" class="w-full h-48 object-cover" data-id="program-pre-university-image">
+            <div class="p-8" data-id="program-pre-university-content">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4" data-id="program-pre-university-title">Pre-University College (11th - 12th Grade)</h3>
+              <p class="text-gray-600 mb-6" data-id="program-pre-university-description">Advanced preparation for higher education with specialized streams. Students choose their career path while maintaining focus on moral and ethical development.</p>
+              <ul class="space-y-2 mb-6" data-id="program-pre-university-features">
+                <li class="flex items-center text-gray-700" data-id="program-pre-university-feature-0">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Science Stream (PCM, PCB)
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-pre-university-feature-1">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Commerce Stream
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-pre-university-feature-2">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Arts Stream
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-pre-university-feature-3">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Career Guidance
+                </li>
+                <li class="flex items-center text-gray-700" data-id="program-pre-university-feature-4">
+                  <i class="ri-check-line text-primary mr-2"></i>
+                  Competitive Exam Preparation
+                </li>
+              </ul>
+              <button class="w-full bg-primary text-white py-3 px-6 rounded-button hover:bg-primary/90 transition-colors font-semibold" data-id="program-pre-university-btn">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="py-20 bg-gray-50" data-id="subjects-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="subjects-container">
+        <div class="text-center mb-16" data-id="subjects-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" data-id="subjects-title">Subjects Offered</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-id="subjects-subtitle">
+            Comprehensive curriculum covering essential subjects for holistic education
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-id="subjects-grid">
+          <!-- Mathematics -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-0">
+            <div class="text-center mb-4" data-id="subject-0-icon">
+              <span class="text-4xl" data-id="subject-0-emoji">ðŸ”¢</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-0-name">Mathematics</h3>
+            <p class="text-gray-600 text-center" data-id="subject-0-description">Advanced mathematical concepts and problem-solving skills</p>
+          </div>
+          
+          <!-- Physics -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-1">
+            <div class="text-center mb-4" data-id="subject-1-icon">
+              <span class="text-4xl" data-id="subject-1-emoji">âš›ï¸</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-1-name">Physics</h3>
+            <p class="text-gray-600 text-center" data-id="subject-1-description">Understanding the fundamental laws of nature and universe</p>
+          </div>
+          
+          <!-- Chemistry -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-2">
+            <div class="text-center mb-4" data-id="subject-2-icon">
+              <span class="text-4xl" data-id="subject-2-emoji">ðŸ§ª</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-2-name">Chemistry</h3>
+            <p class="text-gray-600 text-center" data-id="subject-2-description">Exploring matter, its properties and chemical reactions</p>
+          </div>
+          
+          <!-- Biology -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-3">
+            <div class="text-center mb-4" data-id="subject-3-icon">
+              <span class="text-4xl" data-id="subject-3-emoji">ðŸŒ±</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-3-name">Biology</h3>
+            <p class="text-gray-600 text-center" data-id="subject-3-description">Study of living organisms and life processes</p>
+          </div>
+          
+          <!-- Computer Science -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-4">
+            <div class="text-center mb-4" data-id="subject-4-icon">
+              <span class="text-4xl" data-id="subject-4-emoji">ðŸ’»</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-4-name">Computer Science</h3>
+            <p class="text-gray-600 text-center" data-id="subject-4-description">Programming, algorithms and digital technology</p>
+          </div>
+          
+          <!-- English -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-5">
+            <div class="text-center mb-4" data-id="subject-5-icon">
+              <span class="text-4xl" data-id="subject-5-emoji">ðŸ“š</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-5-name">English</h3>
+            <p class="text-gray-600 text-center" data-id="subject-5-description">Language skills, literature and communication</p>
+          </div>
+          
+          <!-- Hindi -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-6">
+            <div class="text-center mb-4" data-id="subject-6-icon">
+              <span class="text-4xl" data-id="subject-6-emoji">ðŸ‡®ðŸ‡³</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-6-name">Hindi</h3>
+            <p class="text-gray-600 text-center" data-id="subject-6-description">National language proficiency and literature</p>
+          </div>
+          
+          <!-- Kannada -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-7">
+            <div class="text-center mb-4" data-id="subject-7-icon">
+              <span class="text-4xl" data-id="subject-7-emoji">ðŸ›ï¸</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-7-name">Kannada</h3>
+            <p class="text-gray-600 text-center" data-id="subject-7-description">Regional language and cultural studies</p>
+          </div>
+          
+          <!-- Social Studies -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-8">
+            <div class="text-center mb-4" data-id="subject-8-icon">
+              <span class="text-4xl" data-id="subject-8-emoji">ðŸŒ</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-8-name">Social Studies</h3>
+            <p class="text-gray-600 text-center" data-id="subject-8-description">History, geography, civics and economics</p>
+          </div>
+          
+          <!-- Commerce -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-9">
+            <div class="text-center mb-4" data-id="subject-9-icon">
+              <span class="text-4xl" data-id="subject-9-emoji">ðŸ’¼</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-9-name">Commerce</h3>
+            <p class="text-gray-600 text-center" data-id="subject-9-description">Business studies, accounting and economics</p>
+          </div>
+          
+          <!-- Psychology -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-10">
+            <div class="text-center mb-4" data-id="subject-10-icon">
+              <span class="text-4xl" data-id="subject-10-emoji">ðŸ§ </span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-10-name">Psychology</h3>
+            <p class="text-gray-600 text-center" data-id="subject-10-description">Understanding human behavior and mental processes</p>
+          </div>
+          
+          <!-- Value Education -->
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-id="subject-11">
+            <div class="text-center mb-4" data-id="subject-11-icon">
+              <span class="text-4xl" data-id="subject-11-emoji">ðŸ•‰ï¸</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center" data-id="subject-11-name">Value Education</h3>
+            <p class="text-gray-600 text-center" data-id="subject-11-description">Moral and spiritual development based on universal values</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Achievement Statistics -->
+    <section class="py-20 bg-primary text-white" data-id="achievements-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="achievements-container">
+        <div class="text-center mb-16" data-id="achievements-header">
+          <h2 class="text-4xl font-bold mb-4" data-id="achievements-title">Academic Achievements</h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto" data-id="achievements-subtitle">
+            Our commitment to excellence is reflected in our students' outstanding performance
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center" data-id="achievements-stats">
+          <div data-id="stat-1">
+            <div class="text-4xl font-bold mb-2" data-id="stat-1-number">98%</div>
+            <div class="text-white/80" data-id="stat-1-label">Pass Rate</div>
+          </div>
+          <div data-id="stat-2">
+            <div class="text-4xl font-bold mb-2" data-id="stat-2-number">450+</div>
+            <div class="text-white/80" data-id="stat-2-label">Students Enrolled</div>
+          </div>
+          <div data-id="stat-3">
+            <div class="text-4xl font-bold mb-2" data-id="stat-3-number">25+</div>
+            <div class="text-white/80" data-id="stat-3-label">Experienced Faculty</div>
+          </div>
+          <div data-id="stat-4">
+            <div class="text-4xl font-bold mb-2" data-id="stat-4-number">67</div>
+            <div class="text-white/80" data-id="stat-4-label">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="dynamic-footer" data-dynamic="true">
+    <!-- Footer content will be loaded dynamically by dynamic-footer-netlify.js -->
+    <!-- Loading placeholder -->
+    <div class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-gray-400">Loading footer...</div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script>
+    // Initialize mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const closeBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (toggleBtn && closeBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+          mobileMenu.classList.remove('-translate-x-full');
+        });
+        closeBtn.addEventListener('click', () => {
+          mobileMenu.classList.add('-translate-x-full');
+        });
+      }
+    });
+  </script>
+  <script type="module">
+    import { initializeAcademics } from './scripts/pages/academics.js';
+    // Initialize page-specific functionality
+    initializeAcademics();
+    // Initialize icons
+    if (window.lucide && typeof lucide.createIcons === 'function') { lucide.createIcons(); }
+  </script>
+</body>
+</html>
+

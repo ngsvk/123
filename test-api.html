@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test - SSSBPUC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1B3764',
+                        secondary: '#DAA520'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto p-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">🧪 API Test - Netlify Functions</h1>
+        
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Test Navigation API</h2>
+                <button id="test-navigation" class="bg-primary text-white px-4 py-2 rounded mr-2">Test Get Navigation</button>
+                <div id="navigation-result" class="mt-4 p-4 bg-gray-100 rounded text-sm"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Test Footer API</h2>
+                <button id="test-footer" class="bg-primary text-white px-4 py-2 rounded mr-2">Test Get Footer</button>
+                <div id="footer-result" class="mt-4 p-4 bg-gray-100 rounded text-sm"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Test Login API</h2>
+                <button id="test-login" class="bg-secondary text-white px-4 py-2 rounded mr-2">Test Login</button>
+                <div id="login-result" class="mt-4 p-4 bg-gray-100 rounded text-sm"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Test Save APIs</h2>
+                <button id="test-save-nav" class="bg-green-600 text-white px-4 py-2 rounded mr-2">Test Save Navigation</button>
+                <button id="test-save-footer" class="bg-green-600 text-white px-4 py-2 rounded mr-2">Test Save Footer</button>
+                <div id="save-result" class="mt-4 p-4 bg-gray-100 rounded text-sm"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sessionId = null;
+
+        document.getElementById('test-navigation').addEventListener('click', async () => {
+            const result = document.getElementById('navigation-result');
+            result.textContent = 'Testing...';
+            
+            try {
+                const response = await fetch('/.netlify/functions/api?endpoint=get-navigation');
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+                result.className = 'mt-4 p-4 bg-green-100 rounded text-sm whitespace-pre';
+            } catch (error) {
+                result.textContent = 'Error: ' + error.message;
+                result.className = 'mt-4 p-4 bg-red-100 rounded text-sm';
+            }
+        });
+
+        document.getElementById('test-footer').addEventListener('click', async () => {
+            const result = document.getElementById('footer-result');
+            result.textContent = 'Testing...';
+            
+            try {
+                const response = await fetch('/.netlify/functions/api?endpoint=get-footer');
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+                result.className = 'mt-4 p-4 bg-green-100 rounded text-sm whitespace-pre';
+            } catch (error) {
+                result.textContent = 'Error: ' + error.message;
+                result.className = 'mt-4 p-4 bg-red-100 rounded text-sm';
+            }
+        });
+
+        document.getElementById('test-login').addEventListener('click', async () => {
+            const result = document.getElementById('login-result');
+            result.textContent = 'Testing...';
+            
+            try {
+                const response = await fetch('/.netlify/functions/api?endpoint=login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'sssbpuc2025'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    sessionId = data.sessionId;
+                    result.textContent = 'Login successful! Session ID: ' + sessionId;
+                    result.className = 'mt-4 p-4 bg-green-100 rounded text-sm';
+                } else {
+                    result.textContent = 'Login failed: ' + JSON.stringify(data, null, 2);
+                    result.className = 'mt-4 p-4 bg-red-100 rounded text-sm whitespace-pre';
+                }
+            } catch (error) {
+                result.textContent = 'Error: ' + error.message;
+                result.className = 'mt-4 p-4 bg-red-100 rounded text-sm';
+            }
+        });
+
+        document.getElementById('test-save-nav').addEventListener('click', async () => {
+            const result = document.getElementById('save-result');
+            result.textContent = 'Testing save navigation...';
+            
+            if (!sessionId) {
+                result.textContent = 'Please login first!';
+                result.className = 'mt-4 p-4 bg-yellow-100 rounded text-sm';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/.netlify/functions/api?endpoint=save-navigation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Session-ID': sessionId
+                    },
+                    body: JSON.stringify({
+                        branding: {
+                            college_name: 'Test College Name',
+                            location: 'Test Location'
+                        },
+                        menu_items: [
+                            { name: 'Test Home', url: 'index.html' }
+                        ]
+                    })
+                });
+                
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+                result.className = data.success ? 'mt-4 p-4 bg-green-100 rounded text-sm whitespace-pre' : 'mt-4 p-4 bg-red-100 rounded text-sm whitespace-pre';
+            } catch (error) {
+                result.textContent = 'Error: ' + error.message;
+                result.className = 'mt-4 p-4 bg-red-100 rounded text-sm';
+            }
+        });
+
+        document.getElementById('test-save-footer').addEventListener('click', async () => {
+            const result = document.getElementById('save-result');
+            result.textContent = 'Testing save footer...';
+            
+            if (!sessionId) {
+                result.textContent = 'Please login first!';
+                result.className = 'mt-4 p-4 bg-yellow-100 rounded text-sm';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/.netlify/functions/api?endpoint=save-footer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Session-ID': sessionId
+                    },
+                    body: JSON.stringify({
+                        branding: {
+                            description: 'Test footer description'
+                        },
+                        copyright: '© 2025 Test College'
+                    })
+                });
+                
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+                result.className = data.success ? 'mt-4 p-4 bg-green-100 rounded text-sm whitespace-pre' : 'mt-4 p-4 bg-red-100 rounded text-sm whitespace-pre';
+            } catch (error) {
+                result.textContent = 'Error: ' + error.message;
+                result.className = 'mt-4 p-4 bg-red-100 rounded text-sm';
+            }
+        });
+    </script>
+</body>
+</html>

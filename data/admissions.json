@@ -1,0 +1,201 @@
+{
+  "hero": {
+    "title": "Admissions",
+    "subtitle": "Join the SSSBPUC Family",
+    "description": "Begin your journey of academic excellence and character development with us.",
+    "background_image": "assets/campus/campus3.jpg"
+  },
+  "overview": {
+    "title": "Admission Overview",
+    "description": "We welcome students who are eager to learn, grow, and contribute positively to society. Our admission process is designed to identify students who will thrive in our values-based educational environment.",
+    "academic_year": "2025-2026",
+    "application_deadline": "March 15, 2025",
+    "announcement_date": "April 15, 2025"
+  },
+  "programs": {
+    "title": "Available Programs",
+    "subtitle": "Choose the path that aligns with your aspirations",
+    "items": [
+      {
+        "name": "High School (Grades 8-10)",
+        "description": "Foundation program focusing on core subjects and character development. CBSE curriculum with integrated value education.",
+        "eligibility": "Completion of Grade 7 for Grade 8 admission",
+        "subjects": ["Mathematics", "Science", "English", "Hindi", "Kannada", "Social Studies", "Value Education"],
+        "image_url": "assets/academics/high-school.jpg"
+      },
+      {
+        "name": "Pre-University (Grades 11-12)",
+        "description": "Specialized streams preparing students for higher education and career goals.",
+        "eligibility": "Completion of Grade 10 with minimum 60% marks",
+        "streams": [
+          {
+            "name": "Science (PCM)",
+            "subjects": ["Physics", "Chemistry", "Mathematics", "English", "Kannada/Hindi"]
+          },
+          {
+            "name": "Science (PCB)",
+            "subjects": ["Physics", "Chemistry", "Biology", "English", "Kannada/Hindi"]
+          },
+          {
+            "name": "Commerce",
+            "subjects": ["Accountancy", "Business Studies", "Economics", "English", "Kannada/Hindi"]
+          }
+        ],
+        "image_url": "assets/academics/pre-university.jpg"
+      }
+    ]
+  },
+  "admission_process": {
+    "title": "Admission Process",
+    "subtitle": "Simple steps to join our institution",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Application Form",
+        "description": "Fill out the online application form with accurate details",
+        "icon": "ri-file-text-line",
+        "documents": ["Recent passport size photograph", "Birth certificate", "Previous academic records"]
+      },
+      {
+        "step": 2,
+        "title": "Document Verification",
+        "description": "Submit required documents for verification",
+        "icon": "ri-file-check-line",
+        "documents": ["Transfer certificate", "Character certificate", "Caste certificate (if applicable)"]
+      },
+      {
+        "step": 3,
+        "title": "Entrance Test",
+        "description": "Appear for entrance examination (for PU admissions)",
+        "icon": "ri-pencil-line",
+        "documents": ["Admission ticket", "Valid ID proof"]
+      },
+      {
+        "step": 4,
+        "title": "Interview",
+        "description": "Personal interview with student and parents",
+        "icon": "ri-chat-3-line",
+        "documents": ["All original certificates"]
+      },
+      {
+        "step": 5,
+        "title": "Admission Confirmation",
+        "description": "Complete admission formalities and fee payment",
+        "icon": "ri-check-double-line",
+        "documents": ["Fee receipt", "Medical certificate"]
+      }
+    ]
+  },
+  "fee_structure": {
+    "title": "Fee Structure",
+    "subtitle": "Academic Year 2025-2026",
+    "note": "Fees are subject to revision. Scholarships available for meritorious students.",
+    "categories": [
+      {
+        "program": "High School (Grades 8-10)",
+        "fees": [
+          {"item": "Tuition Fee", "amount": "₹15,000"},
+          {"item": "Development Fee", "amount": "₹5,000"},
+          {"item": "Activity Fee", "amount": "₹2,000"},
+          {"item": "Total Annual Fee", "amount": "₹22,000"}
+        ]
+      },
+      {
+        "program": "Pre-University (Grades 11-12)",
+        "fees": [
+          {"item": "Tuition Fee", "amount": "₹18,000"},
+          {"item": "Development Fee", "amount": "₹6,000"},
+          {"item": "Laboratory Fee", "amount": "₹3,000"},
+          {"item": "Activity Fee", "amount": "₹2,000"},
+          {"item": "Total Annual Fee", "amount": "₹29,000"}
+        ]
+      }
+    ]
+  },
+  "scholarships": {
+    "title": "Scholarships & Financial Aid",
+    "subtitle": "Supporting deserving students in their educational journey",
+    "programs": [
+      {
+        "name": "Merit Scholarship",
+        "description": "For students with exceptional academic performance",
+        "criteria": "Top 5% in entrance examination",
+        "benefit": "50% fee waiver"
+      },
+      {
+        "name": "Need-Based Assistance",
+        "description": "Financial support for economically disadvantaged students",
+        "criteria": "Family income below ₹2,00,000 annually",
+        "benefit": "Up to 75% fee waiver"
+      },
+      {
+        "name": "Sports Scholarship",
+        "description": "For students with outstanding sports achievements",
+        "criteria": "State/National level sports participation",
+        "benefit": "25-50% fee waiver"
+      }
+    ]
+  },
+  "important_dates": {
+    "title": "Important Dates",
+    "dates": [
+      {"event": "Application Start Date", "date": "January 15, 2025"},
+      {"event": "Application End Date", "date": "March 15, 2025"},
+      {"event": "Entrance Test Date", "date": "March 25, 2025"},
+      {"event": "Results Announcement", "date": "April 15, 2025"},
+      {"event": "Admission Confirmation", "date": "April 30, 2025"},
+      {"event": "Classes Commence", "date": "June 1, 2025"}
+    ]
+  },
+  "contact": {
+    "title": "Admissions Contact",
+    "subtitle": "Get in touch for any admission-related queries",
+    "details": [
+      {
+        "type": "Address",
+        "info": "Sri Sathya Sai Baba PU College, 46, 4th Main Rd, 3rd Block, Jayalakshmipuram, Mysuru, Karnataka 570012",
+        "icon": "ri-map-pin-line"
+      },
+      {
+        "type": "Phone",
+        "info": "0821 2410856",
+        "icon": "ri-phone-line"
+      },
+      {
+        "type": "Email",
+        "info": "admissions@sssbpuc.edu.in",
+        "icon": "ri-mail-line"
+      },
+      {
+        "type": "Office Hours",
+        "info": "Monday to Friday: 9:00 AM - 5:00 PM, Saturday: 9:00 AM - 1:00 PM",
+        "icon": "ri-time-line"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What is the minimum percentage required for PU admission?",
+        "answer": "Students need a minimum of 60% in their 10th grade examination for PU admission."
+      },
+      {
+        "question": "Is there an entrance test for high school admission?",
+        "answer": "No, high school admissions are based on previous academic records and interview."
+      },
+      {
+        "question": "Are there hostel facilities available?",
+        "answer": "Currently, we do not have hostel facilities. Students need to arrange local accommodation."
+      },
+      {
+        "question": "What documents are required for admission?",
+        "answer": "Birth certificate, previous academic records, transfer certificate, character certificate, and recent photographs are required."
+      },
+      {
+        "question": "Is there a reservation policy?",
+        "answer": "We follow the reservation policy as per government guidelines for SC/ST and OBC categories."
+      }
+    ]
+  }
+}

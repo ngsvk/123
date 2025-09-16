@@ -1,0 +1,50 @@
+[build]
+  # Simple static deployment - copy files as needed
+  publish = "."
+  command = "echo 'No build process - static files deployed directly'"
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  # Apply these headers to all routes
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # CORS headers for API calls (if needed)
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
+
+[[headers]]
+  # JSON files should be served with correct content type
+  for = "*.json"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[redirects]]
+  # Redirect any PHP files to HTML equivalents or 404
+  from = "/admin/api.php"
+  to = "/404.html"
+  status = 404
+  
+[[redirects]]
+  # Redirect root admin to login
+  from = "/admin/"
+  to = "/admin/login.html"
+  status = 200
+
+[[redirects]]
+  # Handle 404s gracefully
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Ignore PHP files in deployment
+[build.ignore]
+  command = "exit 0"

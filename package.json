@@ -1,0 +1,31 @@
+{
+  "name": "sssbpuc-website",
+  "version": "1.0.0",
+  "description": "Sri Sathya Sai Baba PU College Website",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "npm run build && npx http-server public -p 8080",
+    "deploy": "npm run build && netlify deploy --prod",
+    "preview": "netlify deploy --dir=public",
+    "clean": "rimraf public",
+    "prepare-data": "node scripts/prepare-data.js"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^2.4.1",
+    "netlify-cli": "^17.10.1",
+    "http-server": "^14.1.1",
+    "rimraf": "^5.0.5"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/sssbpuc-website.git"
+  },
+  "keywords": ["education", "college", "website", "netlify"],
+  "author": "SSSBPUC",
+  "license": "MIT"
+}

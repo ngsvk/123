@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Test - SSSBPUC</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Enhanced Navigation -->
+  <script src="scripts/enhanced-navigation.js"></script>
+  
+  <!-- Dynamic Navigation Loader -->
+  <script src="scripts/navigation-loader.js"></script>
+  
+  <style>
+    /* Navigation animations */
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      transform: translateY(-2px);
+      color: #DAA520 !important;
+    }
+    
+    #mobile-menu {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    #mobile-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+    <!-- College Name Header with Logos -->
+    <div class="bg-white py-3 px-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+        <!-- Desktop Layout -->
+        <div class="hidden md:flex items-center justify-center w-full relative">
+          <!-- Left Logo -->
+          <div class="absolute left-0 flex items-center">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 45px;" alt="Sai Baba Logo">
+          </div>
+          
+          <!-- Centered College Name -->
+          <div class="text-center">
+            <h1 class="text-lg md:text-xl font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+            <p class="text-xs md:text-sm text-gray-600">Mysuru, Karnataka</p>
+          </div>
+          
+          <!-- Right Logo -->
+          <div class="absolute right-0 flex items-center">
+            <img src="assets/logo/school-logo.png" style="height: 45px;" alt="School Logo">
+          </div>
+        </div>
+        
+        <!-- Mobile Layout -->
+        <div class="md:hidden mobile-header w-full">
+          <div class="mobile-logos relative">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 40px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 40px;" alt="School Logo">
+            
+            <!-- College Name Between Logos -->
+            <div class="mobile-college-name">
+              <h1 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+              <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu Bar -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle text-gray-700 hover:text-primary focus:outline-none p-2 transition-all duration-300">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Centered Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-center w-full">
+            <div id="desktop-menu-container" class="flex space-x-8 items-center">
+              <!-- Navigation items will be loaded dynamically by navigation-loader.js -->
+              <div class="text-gray-500 italic">Loading navigation...</div>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation Toggle Space -->
+          <div class="md:hidden w-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="absolute top-full left-0 right-0 bg-white shadow-lg border-t opacity-0 invisible transition-all duration-300 md:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="text-center mb-4 pb-4 border-b border-gray-100">
+          <div class="flex items-center justify-center space-x-3 mb-2">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 32px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 32px;" alt="School Logo">
+          </div>
+          <h2 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h2>
+          <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        <div id="mobile-menu-container" class="space-y-3">
+          <!-- Mobile navigation items will be loaded dynamically by navigation-loader.js -->
+          <div class="text-gray-500 italic px-4 py-3">Loading navigation...</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-32 md:pt-36">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <!-- Test Results -->
+      <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">🧭 Navigation Test Results</h1>
+        
+        <div id="test-results" class="space-y-4">
+          <div class="p-4 rounded-lg border border-gray-200">
+            <h3 class="font-semibold text-gray-800 mb-2">Dynamic Navigation Loader Status</h3>
+            <div id="loader-status" class="text-gray-600">⏳ Testing...</div>
+          </div>
+          
+          <div class="p-4 rounded-lg border border-gray-200">
+            <h3 class="font-semibold text-gray-800 mb-2">API Connection</h3>
+            <div id="api-status" class="text-gray-600">⏳ Testing...</div>
+          </div>
+          
+          <div class="p-4 rounded-lg border border-gray-200">
+            <h3 class="font-semibold text-gray-800 mb-2">Navigation Data</h3>
+            <div id="nav-data" class="text-gray-600">⏳ Loading...</div>
+          </div>
+          
+          <div class="p-4 rounded-lg border border-gray-200">
+            <h3 class="font-semibold text-gray-800 mb-2">Menu Rendering</h3>
+            <div id="menu-status" class="text-gray-600">⏳ Checking...</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Instructions -->
+      <div class="bg-blue-50 rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-blue-900 mb-4">📋 Test Instructions</h2>
+        <ol class="list-decimal list-inside space-y-2 text-blue-800">
+          <li>Check if navigation loads dynamically from dashboard settings</li>
+          <li>Verify both desktop and mobile navigation are updated</li>
+          <li>Test navigation links work correctly</li>
+          <li>Confirm branding elements (logos, college name) can be updated</li>
+          <li>Check console for any JavaScript errors</li>
+        </ol>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Test Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loaderStatus = document.getElementById('loader-status');
+      const apiStatus = document.getElementById('api-status');
+      const navData = document.getElementById('nav-data');
+      const menuStatus = document.getElementById('menu-status');
+      
+      // Test NavigationLoader
+      setTimeout(() => {
+        if (window.navigationLoader) {
+          loaderStatus.innerHTML = '✅ NavigationLoader instance found';
+          loaderStatus.className = 'text-green-600';
+        } else {
+          loaderStatus.innerHTML = '❌ NavigationLoader not found';
+          loaderStatus.className = 'text-red-600';
+        }
+      }, 1000);
+      
+      // Test API connection
+      setTimeout(async () => {
+        try {
+          const response = await fetch('/.netlify/functions/api?endpoint=get-navigation&_t=' + Date.now());
+          if (response.ok) {
+            const result = await response.json();
+            apiStatus.innerHTML = `✅ API connected (Status: ${response.status})`;
+            apiStatus.className = 'text-green-600';
+            
+            // Show navigation data
+            if (result.success && result.data) {
+              navData.innerHTML = `✅ Navigation data loaded<br><pre class="mt-2 text-xs bg-gray-100 p-2 rounded overflow-auto">${JSON.stringify(result.data, null, 2)}</pre>`;
+              navData.className = 'text-green-600';
+            } else {
+              navData.innerHTML = '⚠️ Navigation data empty or invalid';
+              navData.className = 'text-yellow-600';
+            }
+          } else {
+            apiStatus.innerHTML = `❌ API error (Status: ${response.status})`;
+            apiStatus.className = 'text-red-600';
+          }
+        } catch (error) {
+          apiStatus.innerHTML = `❌ API connection failed: ${error.message}`;
+          apiStatus.className = 'text-red-600';
+        }
+      }, 2000);
+      
+      // Test menu rendering
+      setTimeout(() => {
+        const desktopMenu = document.getElementById('desktop-menu-container');
+        const mobileMenu = document.getElementById('mobile-menu-container');
+        
+        let status = [];
+        
+        if (desktopMenu && desktopMenu.children.length > 1) {
+          status.push('✅ Desktop menu rendered');
+        } else {
+          status.push('❌ Desktop menu not rendered');
+        }
+        
+        if (mobileMenu && mobileMenu.children.length > 1) {
+          status.push('✅ Mobile menu rendered');
+        } else {
+          status.push('❌ Mobile menu not rendered');
+        }
+        
+        menuStatus.innerHTML = status.join('<br>');
+        menuStatus.className = status.some(s => s.includes('❌')) ? 'text-red-600' : 'text-green-600';
+      }, 3000);
+      
+      // Initialize mobile menu toggle
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('show');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation & Footer Test - SSSBPUC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1B3764',
+                        secondary: '#DAA520'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Dynamic Navigation & Footer -->
+    <script src="scripts/dynamic-navigation-netlify.js"></script>
+    <script src="scripts/dynamic-footer-netlify.js"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="desktop-navigation" class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+        <!-- Navigation will be loaded dynamically -->
+        <div class="max-w-7xl mx-auto px-4 py-4 text-center">
+            <div class="text-gray-500">Loading navigation...</div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-navigation" class="hidden">
+        <!-- Mobile menu will be loaded dynamically -->
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">🧭 Navigation & Footer Test</h1>
+                <p class="text-xl text-gray-600">Testing dynamic navigation and footer loading across all pages</p>
+            </div>
+
+            <!-- Status Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="ri-navigation-line text-primary mr-2"></i>
+                        Navigation Status
+                    </h3>
+                    <div id="nav-status" class="text-gray-600">Testing...</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="ri-layout-bottom-line text-primary mr-2"></i>
+                        Footer Status
+                    </h3>
+                    <div id="footer-status" class="text-gray-600">Testing...</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="ri-server-line text-primary mr-2"></i>
+                        API Status
+                    </h3>
+                    <div id="api-status" class="text-gray-600">Testing...</div>
+                </div>
+            </div>
+
+            <!-- Page Links -->
+            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-2xl font-semibold mb-6">📄 Test Pages</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="index.html" class="text-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors">
+                        <i class="ri-home-line text-2xl text-primary mb-2 block"></i>
+                        <span class="text-sm font-medium">Home</span>
+                    </a>
+                    <a href="about.html" class="text-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors">
+                        <i class="ri-information-line text-2xl text-primary mb-2 block"></i>
+                        <span class="text-sm font-medium">About</span>
+                    </a>
+                    <a href="academics.html" class="text-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors">
+                        <i class="ri-book-line text-2xl text-primary mb-2 block"></i>
+                        <span class="text-sm font-medium">Academics</span>
+                    </a>
+                    <a href="admissions.html" class="text-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors">
+                        <i class="ri-graduation-cap-line text-2xl text-primary mb-2 block"></i>
+                        <span class="text-sm font-medium">Admissions</span>
+                    </a>
+                    <a href="campus-life.html" class="text-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors">
+                        <i class="ri-building-line text-2xl text-primary mb-2 block"></i>
+                        <span class="text-sm font-medium">Campus Life</span>
+                    </a>
+                    <a href="gallery.html" class="text-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors">
+                        <i class="ri-gallery-line text-2xl text-primary mb-2 block"></i>
+                        <span class="text-sm font-medium">Gallery</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Admin Links -->
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-semibold mb-6">⚙️ Admin Tools</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="admin/navigation-editor.html" class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-secondary hover:bg-secondary/5 transition-colors">
+                        <i class="ri-navigation-line text-2xl text-secondary mr-4"></i>
+                        <div>
+                            <div class="font-medium">Navigation Editor</div>
+                            <div class="text-sm text-gray-600">Edit navigation menu and branding</div>
+                        </div>
+                    </a>
+                    <a href="admin/footer-editor.html" class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-secondary hover:bg-secondary/5 transition-colors">
+                        <i class="ri-layout-bottom-line text-2xl text-secondary mr-4"></i>
+                        <div>
+                            <div class="font-medium">Footer Editor</div>
+                            <div class="text-sm text-gray-600">Edit footer content and links</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="dynamic-footer" data-dynamic="true">
+        <!-- Footer content will be loaded dynamically -->
+        <div class="bg-gray-900 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <div class="text-gray-400">Loading footer...</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navStatus = document.getElementById('nav-status');
+            const footerStatus = document.getElementById('footer-status');
+            const apiStatus = document.getElementById('api-status');
+            
+            // Test navigation
+            setTimeout(() => {
+                const nav = document.querySelector('#desktop-navigation');
+                if (nav && nav.innerHTML.includes('Sri Sathya Sai Baba')) {
+                    navStatus.innerHTML = '<span class="text-green-600"><i class="ri-check-line mr-1"></i>Navigation loaded successfully</span>';
+                } else {
+                    navStatus.innerHTML = '<span class="text-red-600"><i class="ri-close-line mr-1"></i>Navigation failed to load</span>';
+                }
+            }, 2000);
+            
+            // Test footer
+            setTimeout(() => {
+                const footer = document.querySelector('#dynamic-footer');
+                if (footer && footer.innerHTML.includes('Quick Links')) {
+                    footerStatus.innerHTML = '<span class="text-green-600"><i class="ri-check-line mr-1"></i>Footer loaded successfully</span>';
+                } else {
+                    footerStatus.innerHTML = '<span class="text-red-600"><i class="ri-close-line mr-1"></i>Footer failed to load</span>';
+                }
+            }, 2000);
+            
+            // Test API
+            fetch('/.netlify/functions/api?endpoint=get-navigation')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        apiStatus.innerHTML = '<span class="text-green-600"><i class="ri-check-line mr-1"></i>API working correctly</span>';
+                    } else {
+                        apiStatus.innerHTML = '<span class="text-yellow-600"><i class="ri-error-warning-line mr-1"></i>API responded with error</span>';
+                    }
+                })
+                .catch(error => {
+                    apiStatus.innerHTML = '<span class="text-red-600"><i class="ri-close-line mr-1"></i>API connection failed</span>';
+                });
+        });
+    </script>
+
+</body>
+</html>

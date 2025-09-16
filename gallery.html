@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="assets/logo/school-logo.png">
+  <title>Gallery - Sri Sathya Sai Baba School & Pre-University College</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Sofia Pro Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Client-side API -->
+  <script src="scripts/client-api.js"></script>
+  
+  <!-- Dynamic Content Management -->
+  <script src="scripts/dynamic-content.js"></script>
+  
+  <!-- Admin Content Manager -->
+  <script src="scripts/admin-content-manager.js"></script>
+  
+  <!-- Enhanced Navigation -->
+  <script src="scripts/enhanced-navigation.js"></script>
+  
+  <!-- Dynamic Navigation Loader -->
+  <script src="scripts/dynamic-navigation-netlify.js"></script>
+  <script src="scripts/dynamic-footer-netlify.js"></script>
+  
+  <!-- Enhanced Navigation Styles -->
+  <link rel="stylesheet" href="styles/enhanced-navigation.css">
+</head>
+<body class="bg-white">
+
+  <!-- Navigation -->
+    <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-200">
+    <!-- College Name Header with Logos -->
+    <div class="bg-white py-3 px-4 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+        <!-- Desktop Layout -->
+        <div class="hidden md:flex items-center justify-center w-full relative">
+          <!-- Left Logo -->
+          <div class="absolute left-0 flex items-center">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 45px;" alt="Sai Baba Logo">
+          </div>
+          
+          <!-- Centered College Name -->
+          <div class="text-center">
+            <h1 class="text-lg md:text-xl font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+            <p class="text-xs md:text-sm text-gray-600">Mysuru, Karnataka</p>
+          </div>
+          
+          <!-- Right Logo -->
+          <div class="absolute right-0 flex items-center">
+            <img src="assets/logo/school-logo.png" style="height: 45px;" alt="School Logo">
+          </div>
+        </div>
+        
+        <!-- Mobile Layout -->
+        <div class="md:hidden mobile-header w-full">
+          <div class="mobile-logos relative">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 40px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 40px;" alt="School Logo">
+            
+            <!-- College Name Between Logos -->
+            <div class="mobile-college-name">
+              <h1 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h1>
+              <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu Bar -->
+    <div class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-14">
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle text-gray-700 hover:text-primary focus:outline-none p-2 transition-all duration-300">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Centered Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-center w-full">
+            <div id="desktop-menu-container" class="flex space-x-8 items-center">
+              <!-- Navigation items will be loaded dynamically by navigation-loader.js -->
+              <!-- Fallback static navigation -->
+              <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Home</a>
+              <a href="academics.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Academics</a>
+              <a href="gallery.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Gallery</a>
+              <a href="campus-life.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">Campus Life</a>
+              <a href="about.html" class="nav-link text-gray-700 hover:text-primary transition-colors font-medium px-3 py-2 rounded-md">About</a>
+              <a href="admissions.html">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium shadow-sm hover:shadow-lg hover:scale-105">
+                  FOR ADMISSIONS
+                </button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation Toggle Space -->
+          <div class="md:hidden w-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="absolute top-full left-0 right-0 bg-white shadow-lg border-t opacity-0 invisible transition-all duration-300 md:hidden">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="text-center mb-4 pb-4 border-b border-gray-100">
+          <div class="flex items-center justify-center space-x-3 mb-2">
+            <img src="assets/logo/sai-baba-logo.png" style="height: 32px;" alt="Sai Baba Logo">
+            <img src="assets/logo/school-logo.png" style="height: 32px;" alt="School Logo">
+          </div>
+          <h2 class="text-sm font-bold text-primary leading-tight">Sri Sathya Sai Baba PU College</h2>
+          <p class="text-xs text-gray-600">Mysuru, Karnataka</p>
+        </div>
+        <div id="mobile-menu-container" class="space-y-3">
+          <!-- Mobile navigation items will be loaded dynamically by navigation-loader.js -->
+          <!-- Fallback static navigation -->
+          <a href="index.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-home-line mr-3"></i>Home
+          </a>
+          <a href="academics.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-book-open-line mr-3"></i>Academics
+          </a>
+          <a href="gallery.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-gallery-line mr-3"></i>Gallery
+          </a>
+          <a href="campus-life.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-building-line mr-3"></i>Campus Life
+          </a>
+          <a href="about.html" class="mobile-menu-item block px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-300">
+            <i class="ri-information-line mr-3"></i>About
+          </a>
+          <a href="admissions.html" class="mobile-menu-item block mt-4">
+            <button class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-primary/90 font-medium transition-all duration-300 hover:scale-105">
+              <i class="ri-graduation-cap-line mr-2"></i>FOR ADMISSIONS
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 md:pt-36" data-id="gallery-main">
+    
+    <!-- Hero Section -->
+    <section class="relative h-[500px] flex items-center overflow-hidden" data-id="gallery-hero">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" data-id="gallery-hero-overlay"></div>
+      <div class="absolute inset-0" data-id="gallery-hero-bg">
+        <img src="assets/baba/bhajan-hall.png" class="w-full h-full object-cover" alt="Campus Background">
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-id="gallery-hero-content">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6" data-id="gallery-hero-title">Gallery</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto" data-id="gallery-hero-subtitle">
+          A glimpse into our vibrant campus life, modern facilities, and cherished moments
+        </p>
+      </div>
+    </section>
+
+    <!-- Campus Life Gallery -->
+    <section class="py-20 bg-white" data-id="campus-gallery-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="campus-gallery-container">
+        <div class="text-center mb-16" data-id="campus-gallery-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" data-id="campus-gallery-title">Campus Life</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-id="campus-gallery-subtitle">
+            Experience the vibrant atmosphere of our campus through these moments
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-id="campus-gallery-grid">
+          <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-id="campus-photo-1">
+            <img src="assets/photos/DSC_4033.jpg" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" alt="Campus Event">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end" data-id="campus-photo-1-overlay">
+              <div class="p-6 text-white" data-id="campus-photo-1-info">
+                <h3 class="text-xl font-semibold mb-2">Annual Sports Day</h3>
+                <p class="text-gray-200">Students participating in various sporting events</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-id="campus-photo-2">
+            <img src="assets/photos/DSC_4038.jpg" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" alt="Cultural Event">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end" data-id="campus-photo-2-overlay">
+              <div class="p-6 text-white" data-id="campus-photo-2-info">
+                <h3 class="text-xl font-semibold mb-2">Cultural Celebration</h3>
+                <p class="text-gray-200">Students showcasing their cultural talents</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-id="campus-photo-3">
+            <img src="assets/photos/DSC_4015.jpg" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" alt="Academic Achievement">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end" data-id="campus-photo-3-overlay">
+              <div class="p-6 text-white" data-id="campus-photo-3-info">
+                <h3 class="text-xl font-semibold mb-2">Academic Excellence</h3>
+                <p class="text-gray-200">Celebrating student achievements</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-id="campus-photo-4">
+            <img src="assets/photos/DSC_4006.jpg" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" alt="Science Exhibition">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end" data-id="campus-photo-4-overlay">
+              <div class="p-6 text-white" data-id="campus-photo-4-info">
+                <h3 class="text-xl font-semibold mb-2">Science Exhibition</h3>
+                <p class="text-gray-200">Innovation and research showcase</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-id="campus-photo-5">
+            <img src="assets/photos/DSC_4054.jpg" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" alt="Community Service">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end" data-id="campus-photo-5-overlay">
+              <div class="p-6 text-white" data-id="campus-photo-5-info">
+                <h3 class="text-xl font-semibold mb-2">Community Service</h3>
+                <p class="text-gray-200">Students engaged in social service</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-id="campus-photo-6">
+            <img src="assets/campus/campus3.jpg" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" alt="Campus Architecture">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end" data-id="campus-photo-6-overlay">
+              <div class="p-6 text-white" data-id="campus-photo-6-info">
+                <h3 class="text-xl font-semibold mb-2">Beautiful Campus</h3>
+                <p class="text-gray-200">Modern architecture and green spaces</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Gallery -->
+    <section class="py-20 bg-gray-50" data-id="facilities-gallery-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-id="facilities-gallery-container">
+        <div class="text-center mb-16" data-id="facilities-gallery-header">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4" data-id="facilities-gallery-title">Our Facilities</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-id="facilities-gallery-subtitle">
+            State-of-the-art infrastructure designed for holistic development
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-id="facilities-gallery-grid">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-id="facility-1">
+            <img src="assets/campus/campus4.jpg" class="w-full h-64 object-cover" alt="Modern Classrooms">
+            <div class="p-8" data-id="facility-1-content">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Modern Classrooms</h3>
+              <p class="text-gray-600 mb-4">Smart classrooms equipped with latest technology to enhance the learning experience.</p>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>Interactive whiteboards</li>
+                <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>Audio-visual systems</li>
+                <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>Comfortable seating</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-id="facility-2">
+            <img src="assets/sister/College.jpg" class="w-full h-64 object-cover" alt="Science Laboratories">
+            <div class="p-8" data-id="facility-2-content">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Advanced Laboratories</h3>
+              <p class="text-gray-600 mb-4">Well-equipped science and computer labs for practical learning and experimentation.</p>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>Physics & Chemistry Labs</li>
+                <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>Biology Lab</li>
+                <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>Computer Lab</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Virtual Tour CTA -->
+    <section class="py-20 bg-primary" data-id="virtual-tour-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-id="virtual-tour-container">
+        <h2 class="text-4xl font-bold text-white mb-6" data-id="virtual-tour-title">Experience Our Campus</h2>
+        <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto" data-id="virtual-tour-subtitle">
+          Want to see more? Schedule a visit or take a virtual tour to experience the complete SSSBPUC environment.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-id="virtual-tour-buttons">
+          <button class="bg-white text-primary px-8 py-3 rounded-button font-semibold hover:bg-gray-100 transition-colors" data-id="schedule-visit-btn">
+            Schedule Campus Visit
+          </button>
+          <button class="border-2 border-white text-white px-8 py-3 rounded-button font-semibold hover:bg-white hover:text-primary transition-colors" data-id="virtual-tour-btn">
+            Take Virtual Tour
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="dynamic-footer" data-dynamic="true">
+    <!-- Footer content will be loaded dynamically by dynamic-footer-netlify.js -->
+    <!-- Loading placeholder -->
+    <div class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-gray-400">Loading footer...</div>
+      </div>
+    </div>
+  </footer>
+
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const closeBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (toggleBtn && closeBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => mobileMenu.classList.remove('-translate-x-full'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.add('-translate-x-full'));
+      }
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <h1 class="text-xl font-semibold text-gray-900">Admin Dashboard</h1>
+                <span class="text-gray-600">Welcome, admin</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside class="w-64 bg-white shadow-sm min-h-screen">
+            <nav class="mt-8">
+                <div class="px-4 space-y-2">
+                    <a href="#dashboard" class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg active" data-section="dashboard">
+                        <i class="ri-dashboard-line mr-3"></i>Dashboard
+                    </a>
+                    <a href="#file-manager" class="sidebar-link flex items-center px-4 py-3 text-gray-700 rounded-lg" data-section="file-manager">
+                        <i class="ri-folder-line mr-3"></i>File Manager
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <div id="dashboard-section" class="section active">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Dashboard Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-blue-100 rounded-lg">
+                                <i class="ri-pages-line text-blue-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Total Pages</p>
+                                <p class="text-2xl font-semibold text-gray-900" id="total-pages">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-green-100 rounded-lg">
+                                <i class="ri-file-line text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Total Files</p>
+                                <p class="text-2xl font-semibold text-gray-900" id="total-files">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-yellow-100 rounded-lg">
+                                <i class="ri-image-line text-yellow-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Media Items</p>
+                                <p class="text-2xl font-semibold text-gray-900" id="media-count">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-purple-100 rounded-lg">
+                                <i class="ri-save-line text-purple-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Last Updated</p>
+                                <p class="text-sm font-semibold text-gray-900" id="last-updated">Never</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="file-manager-section" class="section" style="display: none;">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">File Manager</h2>
+                <p>File management functionality will be here.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Required modal elements -->
+    <div id="section-editor-modal" style="display: none;">
+        <span id="section-editor-title"></span>
+        <span id="section-editor-icon"></span>
+        <div id="section-editor-form"></div>
+        <button id="close-section-editor"></button>
+        <button id="cancel-section-edit"></button>
+        <button id="save-section-edit"></button>
+    </div>
+
+    <!-- Status display -->
+    <div id="status" class="fixed bottom-4 right-4 p-4 bg-white shadow-lg rounded-lg">
+        <h3 class="font-semibold">Initialization Status:</h3>
+        <div id="init-status">Loading...</div>
+    </div>
+
+    <!-- Load the JavaScript -->
+    <script src="scripts/enhanced-admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('init-status');
+            
+            try {
+                statusDiv.innerHTML = '<p class="text-yellow-600">🔄 Attempting to initialize...</p>';
+                
+                if (typeof initEnhancedAdmin !== 'undefined') {
+                    statusDiv.innerHTML += '<p class="text-green-600">✅ initEnhancedAdmin function found</p>';
+                    initEnhancedAdmin();
+                    statusDiv.innerHTML += '<p class="text-green-600">✅ Dashboard initialized!</p>';
+                } else {
+                    statusDiv.innerHTML = '<p class="text-red-600">❌ initEnhancedAdmin function not found</p>';
+                }
+                
+                // Test section switching
+                document.querySelectorAll('.sidebar-link').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const section = this.getAttribute('data-section');
+                        
+                        // Hide all sections
+                        document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+                        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                        
+                        // Show target section
+                        document.getElementById(section + '-section').style.display = 'block';
+                        this.classList.add('active');
+                        
+                        statusDiv.innerHTML += `<p class="text-blue-600">🔄 Switched to ${section}</p>`;
+                    });
+                });
+                
+            } catch (error) {
+                statusDiv.innerHTML = `<p class="text-red-600">❌ Error: ${error.message}</p>`;
+                console.error('Dashboard error:', error);
+            }
+        });
+    </script>
+
+    <style>
+        .sidebar-link.active {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3B82F6;
+            border-right: 3px solid #3B82F6;
+        }
+        .section { display: none; }
+        .section.active { display: block; }
+    </style>
+</body>
+</html>
