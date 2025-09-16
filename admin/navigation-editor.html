@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="../assets/logo/school-logo.png">
+  <title>Navigation Editor - SSSBPUC Admin</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520',
+            danger: '#EF4444',
+            success: '#10B981',
+            warning: '#F59E0B'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Authentication System -->
+  <script src="netlify-auth.js"></script>
+  
+  <!-- Sortable.js for drag & drop -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <img src="../assets/logo/school-logo.png" alt="SSSBPUC" class="w-8 h-8 mr-3" onerror="this.style.display='none'">
+          <div>
+            <h1 class="text-xl font-semibold text-gray-900">Navigation Editor</h1>
+            <p class="text-sm text-gray-500">Manage website navigation menu</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <a href="website-content-manager.html" class="text-gray-500 hover:text-primary transition-colors">
+            <i class="ri-arrow-left-line mr-1"></i>Back
+          </a>
+          <button id="save-navigation-btn" class="bg-success text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+            <i class="ri-save-line mr-2"></i>Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Branding Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Branding & Logos</h2>
+          <p class="text-gray-600">Configure website branding elements</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="ri-image-line text-primary text-xl"></i>
+          <span class="text-sm text-gray-500">Branding</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Left Logo URL</label>
+          <input type="text" id="logo-left" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="assets/logo/sai-baba-logo.png">
+          <div class="mt-2">
+            <img id="logo-left-preview" src="" alt="Left Logo Preview" class="h-12 border border-gray-200 rounded" style="display: none;">
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Right Logo URL</label>
+          <input type="text" id="logo-right" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="assets/logo/school-logo.png">
+          <div class="mt-2">
+            <img id="logo-right-preview" src="" alt="Right Logo Preview" class="h-12 border border-gray-200 rounded" style="display: none;">
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">College Name</label>
+          <input type="text" id="college-name" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Sri Sathya Sai Baba PU College">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+          <input type="text" id="location" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Mysuru, Karnataka">
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Items Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Navigation Menu Items</h2>
+          <p class="text-gray-600">Add and reorder navigation menu items</p>
+        </div>
+        <button id="add-menu-item-btn" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          <i class="ri-add-line mr-2"></i>Add Menu Item
+        </button>
+      </div>
+      
+      <div id="menu-items-container" class="space-y-4">
+        <!-- Menu items will be populated here -->
+      </div>
+    </div>
+
+    <!-- CTA Button Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Call-to-Action Button</h2>
+          <p class="text-gray-600">Configure the main action button</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="ri-cursor-line text-secondary text-xl"></i>
+          <span class="text-sm text-gray-500">CTA Button</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Button Text</label>
+          <input type="text" id="cta-text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="FOR ADMISSIONS">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Button URL</label>
+          <input type="text" id="cta-url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="admissions.html">
+        </div>
+      </div>
+      
+      <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+        <h4 class="font-medium text-gray-900 mb-3">Button Preview</h4>
+        <div class="flex justify-center">
+          <button id="cta-preview" class="bg-primary text-white px-6 py-2 rounded-lg font-medium shadow-sm">
+            FOR ADMISSIONS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Preview -->
+    <div class="bg-white rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">Navigation Preview</h2>
+      
+      <!-- Desktop Preview -->
+      <div class="border border-gray-200 rounded-lg mb-6">
+        <div class="bg-gray-50 px-4 py-2 border-b border-gray-200">
+          <h4 class="text-sm font-medium text-gray-700">Desktop Navigation</h4>
+        </div>
+        <div class="p-4">
+          <div id="desktop-nav-preview" class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <img id="preview-logo-left" src="" alt="Left Logo" class="h-8" style="display: none;">
+              <div class="text-center">
+                <div id="preview-college-name" class="text-lg font-bold text-primary">College Name</div>
+                <div id="preview-location" class="text-sm text-gray-600">Location</div>
+              </div>
+              <img id="preview-logo-right" src="" alt="Right Logo" class="h-8" style="display: none;">
+            </div>
+          </div>
+          <div class="border-t border-gray-200 mt-4 pt-4">
+            <div class="flex items-center justify-center">
+              <div id="preview-menu-items" class="flex space-x-6 items-center">
+                <span class="text-gray-500">Menu items will appear here</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Preview -->
+      <div class="border border-gray-200 rounded-lg">
+        <div class="bg-gray-50 px-4 py-2 border-b border-gray-200">
+          <h4 class="text-sm font-medium text-gray-700">Mobile Navigation</h4>
+        </div>
+        <div class="p-4">
+          <div class="max-w-sm mx-auto bg-white border border-gray-300 rounded-lg p-4">
+            <div class="flex justify-between items-center mb-4">
+              <i class="ri-menu-line text-xl text-gray-700"></i>
+              <div class="text-center flex-1">
+                <div id="mobile-preview-college-name" class="text-sm font-bold text-primary">College Name</div>
+                <div id="mobile-preview-location" class="text-xs text-gray-600">Location</div>
+              </div>
+              <div class="w-6"></div>
+            </div>
+            <div id="mobile-preview-menu" class="space-y-2">
+              <div class="text-gray-500 text-sm text-center">Mobile menu items</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Menu Item Modal -->
+  <div id="menu-item-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-lg max-w-md w-full">
+      <div class="p-6 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xl font-semibold text-gray-900" id="menu-item-modal-title">Add Menu Item</h3>
+          <button id="close-menu-item-modal" class="text-gray-400 hover:text-gray-600">
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <form id="menu-item-form" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Menu Item Name</label>
+            <input type="text" id="menu-item-name" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Home" required>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">URL/Link</label>
+            <input type="text" id="menu-item-url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="index.html" required>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Link Type</label>
+            <select id="menu-item-type" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="link">Regular Link</option>
+              <option value="external">External Link</option>
+              <option value="anchor">Anchor Link</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      
+      <div class="border-t border-gray-200 p-6">
+        <div class="flex justify-end space-x-4">
+          <button type="button" id="cancel-menu-item" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+            Cancel
+          </button>
+          <button type="submit" form="menu-item-form" id="save-menu-item" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90">
+            <i class="ri-save-line mr-2"></i>Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+  <script>
+    let navigationData = {
+      branding: {},
+      menu_items: [],
+      cta_button: {}
+    };
+    let editingIndex = -1;
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', function() {
+      loadNavigationData();
+      initializeEventListeners();
+    });
+
+    function initializeEventListeners() {
+      // Save navigation
+      document.getElementById('save-navigation-btn').addEventListener('click', saveNavigation);
+      
+      // Add menu item
+      document.getElementById('add-menu-item-btn').addEventListener('click', () => {
+        editingIndex = -1;
+        openMenuItemModal();
+      });
+      
+      // Modal controls
+      document.getElementById('close-menu-item-modal').addEventListener('click', closeMenuItemModal);
+      document.getElementById('cancel-menu-item').addEventListener('click', closeMenuItemModal);
+      
+      // Form submission
+      document.getElementById('menu-item-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveMenuItem();
+      });
+      
+      // Real-time preview updates
+      document.getElementById('logo-left').addEventListener('input', updateBrandingPreview);
+      document.getElementById('logo-right').addEventListener('input', updateBrandingPreview);
+      document.getElementById('college-name').addEventListener('input', updateBrandingPreview);
+      document.getElementById('location').addEventListener('input', updateBrandingPreview);
+      document.getElementById('cta-text').addEventListener('input', updateCTAPreview);
+      document.getElementById('cta-url').addEventListener('input', updateCTAPreview);
+    }
+
+    async function loadNavigationData() {
+      try {
+        showToast('Loading navigation data...', 'info');
+        const response = await fetch('/.netlify/functions/api?endpoint=get-navigation&_t=' + Date.now());
+        const result = await response.json();
+        
+        if (result.success && result.data) {
+          navigationData = result.data;
+          populateForm();
+          showToast('Navigation data loaded successfully!', 'success');
+        } else {
+          throw new Error(result.error || 'Failed to load navigation data');
+        }
+      } catch (error) {
+        showToast('Failed to load navigation data: ' + error.message, 'error');
+        console.error('Error loading navigation:', error);
+      }
+    }
+
+    function populateForm() {
+      // Populate branding
+      if (navigationData.branding) {
+        document.getElementById('logo-left').value = navigationData.branding.logo_left || '';
+        document.getElementById('logo-right').value = navigationData.branding.logo_right || '';
+        document.getElementById('college-name').value = navigationData.branding.college_name || '';
+        document.getElementById('location').value = navigationData.branding.location || '';
+      }
+      
+      // Populate CTA button
+      if (navigationData.cta_button) {
+        document.getElementById('cta-text').value = navigationData.cta_button.text || '';
+        document.getElementById('cta-url').value = navigationData.cta_button.url || '';
+      }
+      
+      // Populate menu items
+      renderMenuItems();
+      updateAllPreviews();
+    }
+
+    function renderMenuItems() {
+      const container = document.getElementById('menu-items-container');
+      container.innerHTML = '';
+      
+      if (!navigationData.menu_items || navigationData.menu_items.length === 0) {
+        container.innerHTML = '<div class="text-gray-500 text-center py-8">No menu items configured. Click "Add Menu Item" to get started.</div>';
+        return;
+      }
+      
+      navigationData.menu_items.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'flex items-center justify-between p-4 border border-gray-200 rounded-lg';
+        itemDiv.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <div class="drag-handle cursor-move text-gray-400">
+              <i class="ri-drag-move-2-line"></i>
+            </div>
+            <div>
+              <div class="font-medium text-gray-900">${item.name}</div>
+              <div class="text-sm text-gray-500">${item.url}</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="editMenuItem(${index})" class="text-primary hover:text-blue-700">
+              <i class="ri-edit-line"></i>
+            </button>
+            <button onclick="deleteMenuItem(${index})" class="text-red-500 hover:text-red-700">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(itemDiv);
+      });
+      
+      // Initialize sortable
+      new Sortable(container, {
+        animation: 150,
+        handle: '.drag-handle',
+        onEnd: function(evt) {
+          const item = navigationData.menu_items.splice(evt.oldIndex, 1)[0];
+          navigationData.menu_items.splice(evt.newIndex, 0, item);
+          updateMenuPreview();
+        }
+      });
+    }
+
+    function openMenuItemModal(editIndex = -1) {
+      const modal = document.getElementById('menu-item-modal');
+      const title = document.getElementById('menu-item-modal-title');
+      const nameInput = document.getElementById('menu-item-name');
+      const urlInput = document.getElementById('menu-item-url');
+      const typeInput = document.getElementById('menu-item-type');
+      
+      if (editIndex >= 0) {
+        title.textContent = 'Edit Menu Item';
+        const item = navigationData.menu_items[editIndex];
+        nameInput.value = item.name;
+        urlInput.value = item.url;
+        typeInput.value = item.type || 'link';
+        editingIndex = editIndex;
+      } else {
+        title.textContent = 'Add Menu Item';
+        nameInput.value = '';
+        urlInput.value = '';
+        typeInput.value = 'link';
+        editingIndex = -1;
+      }
+      
+      modal.classList.remove('hidden');
+      nameInput.focus();
+    }
+
+    function closeMenuItemModal() {
+      document.getElementById('menu-item-modal').classList.add('hidden');
+    }
+
+    function saveMenuItem() {
+      const name = document.getElementById('menu-item-name').value.trim();
+      const url = document.getElementById('menu-item-url').value.trim();
+      const type = document.getElementById('menu-item-type').value;
+      
+      if (!name || !url) {
+        showToast('Please fill in all required fields', 'error');
+        return;
+      }
+      
+      const menuItem = { name, url, type };
+      
+      if (editingIndex >= 0) {
+        navigationData.menu_items[editingIndex] = menuItem;
+      } else {
+        navigationData.menu_items.push(menuItem);
+      }
+      
+      renderMenuItems();
+      updateMenuPreview();
+      closeMenuItemModal();
+      showToast('Menu item saved!', 'success');
+    }
+
+    function editMenuItem(index) {
+      openMenuItemModal(index);
+    }
+
+    function deleteMenuItem(index) {
+      if (confirm('Are you sure you want to delete this menu item?')) {
+        navigationData.menu_items.splice(index, 1);
+        renderMenuItems();
+        updateMenuPreview();
+        showToast('Menu item deleted!', 'success');
+      }
+    }
+
+    function updateBrandingPreview() {
+      const logoLeft = document.getElementById('logo-left').value;
+      const logoRight = document.getElementById('logo-right').value;
+      const collegeName = document.getElementById('college-name').value;
+      const location = document.getElementById('location').value;
+      
+      // Update logo previews
+      const logoLeftPreview = document.getElementById('logo-left-preview');
+      const logoRightPreview = document.getElementById('logo-right-preview');
+      
+      if (logoLeft) {
+        logoLeftPreview.src = logoLeft;
+        logoLeftPreview.style.display = 'block';
+      } else {
+        logoLeftPreview.style.display = 'none';
+      }
+      
+      if (logoRight) {
+        logoRightPreview.src = logoRight;
+        logoRightPreview.style.display = 'block';
+      } else {
+        logoRightPreview.style.display = 'none';
+      }
+      
+      // Update navigation preview
+      updateNavigationPreview();
+    }
+
+    function updateCTAPreview() {
+      const text = document.getElementById('cta-text').value || 'FOR ADMISSIONS';
+      document.getElementById('cta-preview').textContent = text;
+    }
+
+    function updateNavigationPreview() {
+      // Desktop preview
+      const previewLogoLeft = document.getElementById('preview-logo-left');
+      const previewLogoRight = document.getElementById('preview-logo-right');
+      const previewCollegeName = document.getElementById('preview-college-name');
+      const previewLocation = document.getElementById('preview-location');
+      
+      const logoLeft = document.getElementById('logo-left').value;
+      const logoRight = document.getElementById('logo-right').value;
+      const collegeName = document.getElementById('college-name').value || 'College Name';
+      const location = document.getElementById('location').value || 'Location';
+      
+      if (logoLeft) {
+        previewLogoLeft.src = logoLeft;
+        previewLogoLeft.style.display = 'block';
+      } else {
+        previewLogoLeft.style.display = 'none';
+      }
+      
+      if (logoRight) {
+        previewLogoRight.src = logoRight;
+        previewLogoRight.style.display = 'block';
+      } else {
+        previewLogoRight.style.display = 'none';
+      }
+      
+      previewCollegeName.textContent = collegeName;
+      previewLocation.textContent = location;
+      
+      // Mobile preview
+      document.getElementById('mobile-preview-college-name').textContent = collegeName;
+      document.getElementById('mobile-preview-location').textContent = location;
+      
+      updateMenuPreview();
+    }
+
+    function updateMenuPreview() {
+      const desktopContainer = document.getElementById('preview-menu-items');
+      const mobileContainer = document.getElementById('mobile-preview-menu');
+      
+      // Desktop menu preview
+      let desktopHTML = '';
+      if (navigationData.menu_items && navigationData.menu_items.length > 0) {
+        navigationData.menu_items.forEach(item => {
+          desktopHTML += `<a href="#" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md">${item.name}</a>`;
+        });
+        
+        const ctaText = document.getElementById('cta-text').value || 'FOR ADMISSIONS';
+        desktopHTML += `<button class="bg-primary text-white px-4 py-2 rounded-lg font-medium">${ctaText}</button>`;
+      } else {
+        desktopHTML = '<span class="text-gray-500">No menu items</span>';
+      }
+      desktopContainer.innerHTML = desktopHTML;
+      
+      // Mobile menu preview
+      let mobileHTML = '';
+      if (navigationData.menu_items && navigationData.menu_items.length > 0) {
+        navigationData.menu_items.forEach(item => {
+          mobileHTML += `<div class="text-sm text-gray-700 p-2 border-b border-gray-100">${item.name}</div>`;
+        });
+        
+        const ctaText = document.getElementById('cta-text').value || 'FOR ADMISSIONS';
+        mobileHTML += `<div class="mt-2 p-2"><button class="w-full bg-primary text-white py-2 rounded text-sm">${ctaText}</button></div>`;
+      } else {
+        mobileHTML = '<div class="text-gray-500 text-sm text-center">No menu items</div>';
+      }
+      mobileContainer.innerHTML = mobileHTML;
+    }
+
+    function updateAllPreviews() {
+      updateBrandingPreview();
+      updateCTAPreview();
+      updateNavigationPreview();
+    }
+
+    async function saveNavigation() {
+      // Collect all form data
+      navigationData.branding = {
+        logo_left: document.getElementById('logo-left').value,
+        logo_right: document.getElementById('logo-right').value,
+        college_name: document.getElementById('college-name').value,
+        location: document.getElementById('location').value
+      };
+      
+      navigationData.cta_button = {
+        text: document.getElementById('cta-text').value,
+        url: document.getElementById('cta-url').value
+      };
+      
+      try {
+        showToast('Saving navigation...', 'info');
+        
+        // Get session for authentication
+        const session = JSON.parse(localStorage.getItem('sssbpuc_session') || '{}');
+        
+        const response = await fetch('/.netlify/functions/api?endpoint=save-navigation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Session-ID': session.sessionId || ''
+          },
+          body: JSON.stringify(navigationData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          showToast('Navigation saved successfully!', 'success');
+          // Set refresh flag for public pages
+          localStorage.setItem('forceContentRefresh', 'true');
+        } else {
+          throw new Error(result.error || 'Failed to save navigation');
+        }
+      } catch (error) {
+        showToast('Failed to save navigation: ' + error.message, 'error');
+        console.error('Error saving navigation:', error);
+      }
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast p-4 rounded-lg shadow-lg text-white ${
+        type === 'success' ? 'bg-green-500' :
+        type === 'error' ? 'bg-red-500' :
+        type === 'warning' ? 'bg-yellow-500' :
+        'bg-blue-500'
+      }`;
+      toast.textContent = message;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>

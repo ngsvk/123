@@ -1,0 +1,69 @@
+{
+    "branding": {
+        "logo": "assets\/logo\/sai-baba-logo.png",
+        "description": "Shaping tomorrow's leaders through excellence in education, research, and innovation."
+    },
+    "social_links": [
+        {
+            "name": "Facebook",
+            "url": "https:\/\/www.facebook.com\/people\/Sathya-Sai-Baba-Puc\/pfbid02EXmmdXSUpaZJE3uH5zdoHTGTsfFPjy5RK5Z6dUJ55skrdtPwmWgYpTbHbh7RwcfZl",
+            "icon": "ri-facebook-fill"
+        },
+        {
+            "name": "Twitter",
+            "url": "#",
+            "icon": "ri-twitter-fill"
+        },
+        {
+            "name": "Instagram",
+            "url": "#",
+            "icon": "ri-instagram-fill"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "#",
+            "icon": "ri-linkedin-fill"
+        }
+    ],
+    "quick_links": [
+        {
+            "name": "About Us",
+            "url": "about.html"
+        },
+        {
+            "name": "Academics",
+            "url": "academics.html"
+        },
+        {
+            "name": "Gallery",
+            "url": "gallery.html"
+        },
+        {
+            "name": "Campus Life",
+            "url": "campus-life.html"
+        },
+        {
+            "name": "Admissions",
+            "url": "admissions.html"
+        }
+    ],
+    "contact_info": [
+        {
+            "type": "address",
+            "icon": "ri-map-pin-line",
+            "text": "Sri Sathya Sai Baba PU College, 46, 4th Main Rd, 3rd Block, Jayalakshmipuram, Mysuru, Karnataka 570012"
+        },
+        {
+            "type": "phone",
+            "icon": "ri-phone-line",
+            "text": "0821 2410856"
+        },
+        {
+            "type": "email",
+            "icon": "ri-mail-line",
+            "text": "admissions@sssbpuc.edu.in"
+        }
+    ],
+    "copyright": "© 2025 SSSBPUC. All rights reserved.",
+    "last_updated": 1757618082
+}

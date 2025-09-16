@@ -1,0 +1,40 @@
+{
+    "branding": {
+        "logo_left": "assets\/logo\/sai-baba-logo.png",
+        "logo_right": "assets\/logo\/school-logo.png",
+        "college_name": "Sri Sathya Sai Baba PU College",
+        "location": "Mysuru, Karnataka"
+    },
+    "menu_items": [
+        {
+            "name": "Home",
+            "url": "index.html",
+            "type": "link"
+        },
+        {
+            "name": "Academics",
+            "url": "academics.html",
+            "type": "link"
+        },
+        {
+            "name": "Gallery",
+            "url": "gallery.html",
+            "type": "link"
+        },
+        {
+            "name": "Campus Life",
+            "url": "campus-life.html",
+            "type": "link"
+        },
+        {
+            "name": "About",
+            "url": "about.html",
+            "type": "link"
+        }
+    ],
+    "cta_button": {
+        "text": "FOR ADMISSIONS",
+        "url": "admissions.html"
+    },
+    "last_updated": 1757803770
+}

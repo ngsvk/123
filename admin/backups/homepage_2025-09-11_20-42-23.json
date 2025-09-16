@@ -1,0 +1,339 @@
+{
+    "hero": {
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "background_video_url": "https:\/\/www.youtube.com\/watch?v=baFVOCdRa-s",
+        "buttons": [],
+        "cta_text": "",
+        "cta_link": "",
+        "buttons[0]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        },
+        "buttons[1]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        },
+        "buttons[2]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        },
+        "buttons[3]": {
+            "text": "",
+            "link": "",
+            "style": "",
+            "icon": "",
+            "action": ""
+        }
+    },
+    "welcome": {
+        "subtitle": "ABOUT US",
+        "title": "<h1>Welcome to <span class=\"highlight-orange\">Sri Sathya Sai School &amp; PU College Mysuru<\/span><\/h1>",
+        "description": "Our school is dedicated to fostering Education in Human Values. Today's education system often prioritizes intellectual and skill development while neglecting the cultivation of good character. We believe that true education extends beyond academics to encompass moral and spiritual growth. Our mission is to nurture students who not only excel academically but also possess compassion, humility, and a sense of service towards society.",
+        "logo_url": "assets\/logo\/school-logo.png"
+    },
+    "founder": {
+        "background_image": "assets\/baba\/bhajan-hall.png",
+        "founder1": {
+            "tag": "founder president",
+            "name": "Late Smt Sunandamma",
+            "description": "Deeply influenced by the Bhagvn Sri Satya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru on 1957...",
+            "image_url": "assets\/baba\/sunandamma.png",
+            "read_more_link": "#"
+        },
+        "founder2": {
+            "tag": "blessings",
+            "name": "Bhagawan Sri Sathya Sai Baba",
+            "description": "Bhagawan Sri Sathya Sai Baba was incarnated in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh in the year 23-11-1926...",
+            "image_url": "assets\/baba\/baba-chair.jpg",
+            "read_more_link": "#"
+        }
+    },
+    "updates": {
+        "title": "Updates",
+        "subtitle": "Stay updated with the latest happenings, breakthroughs, and events at SSSBPUC.",
+        "cards": [
+            {
+                "type": "News",
+                "date": "Feb 20, 2025",
+                "title": "Campus Renovation Completed",
+                "description": "Major renovation of classrooms and labs completed successfully.",
+                "image_url": "assets\/photos\/DSC_4054.jpg",
+                "link": "#"
+            },
+            {
+                "type": "Event",
+                "date": "Jan 15, 2025",
+                "title": "Annual Sports Day Highlights",
+                "description": "Students showcasing their athletic talents and team spirit.",
+                "image_url": "assets\/photos\/DSC_4033.jpg",
+                "link": "#"
+            },
+            {
+                "type": "Achievement",
+                "date": "Dec 10, 2024",
+                "title": "Academic Excellence Awards",
+                "description": "Our students excel in state-level competitions.",
+                "image_url": "assets\/photos\/DSC_4038.jpg",
+                "link": "#"
+            },
+            {
+                "type": "Community",
+                "date": "Nov 25, 2024",
+                "title": "Community Service Initiative",
+                "description": "Students participate in local community development.",
+                "image_url": "assets\/photos\/DSC_4006.jpg",
+                "link": "#"
+            }
+        ],
+        "cards[0]": {
+            "type": "News",
+            "date": "Feb 20, 2025",
+            "title": "Campus Renovation Completed",
+            "description": "Major renovation of classrooms and labs completed successfully.",
+            "image_url": "assets\/photos\/DSC_4054.jpg",
+            "link": "#"
+        },
+        "cards[1]": {
+            "type": "Event",
+            "date": "Jan 15, 2025",
+            "title": "Annual Sports Day Highlights",
+            "description": "Students showcasing their athletic talents and team spirit.",
+            "image_url": "assets\/photos\/DSC_4033.jpg",
+            "link": "#"
+        },
+        "cards[2]": {
+            "type": "Achievement",
+            "date": "Dec 10, 2024",
+            "title": "Academic Excellence Awards",
+            "description": "Our students excel in state-level competitions.",
+            "image_url": "assets\/photos\/DSC_4038.jpg",
+            "link": "#"
+        },
+        "cards[3]": {
+            "type": "Community",
+            "date": "Nov 25, 2024",
+            "title": "Community Service Initiative",
+            "description": "Students participate in local community development.",
+            "image_url": "assets\/photos\/DSC_4006.jpg",
+            "link": "#"
+        }
+    },
+    "facilities": {
+        "title": "Our Facilities",
+        "subtitle": "World-class infrastructure designed for holistic development",
+        "items": [
+            {
+                "name": "Modern Classrooms",
+                "description": "Smart classrooms equipped with latest technology to enhance the learning experience.",
+                "icon": "ri-presentation-line",
+                "image_url": "assets\/campus\/campus4.jpg"
+            },
+            {
+                "name": "Science Laboratories",
+                "description": "Well-equipped labs for physics, chemistry, biology, and computer science.",
+                "icon": "ri-flask-line",
+                "image_url": "assets\/photos\/DSC_4038.jpg"
+            },
+            {
+                "name": "Sports Complex",
+                "description": "Comprehensive sports facilities including courts, fields, and fitness equipment.",
+                "icon": "ri-football-line",
+                "image_url": "assets\/photos\/DSC_4054.jpg"
+            },
+            {
+                "name": "Library & Resources",
+                "description": "Extensive collection of books, digital resources, and quiet study spaces.",
+                "icon": "ri-book-open-line",
+                "image_url": "assets\/campus\/campus3.jpg"
+            }
+        ],
+        "items[0]": {
+            "name": "Modern Classrooms",
+            "description": "Smart classrooms equipped with latest technology to enhance the learning experience.",
+            "icon": "ri-presentation-line",
+            "image_url": "assets\/campus\/campus4.jpg"
+        },
+        "items[1]": {
+            "name": "Science Laboratories",
+            "description": "Well-equipped labs for physics, chemistry, biology, and computer science.",
+            "icon": "ri-flask-line",
+            "image_url": "assets\/photos\/DSC_4038.jpg"
+        },
+        "items[2]": {
+            "name": "Sports Complex",
+            "description": "Comprehensive sports facilities including courts, fields, and fitness equipment.",
+            "icon": "ri-football-line",
+            "image_url": "assets\/photos\/DSC_4054.jpg"
+        },
+        "items[3]": {
+            "name": "Library & Resources",
+            "description": "Extensive collection of books, digital resources, and quiet study spaces.",
+            "icon": "ri-book-open-line",
+            "image_url": "assets\/campus\/campus3.jpg"
+        }
+    },
+    "campus_life": {
+        "title": "Campus Life Gallery",
+        "images": [
+            {
+                "url": "assets\/photos\/DSC_4033.jpg",
+                "title": "Annual Sports Day",
+                "description": "Students participating in various sporting events"
+            },
+            {
+                "url": "assets\/photos\/DSC_4038.jpg",
+                "title": "Cultural Celebration",
+                "description": "Students showcasing their cultural talents"
+            },
+            {
+                "url": "assets\/photos\/DSC_4015.jpg",
+                "title": "Academic Excellence",
+                "description": "Celebrating student achievements"
+            },
+            {
+                "url": "assets\/photos\/DSC_4006.jpg",
+                "title": "Science Exhibition",
+                "description": "Innovation and research showcase"
+            }
+        ],
+        "images[0]": {
+            "url": "assets\/photos\/DSC_4033.jpg",
+            "title": "Annual Sports Day",
+            "description": "Students participating in various sporting events"
+        },
+        "images[1]": {
+            "url": "assets\/photos\/DSC_4038.jpg",
+            "title": "Cultural Celebration",
+            "description": "Students showcasing their cultural talents"
+        },
+        "images[2]": {
+            "url": "assets\/photos\/DSC_4015.jpg",
+            "title": "Academic Excellence",
+            "description": "Celebrating student achievements"
+        },
+        "images[3]": {
+            "url": "assets\/photos\/DSC_4006.jpg",
+            "title": "Science Exhibition",
+            "description": "Innovation and research showcase"
+        }
+    },
+    "statistics": {
+        "title": "By the Numbers",
+        "subtitle": "Our impact in numbers reflects our commitment to excellence in education and research.",
+        "stats": [
+            {
+                "number": "25,000",
+                "label": "Students Enrolled",
+                "target": "25000"
+            },
+            {
+                "number": "70",
+                "label": "Faculty Members",
+                "target": "70"
+            },
+            {
+                "number": "4",
+                "label": "Academic Programs",
+                "target": "4"
+            },
+            {
+                "number": "100%",
+                "label": "Passing Rate",
+                "target": "100"
+            }
+        ],
+        "stats[0]": {
+            "number": "25,000",
+            "label": "Students Enrolled",
+            "target": "25000"
+        },
+        "stats[1]": {
+            "number": "70",
+            "label": "Faculty Members",
+            "target": "70"
+        },
+        "stats[2]": {
+            "number": "4",
+            "label": "Academic Programs",
+            "target": "4"
+        },
+        "stats[3]": {
+            "number": "100%",
+            "label": "Passing Rate",
+            "target": "100"
+        }
+    },
+    "sister_institutes": {
+        "title": "Sister Institutes",
+        "subtitle": "Part of the larger Sai educational family",
+        "institutes": [
+            {
+                "id": 1,
+                "name": "Sri Sathya Sai School ALIKE",
+                "location": "Alike, Karnataka",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Alike.jpg?raw=true",
+                "website": "#",
+                "type": "Sister Institute",
+                "description": "Educational institution in Alike"
+            },
+            {
+                "id": 2,
+                "name": "Sri Sathya Sai School DHARWAD",
+                "location": "Dharwad, Karnataka",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Dharwad%202.jpg?raw=true",
+                "website": "#",
+                "type": "Sister Institute",
+                "description": "Educational institution in Dharwad"
+            },
+            {
+                "id": 3,
+                "name": "Sri Sathya Sai PU College MYSURU",
+                "location": "Mysuru, Karnataka",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/College%20Photos\/College.jpg?raw=true",
+                "website": "#",
+                "type": "Main Institute",
+                "description": "Main college campus"
+            },
+            {
+                "id": 4,
+                "name": "Sri Sathya Sai School",
+                "location": "Bangalore, Karnataka",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Bangalore.jpg?raw=true",
+                "website": "#",
+                "type": "Sister Institute",
+                "description": "Educational institution in Bangalore"
+            },
+            {
+                "id": 5,
+                "name": "Sri Sathya Sai School",
+                "location": "Chennai, Tamil Nadu",
+                "image": "https:\/\/github.com\/Satyamurthi\/mbw-Photos\/blob\/main\/Sister%20Institutes\/Chennai.jpg?raw=true",
+                "website": "#",
+                "type": "Sister Institute",
+                "description": "Educational institution in Chennai"
+            },
+            {
+                "id": 6,
+                "name": "New Institute",
+                "location": "Location",
+                "image": "https:\/\/via.placeholder.com\/300x200",
+                "website": "#",
+                "type": "Sister Institute",
+                "description": "",
+                "display_order": 6,
+                "is_active": true
+            }
+        ]
+    }
+}

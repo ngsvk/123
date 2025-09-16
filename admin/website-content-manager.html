@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="../assets/logo/school-logo.png">
+  <title>Website Content Manager - SSSBPUC Admin</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520',
+            danger: '#EF4444',
+            success: '#10B981',
+            warning: '#F59E0B'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Authentication System -->
+  <script src="netlify-auth.js"></script>
+  
+  <!-- Sortable.js for drag & drop -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  
+  <style>
+    .sortable-ghost {
+      opacity: 0.4;
+      background-color: #f3f4f6;
+    }
+    
+    .button-preview {
+      transition: all 0.3s ease;
+    }
+    
+    .button-preview:hover {
+      transform: scale(1.05);
+    }
+    
+    .section-editor {
+      border: 2px dashed #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    
+    .section-editor.editing {
+      border-color: #3b82f6;
+      background-color: #f8fafc;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .toast {
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    .loading-spinner {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <img src="../assets/logo/school-logo.png" alt="SSSBPUC" class="w-8 h-8 mr-3" onerror="this.style.display='none'">
+          <h1 class="text-xl font-semibold text-gray-900">Website Content Manager</h1>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <a href="dashboard.html" class="text-gray-500 hover:text-primary transition-colors">
+            <i class="ri-dashboard-line text-xl"></i>
+          </a>
+          <button id="save-all-btn" class="bg-success text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+            <i class="ri-save-line mr-2"></i>Save All Changes
+          </button>
+          <button id="preview-site-btn" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">
+            <i class="ri-eye-line mr-2"></i>Preview Site
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Quick Access -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Quick Access</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="sister-institutes-manager.html" class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors group">
+          <div class="flex-shrink-0">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+              <i class="ri-building-2-line text-xl"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-sm font-semibold text-gray-900 group-hover:text-primary">Sister Institutes</h3>
+            <p class="text-xs text-gray-600">Manage institution listings</p>
+          </div>
+        </a>
+        
+        <div class="flex items-center p-4 border border-gray-200 rounded-lg opacity-50">
+          <div class="flex-shrink-0">
+            <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+              <i class="ri-image-line text-xl text-gray-400"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-sm font-semibold text-gray-900">Gallery Manager</h3>
+            <p class="text-xs text-gray-600">Coming soon</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center p-4 border border-gray-200 rounded-lg opacity-50">
+          <div class="flex-shrink-0">
+            <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+              <i class="ri-calendar-event-line text-xl text-gray-400"></i>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-sm font-semibold text-gray-900">Events Manager</h3>
+            <p class="text-xs text-gray-600">Coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Selection -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Select Page to Edit</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4" id="page-selector">
+        <!-- Pages will be populated here -->
+      </div>
+    </div>
+
+    <!-- Dynamic Buttons Manager -->
+    <div id="buttons-manager" class="bg-white rounded-lg shadow-sm p-6 mb-8" style="display: none;">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900">Dynamic Buttons Manager</h3>
+          <p class="text-gray-600">Manage hero section buttons with live preview</p>
+        </div>
+        <div class="flex space-x-3">
+          <button id="add-button-btn" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            <i class="ri-add-line mr-2"></i>Add Button
+          </button>
+          <button id="preview-buttons-btn" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">
+            <i class="ri-eye-line mr-2"></i>Preview
+          </button>
+        </div>
+      </div>
+
+      <!-- Button List -->
+      <div id="buttons-list" class="space-y-4 mb-6">
+        <!-- Dynamic buttons will be populated here -->
+      </div>
+
+      <!-- Button Preview -->
+      <div class="border-t pt-6">
+        <h4 class="text-lg font-semibold text-gray-900 mb-4">Live Preview</h4>
+        <div class="bg-gradient-to-r from-primary to-blue-700 rounded-lg p-8 text-center">
+          <h5 class="text-2xl font-bold text-white mb-4">Hero Section Preview</h5>
+          <div id="button-preview-container" class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="text-white/80">No buttons configured</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Editor -->
+    <div id="section-editor" class="bg-white rounded-lg shadow-sm p-6 mb-8" style="display: none;">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900">Page Sections Editor</h3>
+          <p class="text-gray-600">Edit individual sections of the selected page</p>
+        </div>
+        <button id="save-section-btn" class="bg-success text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+          <i class="ri-save-line mr-2"></i>Save Section
+        </button>
+      </div>
+
+      <!-- Section Tabs -->
+      <div class="border-b border-gray-200 mb-6">
+        <nav class="-mb-px flex space-x-8" id="section-tabs">
+          <!-- Section tabs will be populated here -->
+        </nav>
+      </div>
+
+      <!-- Section Content -->
+      <div id="section-content" class="space-y-6">
+        <!-- Section editing forms will be populated here -->
+      </div>
+    </div>
+
+    <!-- Media Manager -->
+    <div id="media-manager" class="bg-white rounded-lg shadow-sm p-6 mb-8" style="display: none;">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900">Media Manager</h3>
+          <p class="text-gray-600">Upload and manage images, videos, and other media files</p>
+        </div>
+        <div class="flex space-x-3">
+          <button id="upload-media-btn" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            <i class="ri-upload-line mr-2"></i>Upload Media
+          </button>
+          <button id="organize-media-btn" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">
+            <i class="ri-folder-reduce-line mr-2"></i>Organize
+          </button>
+        </div>
+      </div>
+
+      <!-- Media Filters -->
+      <div class="flex items-center space-x-4 mb-6">
+        <select id="media-type-filter" class="border border-gray-300 rounded-lg px-3 py-2">
+          <option value="">All Media</option>
+          <option value="image">Images</option>
+          <option value="video">Videos</option>
+          <option value="document">Documents</option>
+        </select>
+        <select id="media-folder-filter" class="border border-gray-300 rounded-lg px-3 py-2">
+          <option value="">All Folders</option>
+        </select>
+        <input type="text" id="media-search" class="flex-1 border border-gray-300 rounded-lg px-3 py-2" placeholder="Search media files...">
+      </div>
+
+      <!-- Media Grid -->
+      <div id="media-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <!-- Media files will be populated here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Button Modal -->
+  <div id="button-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xl font-semibold text-gray-900" id="button-modal-title">Add New Button</h3>
+          <button id="close-button-modal" class="text-gray-400 hover:text-gray-600">
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <form id="button-form" class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Button Text</label>
+            <input type="text" id="button-text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter button text" required>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Link/URL</label>
+            <input type="text" id="button-link" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter link URL" required>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Button Style</label>
+              <select id="button-style" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                <option value="primary">Primary (Yellow)</option>
+                <option value="secondary">Secondary (Transparent)</option>
+                <option value="outline">Outline</option>
+                <option value="phone">Phone Call (Green)</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Icon (RemixIcon)</label>
+              <input type="text" id="button-icon" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="ri-icon-name">
+              <div class="text-xs text-gray-500 mt-1">Visit <a href="https://remixicon.com" target="_blank" class="text-primary hover:underline">RemixIcon.com</a> for icon names</div>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Action Type</label>
+            <select id="button-action" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="navigate">Navigate to Link</option>
+              <option value="call">Phone Call</option>
+              <option value="email">Email</option>
+              <option value="external">External Link</option>
+            </select>
+          </div>
+          
+          <div class="border-t pt-6">
+            <h4 class="font-semibold text-gray-900 mb-3">Button Preview</h4>
+            <div class="bg-gradient-to-r from-primary to-blue-700 rounded-lg p-6 text-center">
+              <div id="button-form-preview" class="inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg bg-secondary text-white">
+                <i class="ri-information-line mr-2"></i>Sample Button
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="border-t border-gray-200 p-6">
+        <div class="flex justify-end space-x-4">
+          <button type="button" id="cancel-button" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+            Cancel
+          </button>
+          <button type="submit" form="button-form" id="save-button" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+            <i class="ri-save-line mr-2"></i>Save Button
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Media Modal -->
+  <div id="upload-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-lg max-w-2xl w-full">
+      <div class="p-6 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xl font-semibold text-gray-900">Upload Media Files</h3>
+          <button id="close-upload-modal" class="text-gray-400 hover:text-gray-600">
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Upload to Folder</label>
+          <select id="upload-folder" class="w-full border border-gray-300 rounded-lg px-3 py-2 mb-4">
+            <option value="assets">Assets (General)</option>
+            <option value="assets/photos">Photos</option>
+            <option value="assets/campus">Campus</option>
+            <option value="assets/baba">Baba</option>
+            <option value="assets/logo">Logo</option>
+            <option value="assets/sister">Sister Institutes</option>
+          </select>
+        </div>
+        
+        <div id="drop-zone" class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+          <i class="ri-cloud-line text-4xl text-gray-400 mb-4"></i>
+          <p class="text-lg text-gray-600 mb-2">Drop files here or click to browse</p>
+          <button type="button" id="browse-files" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            <i class="ri-folder-open-line mr-2"></i>Browse Files
+          </button>
+          <input type="file" id="file-input" multiple accept="image/*,video/*,.pdf,.doc,.docx" class="hidden">
+        </div>
+        
+        <div id="upload-progress" class="mt-6 hidden">
+          <div class="space-y-3" id="upload-progress-list">
+            <!-- Upload progress items will appear here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2">
+    <!-- Toast notifications will appear here -->
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg p-8 text-center">
+      <div class="loading-spinner w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+      <p class="text-gray-600">Loading...</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../scripts/website-content-manager.js"></script>
+  <script src="page-redirects.js"></script>
+  <script>
+    // Initialize Website Content Manager
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🚀 Website Content Manager Starting...');
+      initWebsiteContentManager();
+    });
+  </script>
+
+</body>
+</html>

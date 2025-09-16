@@ -1,0 +1,181 @@
+{
+  "hero": {
+    "title": "Gallery",
+    "subtitle": "A glimpse into our vibrant campus life, modern facilities, and cherished moments",
+    "background_image": "assets/baba/bhajan-hall.png"
+  },
+  "campus_life": {
+    "title": "Campus Life",
+    "subtitle": "Experience the vibrant atmosphere of our campus through these moments",
+    "photos": [
+      {
+        "url": "assets/photos/DSC_4033.jpg",
+        "title": "Annual Sports Day",
+        "description": "Students participating in various sporting events",
+        "category": "events"
+      },
+      {
+        "url": "assets/photos/DSC_4038.jpg", 
+        "title": "Cultural Celebration",
+        "description": "Students showcasing their cultural talents",
+        "category": "culture"
+      },
+      {
+        "url": "assets/photos/DSC_4015.jpg",
+        "title": "Academic Excellence",
+        "description": "Celebrating student achievements",
+        "category": "academics"
+      },
+      {
+        "url": "assets/photos/DSC_4006.jpg",
+        "title": "Science Exhibition",
+        "description": "Innovation and research showcase",
+        "category": "academics"
+      },
+      {
+        "url": "assets/photos/DSC_4054.jpg",
+        "title": "Community Service",
+        "description": "Students engaged in social service",
+        "category": "service"
+      },
+      {
+        "url": "assets/campus/campus3.jpg",
+        "title": "Beautiful Campus",
+        "description": "Modern architecture and green spaces",
+        "category": "campus"
+      }
+    ]
+  },
+  "facilities": {
+    "title": "Our Facilities",
+    "subtitle": "World-class infrastructure supporting comprehensive education",
+    "photos": [
+      {
+        "url": "assets/campus/campus4.jpg",
+        "title": "Modern Classrooms",
+        "description": "Smart classrooms equipped with latest technology",
+        "category": "academic"
+      },
+      {
+        "url": "assets/facilities/laboratory.jpg",
+        "title": "Science Laboratories",
+        "description": "Well-equipped labs for physics, chemistry, and biology",
+        "category": "academic"
+      },
+      {
+        "url": "assets/facilities/library.jpg",
+        "title": "Library & Resource Center",
+        "description": "Extensive collection of books and digital resources",
+        "category": "academic"
+      },
+      {
+        "url": "assets/facilities/sports.jpg",
+        "title": "Sports Complex",
+        "description": "Comprehensive sports facilities and playgrounds",
+        "category": "sports"
+      },
+      {
+        "url": "assets/facilities/auditorium.jpg",
+        "title": "Auditorium",
+        "description": "Modern auditorium for events and assemblies",
+        "category": "events"
+      },
+      {
+        "url": "assets/facilities/computer-lab.jpg",
+        "title": "Computer Laboratory",
+        "description": "Latest computers with high-speed internet",
+        "category": "technology"
+      }
+    ]
+  },
+  "events": {
+    "title": "Recent Events",
+    "subtitle": "Highlighting memorable moments from our school events",
+    "photos": [
+      {
+        "url": "assets/events/annual-day.jpg",
+        "title": "Annual Day Celebration",
+        "description": "Grand celebration showcasing student talents",
+        "category": "celebration",
+        "date": "2024-12-15"
+      },
+      {
+        "url": "assets/events/graduation.jpg", 
+        "title": "Graduation Ceremony",
+        "description": "Celebrating academic achievements of our students",
+        "category": "ceremony",
+        "date": "2024-11-20"
+      },
+      {
+        "url": "assets/events/teachers-day.jpg",
+        "title": "Teachers' Day",
+        "description": "Honoring our dedicated educators",
+        "category": "celebration",
+        "date": "2024-09-05"
+      },
+      {
+        "url": "assets/events/independence-day.jpg",
+        "title": "Independence Day",
+        "description": "Patriotic celebration with flag hoisting",
+        "category": "national",
+        "date": "2024-08-15"
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Achievements Gallery",
+    "subtitle": "Celebrating our students' accomplishments and milestones",
+    "photos": [
+      {
+        "url": "assets/achievements/state-winners.jpg",
+        "title": "State Level Winners",
+        "description": "Students with state competition trophies",
+        "category": "awards"
+      },
+      {
+        "url": "assets/achievements/science-fair.jpg",
+        "title": "Science Fair Champions",
+        "description": "Winners of inter-school science competition",
+        "category": "academics"
+      },
+      {
+        "url": "assets/achievements/cultural-fest.jpg",
+        "title": "Cultural Fest Winners",
+        "description": "Outstanding performance in cultural competitions",
+        "category": "culture"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "All",
+      "filter": "all",
+      "icon": "ri-apps-line"
+    },
+    {
+      "name": "Campus Life",
+      "filter": "campus",
+      "icon": "ri-building-line"
+    },
+    {
+      "name": "Events",
+      "filter": "events", 
+      "icon": "ri-calendar-event-line"
+    },
+    {
+      "name": "Academics",
+      "filter": "academics",
+      "icon": "ri-book-open-line"
+    },
+    {
+      "name": "Sports",
+      "filter": "sports",
+      "icon": "ri-football-line"
+    },
+    {
+      "name": "Culture",
+      "filter": "culture",
+      "icon": "ri-music-line"
+    }
+  ]
+}

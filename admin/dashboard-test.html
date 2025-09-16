@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Test - SSSBPUC Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-6">Dashboard JavaScript Test</h1>
+        
+        <div id="test-results" class="space-y-4">
+            <div class="bg-blue-100 p-4 rounded">
+                <p class="text-blue-800">🔄 Testing JavaScript load...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required modal elements -->
+    <div style="display: none;">
+        <div id="section-editor-modal">
+            <span id="section-editor-title"></span>
+            <span id="section-editor-icon"></span>
+            <div id="section-editor-form"></div>
+            <button id="close-section-editor"></button>
+            <button id="cancel-section-edit"></button>
+            <button id="save-section-edit"></button>
+        </div>
+        <div id="total-pages">0</div>
+        <div id="total-files">0</div>
+        <div id="media-count">0</div>
+        <div id="last-updated">Never</div>
+    </div>
+    
+    <script src="../scripts/enhanced-admin-fixed.js?v=20250914-0430"></script>
+    <script>
+        const results = document.getElementById('test-results');
+        
+        function addResult(message, type = 'info') {
+            const colors = {
+                success: 'bg-green-100 text-green-800',
+                error: 'bg-red-100 text-red-800',
+                warning: 'bg-yellow-100 text-yellow-800',
+                info: 'bg-blue-100 text-blue-800'
+            };
+            
+            const div = document.createElement('div');
+            div.className = `${colors[type]} p-4 rounded`;
+            div.innerHTML = `<p>${message}</p>`;
+            results.appendChild(div);
+        }
+        
+        try {
+            addResult('✅ Script loaded without syntax errors', 'success');
+            
+            if (typeof EnhancedAdmin !== 'undefined') {
+                addResult('✅ EnhancedAdmin class found', 'success');
+                
+                if (typeof initEnhancedAdmin !== 'undefined') {
+                    addResult('✅ initEnhancedAdmin function found', 'success');
+                    
+                    try {
+                        initEnhancedAdmin();
+                        addResult('✅ Dashboard initialized successfully!', 'success');
+                        
+                        setTimeout(() => {
+                            if (window.enhancedAdmin) {
+                                addResult('✅ window.enhancedAdmin instance created', 'success');
+                                addResult('🎉 All tests passed! The dashboard should work now.', 'success');
+                            } else {
+                                addResult('❌ window.enhancedAdmin not created', 'error');
+                            }
+                        }, 1000);
+                        
+                    } catch (error) {
+                        addResult(`❌ Initialization failed: ${error.message}`, 'error');
+                        console.error('Init error:', error);
+                    }
+                } else {
+                    addResult('❌ initEnhancedAdmin function not found', 'error');
+                }
+            } else {
+                addResult('❌ EnhancedAdmin class not found', 'error');
+            }
+            
+        } catch (error) {
+            addResult(`❌ JavaScript error: ${error.message}`, 'error');
+            console.error('Script error:', error);
+        }
+    </script>
+</body>
+</html>

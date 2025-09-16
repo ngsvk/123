@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "data": {
+    "institutes": [
+      {
+        "id": 1,
+        "name": "Sri Sathya Sai School",
+        "location": "Alike, Karnataka",
+        "description": "A prestigious educational institution following the principles of Education in Human Values",
+        "image": "https://github.com/Satyamurthi/mbw-Photos/blob/main/Sister%20Institutes/Alike.jpg?raw=true",
+        "website": "https://www.ssschool-alike.org",
+        "established": "1985",
+        "type": "School & PU College",
+        "is_active": true,
+        "display_order": 1
+      },
+      {
+        "id": 2,
+        "name": "Sri Sathya Sai School",
+        "location": "Dharwad, Karnataka",
+        "description": "Educational excellence with moral and spiritual development",
+        "image": "https://github.com/Satyamurthi/mbw-Photos/blob/main/Sister%20Institutes/Dharwad%202.jpg?raw=true",
+        "website": "https://www.ssschool-dharwad.org",
+        "established": "1978",
+        "type": "School",
+        "is_active": true,
+        "display_order": 2
+      },
+      {
+        "id": 3,
+        "name": "Sri Sathya Sai PU College",
+        "location": "Mysuru, Karnataka",
+        "description": "The main institution providing quality education with human values",
+        "image": "https://github.com/Satyamurthi/mbw-Photos/blob/main/College%20Photos/College.jpg?raw=true",
+        "website": "#",
+        "established": "1957",
+        "type": "School & PU College",
+        "is_active": true,
+        "display_order": 3
+      },
+      {
+        "id": 4,
+        "name": "Sri Sathya Sai School",
+        "location": "Bangalore, Karnataka",
+        "description": "Urban campus focusing on holistic education and character development",
+        "image": "https://github.com/Satyamurthi/mbw-Photos/blob/main/Sister%20Institutes/Alike.jpg?raw=true",
+        "website": "https://www.ssschool-bangalore.org",
+        "established": "1990",
+        "type": "School",
+        "is_active": true,
+        "display_order": 4
+      },
+      {
+        "id": 5,
+        "name": "Sri Sathya Sai School",
+        "location": "Chennai, Tamil Nadu",
+        "description": "Southern regional campus with strong emphasis on Tamil culture and values",
+        "image": "https://github.com/Satyamurthi/mbw-Photos/blob/main/Sister%20Institutes/Dharwad%202.jpg?raw=true",
+        "website": "https://www.ssschool-chennai.org",
+        "established": "1995",
+        "type": "School & PU College",
+        "is_active": true,
+        "display_order": 5
+      }
+    ],
+    "last_updated": 1736636400
+  }
+}

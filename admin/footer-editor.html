@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="../assets/logo/school-logo.png">
+  <title>Footer Editor - SSSBPUC Admin</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1B3764',
+            secondary: '#DAA520',
+            danger: '#EF4444',
+            success: '#10B981',
+            warning: '#F59E0B'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Authentication System -->
+  <script src="netlify-auth.js"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <img src="../assets/logo/school-logo.png" alt="SSSBPUC" class="w-8 h-8 mr-3" onerror="this.style.display='none'">
+          <div>
+            <h1 class="text-xl font-semibold text-gray-900">Footer Editor</h1>
+            <p class="text-sm text-gray-500">Manage website footer content</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <a href="website-content-manager.html" class="text-gray-500 hover:text-primary transition-colors">
+            <i class="ri-arrow-left-line mr-1"></i>Back
+          </a>
+          <button id="save-footer-btn" class="bg-success text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+            <i class="ri-save-line mr-2"></i>Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Branding Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Footer Branding</h2>
+          <p class="text-gray-600">Configure footer logo and description</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="ri-image-line text-primary text-xl"></i>
+          <span class="text-sm text-gray-500">Branding</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Footer Logo URL</label>
+          <input type="text" id="footer-logo" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="assets/logo/sai-baba-logo.png">
+          <div class="mt-2">
+            <img id="footer-logo-preview" src="" alt="Footer Logo Preview" class="h-12 border border-gray-200 rounded" style="display: none;">
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Footer Description</label>
+          <textarea id="footer-description" class="w-full border border-gray-300 rounded-lg px-3 py-2" rows="3" placeholder="Shaping tomorrow's leaders through excellence in education..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Links Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Social Media Links</h2>
+          <p class="text-gray-600">Manage social media links and icons</p>
+        </div>
+        <button id="add-social-link-btn" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          <i class="ri-add-line mr-2"></i>Add Social Link
+        </button>
+      </div>
+      
+      <div id="social-links-container" class="space-y-4">
+        <!-- Social links will be populated here -->
+      </div>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Quick Links</h2>
+          <p class="text-gray-600">Manage footer navigation links</p>
+        </div>
+        <button id="add-quick-link-btn" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          <i class="ri-add-line mr-2"></i>Add Quick Link
+        </button>
+      </div>
+      
+      <div id="quick-links-container" class="space-y-4">
+        <!-- Quick links will be populated here -->
+      </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Contact Information</h2>
+          <p class="text-gray-600">Manage contact details in footer</p>
+        </div>
+        <button id="add-contact-info-btn" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          <i class="ri-add-line mr-2"></i>Add Contact Info
+        </button>
+      </div>
+      
+      <div id="contact-info-container" class="space-y-4">
+        <!-- Contact info will be populated here -->
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Copyright Notice</h2>
+          <p class="text-gray-600">Set the footer copyright text</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="ri-copyright-line text-secondary text-xl"></i>
+          <span class="text-sm text-gray-500">Copyright</span>
+        </div>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Copyright Text</label>
+        <input type="text" id="copyright-text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="© 2025 SSSBPUC. All rights reserved.">
+      </div>
+    </div>
+
+    <!-- Footer Preview -->
+    <div class="bg-white rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">Footer Preview</h2>
+      
+      <div class="bg-gray-900 text-white p-8 rounded-lg">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            
+            <!-- Branding Column -->
+            <div>
+              <img id="preview-footer-logo" src="" alt="Logo" class="w-24 h-auto mb-4" style="display: none;">
+              <p id="preview-footer-description" class="text-gray-400 mb-4">Footer description will appear here</p>
+              <div id="preview-social-links" class="flex space-x-4">
+                <span class="text-gray-500">Social links will appear here</span>
+              </div>
+            </div>
+            
+            <!-- Quick Links Column -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul id="preview-quick-links" class="space-y-2">
+                <li class="text-gray-500">Quick links will appear here</li>
+              </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Contact</h3>
+              <ul id="preview-contact-info" class="space-y-2">
+                <li class="text-gray-500">Contact info will appear here</li>
+              </ul>
+            </div>
+            
+          </div>
+          
+          <div class="border-t border-gray-800 pt-8 text-center">
+            <p id="preview-copyright" class="text-gray-400">© 2025 SSSBPUC. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link Modal -->
+  <div id="link-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-lg max-w-md w-full">
+      <div class="p-6 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xl font-semibold text-gray-900" id="link-modal-title">Add Link</h3>
+          <button id="close-link-modal" class="text-gray-400 hover:text-gray-600">
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <form id="link-form" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Name/Title</label>
+            <input type="text" id="link-name" class="w-full border border-gray-300 rounded-lg px-3 py-2" required>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">URL/Link</label>
+            <input type="text" id="link-url" class="w-full border border-gray-300 rounded-lg px-3 py-2" required>
+          </div>
+          
+          <div id="icon-field" class="hidden">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Icon (RemixIcon class)</label>
+            <input type="text" id="link-icon" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="ri-facebook-fill">
+            <div class="text-xs text-gray-500 mt-1">Visit <a href="https://remixicon.com" target="_blank" class="text-primary hover:underline">RemixIcon.com</a> for icon classes</div>
+          </div>
+          
+          <div id="type-field" class="hidden">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Type</label>
+            <select id="link-type" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="address">Address</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      
+      <div class="border-t border-gray-200 p-6">
+        <div class="flex justify-end space-x-4">
+          <button type="button" id="cancel-link" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+            Cancel
+          </button>
+          <button type="submit" form="link-form" id="save-link" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90">
+            <i class="ri-save-line mr-2"></i>Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+  <script>
+    let footerData = {
+      branding: { logo: '', description: '' },
+      social_links: [],
+      quick_links: [],
+      contact_info: [],
+      copyright: ''
+    };
+    let editingType = '';
+    let editingIndex = -1;
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', function() {
+      loadFooterData();
+      initializeEventListeners();
+    });
+
+    function initializeEventListeners() {
+      // Save footer
+      document.getElementById('save-footer-btn').addEventListener('click', saveFooter);
+      
+      // Add buttons
+      document.getElementById('add-social-link-btn').addEventListener('click', () => openLinkModal('social'));
+      document.getElementById('add-quick-link-btn').addEventListener('click', () => openLinkModal('quick'));
+      document.getElementById('add-contact-info-btn').addEventListener('click', () => openLinkModal('contact'));
+      
+      // Modal controls
+      document.getElementById('close-link-modal').addEventListener('click', closeLinkModal);
+      document.getElementById('cancel-link').addEventListener('click', closeLinkModal);
+      document.getElementById('link-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveLink();
+      });
+      
+      // Real-time preview updates
+      document.getElementById('footer-logo').addEventListener('input', updateBrandingPreview);
+      document.getElementById('footer-description').addEventListener('input', updateBrandingPreview);
+      document.getElementById('copyright-text').addEventListener('input', updateCopyrightPreview);
+    }
+
+    async function loadFooterData() {
+      try {
+        showToast('Loading footer data...', 'info');
+        const response = await fetch('/.netlify/functions/api?endpoint=get-footer&_t=' + Date.now());
+        const result = await response.json();
+        
+        if (result.success && result.data) {
+          footerData = result.data;
+          populateForm();
+          showToast('Footer data loaded successfully!', 'success');
+        } else {
+          throw new Error(result.error || 'Failed to load footer data');
+        }
+      } catch (error) {
+        showToast('Failed to load footer data: ' + error.message, 'error');
+        console.error('Error loading footer:', error);
+      }
+    }
+
+    function populateForm() {
+      // Populate branding
+      if (footerData.branding) {
+        document.getElementById('footer-logo').value = footerData.branding.logo || '';
+        document.getElementById('footer-description').value = footerData.branding.description || '';
+      }
+      
+      // Populate copyright
+      document.getElementById('copyright-text').value = footerData.copyright || '';
+      
+      // Populate all sections
+      renderSocialLinks();
+      renderQuickLinks();
+      renderContactInfo();
+      updateAllPreviews();
+    }
+
+    function renderSocialLinks() {
+      const container = document.getElementById('social-links-container');
+      container.innerHTML = '';
+      
+      if (!footerData.social_links || footerData.social_links.length === 0) {
+        container.innerHTML = '<div class="text-gray-500 text-center py-8">No social links configured. Click "Add Social Link" to get started.</div>';
+        return;
+      }
+      
+      footerData.social_links.forEach((link, index) => {
+        const linkDiv = document.createElement('div');
+        linkDiv.className = 'flex items-center justify-between p-4 border border-gray-200 rounded-lg';
+        linkDiv.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <i class="${link.icon || 'ri-link'} text-2xl text-primary"></i>
+            <div>
+              <div class="font-medium text-gray-900">${link.name}</div>
+              <div class="text-sm text-gray-500">${link.url}</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="editSocialLink(${index})" class="text-primary hover:text-blue-700">
+              <i class="ri-edit-line"></i>
+            </button>
+            <button onclick="deleteSocialLink(${index})" class="text-red-500 hover:text-red-700">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(linkDiv);
+      });
+    }
+
+    function renderQuickLinks() {
+      const container = document.getElementById('quick-links-container');
+      container.innerHTML = '';
+      
+      if (!footerData.quick_links || footerData.quick_links.length === 0) {
+        container.innerHTML = '<div class="text-gray-500 text-center py-8">No quick links configured. Click "Add Quick Link" to get started.</div>';
+        return;
+      }
+      
+      footerData.quick_links.forEach((link, index) => {
+        const linkDiv = document.createElement('div');
+        linkDiv.className = 'flex items-center justify-between p-4 border border-gray-200 rounded-lg';
+        linkDiv.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <i class="ri-link text-2xl text-primary"></i>
+            <div>
+              <div class="font-medium text-gray-900">${link.name}</div>
+              <div class="text-sm text-gray-500">${link.url}</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="editQuickLink(${index})" class="text-primary hover:text-blue-700">
+              <i class="ri-edit-line"></i>
+            </button>
+            <button onclick="deleteQuickLink(${index})" class="text-red-500 hover:text-red-700">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(linkDiv);
+      });
+    }
+
+    function renderContactInfo() {
+      const container = document.getElementById('contact-info-container');
+      container.innerHTML = '';
+      
+      if (!footerData.contact_info || footerData.contact_info.length === 0) {
+        container.innerHTML = '<div class="text-gray-500 text-center py-8">No contact info configured. Click "Add Contact Info" to get started.</div>';
+        return;
+      }
+      
+      footerData.contact_info.forEach((info, index) => {
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'flex items-center justify-between p-4 border border-gray-200 rounded-lg';
+        infoDiv.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <i class="${info.icon || 'ri-information-line'} text-2xl text-primary"></i>
+            <div>
+              <div class="font-medium text-gray-900">${info.type?.toUpperCase() || 'INFO'}</div>
+              <div class="text-sm text-gray-500">${info.text}</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="editContactInfo(${index})" class="text-primary hover:text-blue-700">
+              <i class="ri-edit-line"></i>
+            </button>
+            <button onclick="deleteContactInfo(${index})" class="text-red-500 hover:text-red-700">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(infoDiv);
+      });
+    }
+
+    function openLinkModal(type, editIndex = -1) {
+      const modal = document.getElementById('link-modal');
+      const title = document.getElementById('link-modal-title');
+      const nameInput = document.getElementById('link-name');
+      const urlInput = document.getElementById('link-url');
+      const iconField = document.getElementById('icon-field');
+      const typeField = document.getElementById('type-field');
+      const iconInput = document.getElementById('link-icon');
+      const typeInput = document.getElementById('link-type');
+      
+      editingType = type;
+      editingIndex = editIndex;
+      
+      // Configure modal based on type
+      if (type === 'social') {
+        title.textContent = editIndex >= 0 ? 'Edit Social Link' : 'Add Social Link';
+        iconField.classList.remove('hidden');
+        typeField.classList.add('hidden');
+        
+        if (editIndex >= 0) {
+          const link = footerData.social_links[editIndex];
+          nameInput.value = link.name;
+          urlInput.value = link.url;
+          iconInput.value = link.icon || '';
+        } else {
+          nameInput.value = '';
+          urlInput.value = '';
+          iconInput.value = '';
+        }
+      } else if (type === 'quick') {
+        title.textContent = editIndex >= 0 ? 'Edit Quick Link' : 'Add Quick Link';
+        iconField.classList.add('hidden');
+        typeField.classList.add('hidden');
+        
+        if (editIndex >= 0) {
+          const link = footerData.quick_links[editIndex];
+          nameInput.value = link.name;
+          urlInput.value = link.url;
+        } else {
+          nameInput.value = '';
+          urlInput.value = '';
+        }
+      } else if (type === 'contact') {
+        title.textContent = editIndex >= 0 ? 'Edit Contact Info' : 'Add Contact Info';
+        iconField.classList.remove('hidden');
+        typeField.classList.remove('hidden');
+        nameInput.placeholder = 'Contact information text';
+        urlInput.style.display = 'none';
+        urlInput.previousElementSibling.style.display = 'none';
+        
+        if (editIndex >= 0) {
+          const info = footerData.contact_info[editIndex];
+          nameInput.value = info.text;
+          iconInput.value = info.icon || '';
+          typeInput.value = info.type || 'address';
+        } else {
+          nameInput.value = '';
+          iconInput.value = '';
+          typeInput.value = 'address';
+        }
+      }
+      
+      modal.classList.remove('hidden');
+      nameInput.focus();
+    }
+
+    function closeLinkModal() {
+      document.getElementById('link-modal').classList.add('hidden');
+      // Reset URL field visibility
+      const urlInput = document.getElementById('link-url');
+      urlInput.style.display = 'block';
+      urlInput.previousElementSibling.style.display = 'block';
+    }
+
+    function saveLink() {
+      const name = document.getElementById('link-name').value.trim();
+      const url = document.getElementById('link-url').value.trim();
+      const icon = document.getElementById('link-icon').value.trim();
+      const type = document.getElementById('link-type').value;
+      
+      if (!name) {
+        showToast('Name/text is required', 'error');
+        return;
+      }
+      
+      let linkItem;
+      
+      if (editingType === 'social') {
+        if (!url) {
+          showToast('URL is required for social links', 'error');
+          return;
+        }
+        linkItem = { name, url, icon };
+        
+        if (editingIndex >= 0) {
+          footerData.social_links[editingIndex] = linkItem;
+        } else {
+          footerData.social_links.push(linkItem);
+        }
+        renderSocialLinks();
+        
+      } else if (editingType === 'quick') {
+        if (!url) {
+          showToast('URL is required for quick links', 'error');
+          return;
+        }
+        linkItem = { name, url };
+        
+        if (editingIndex >= 0) {
+          footerData.quick_links[editingIndex] = linkItem;
+        } else {
+          footerData.quick_links.push(linkItem);
+        }
+        renderQuickLinks();
+        
+      } else if (editingType === 'contact') {
+        linkItem = { text: name, icon, type };
+        
+        if (editingIndex >= 0) {
+          footerData.contact_info[editingIndex] = linkItem;
+        } else {
+          footerData.contact_info.push(linkItem);
+        }
+        renderContactInfo();
+      }
+      
+      updateAllPreviews();
+      closeLinkModal();
+      showToast('Item saved!', 'success');
+    }
+
+    function editSocialLink(index) { openLinkModal('social', index); }
+    function editQuickLink(index) { openLinkModal('quick', index); }
+    function editContactInfo(index) { openLinkModal('contact', index); }
+
+    function deleteSocialLink(index) {
+      if (confirm('Delete this social link?')) {
+        footerData.social_links.splice(index, 1);
+        renderSocialLinks();
+        updateAllPreviews();
+        showToast('Social link deleted!', 'success');
+      }
+    }
+
+    function deleteQuickLink(index) {
+      if (confirm('Delete this quick link?')) {
+        footerData.quick_links.splice(index, 1);
+        renderQuickLinks();
+        updateAllPreviews();
+        showToast('Quick link deleted!', 'success');
+      }
+    }
+
+    function deleteContactInfo(index) {
+      if (confirm('Delete this contact info?')) {
+        footerData.contact_info.splice(index, 1);
+        renderContactInfo();
+        updateAllPreviews();
+        showToast('Contact info deleted!', 'success');
+      }
+    }
+
+    function updateBrandingPreview() {
+      const logo = document.getElementById('footer-logo').value;
+      const description = document.getElementById('footer-description').value;
+      
+      const logoPreview = document.getElementById('footer-logo-preview');
+      const footerLogoPreview = document.getElementById('preview-footer-logo');
+      const descPreview = document.getElementById('preview-footer-description');
+      
+      if (logo) {
+        logoPreview.src = logo;
+        logoPreview.style.display = 'block';
+        footerLogoPreview.src = logo;
+        footerLogoPreview.style.display = 'block';
+      } else {
+        logoPreview.style.display = 'none';
+        footerLogoPreview.style.display = 'none';
+      }
+      
+      descPreview.textContent = description || 'Footer description will appear here';
+    }
+
+    function updateCopyrightPreview() {
+      const copyright = document.getElementById('copyright-text').value;
+      document.getElementById('preview-copyright').textContent = copyright || '© 2025 SSSBPUC. All rights reserved.';
+    }
+
+    function updateAllPreviews() {
+      updateBrandingPreview();
+      updateCopyrightPreview();
+      
+      // Update social links preview
+      const socialContainer = document.getElementById('preview-social-links');
+      let socialHTML = '';
+      if (footerData.social_links && footerData.social_links.length > 0) {
+        footerData.social_links.forEach(link => {
+          socialHTML += `<a href="${link.url}" class="text-gray-400 hover:text-white transition-colors"><i class="${link.icon} text-xl"></i></a>`;
+        });
+      } else {
+        socialHTML = '<span class="text-gray-500">Social links will appear here</span>';
+      }
+      socialContainer.innerHTML = socialHTML;
+      
+      // Update quick links preview
+      const quickContainer = document.getElementById('preview-quick-links');
+      let quickHTML = '';
+      if (footerData.quick_links && footerData.quick_links.length > 0) {
+        footerData.quick_links.forEach(link => {
+          quickHTML += `<li><a href="${link.url}" class="text-gray-400 hover:text-white transition-colors">${link.name}</a></li>`;
+        });
+      } else {
+        quickHTML = '<li class="text-gray-500">Quick links will appear here</li>';
+      }
+      quickContainer.innerHTML = quickHTML;
+      
+      // Update contact info preview
+      const contactContainer = document.getElementById('preview-contact-info');
+      let contactHTML = '';
+      if (footerData.contact_info && footerData.contact_info.length > 0) {
+        footerData.contact_info.forEach(info => {
+          contactHTML += `<li class="flex items-center text-gray-400"><i class="${info.icon} mr-2"></i>${info.text}</li>`;
+        });
+      } else {
+        contactHTML = '<li class="text-gray-500">Contact info will appear here</li>';
+      }
+      contactContainer.innerHTML = contactHTML;
+    }
+
+    async function saveFooter() {
+      // Collect all form data
+      footerData.branding = {
+        logo: document.getElementById('footer-logo').value,
+        description: document.getElementById('footer-description').value
+      };
+      
+      footerData.copyright = document.getElementById('copyright-text').value;
+      
+      try {
+        showToast('Saving footer...', 'info');
+        
+        // Get session for authentication
+        const session = JSON.parse(localStorage.getItem('sssbpuc_session') || '{}');
+        
+        const response = await fetch('/.netlify/functions/api?endpoint=save-footer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Session-ID': session.sessionId || ''
+          },
+          body: JSON.stringify(footerData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          showToast('Footer saved successfully!', 'success');
+          // Set refresh flag for public pages
+          localStorage.setItem('forceContentRefresh', 'true');
+        } else {
+          throw new Error(result.error || 'Failed to save footer');
+        }
+      } catch (error) {
+        showToast('Failed to save footer: ' + error.message, 'error');
+        console.error('Error saving footer:', error);
+      }
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast p-4 rounded-lg shadow-lg text-white ${
+        type === 'success' ? 'bg-green-500' :
+        type === 'error' ? 'bg-red-500' :
+        type === 'warning' ? 'bg-yellow-500' :
+        'bg-blue-500'
+      }`;
+      toast.textContent = message;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>

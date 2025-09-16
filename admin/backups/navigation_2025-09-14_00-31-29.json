@@ -1,0 +1,17 @@
+{
+    "branding": {
+        "logo_left": "assets\/logo\/sai-baba-logo.png",
+        "logo_right": "assets\/logo\/school-logo.png",
+        "college_name": "Sri Sathya Sai Baba Pre University College",
+        "location": "Mysuru, Karnataka"
+    },
+    "menu_items[0]": {
+        "name": "HOME",
+        "url": "index.html"
+    },
+    "cta_button": {
+        "text": "FOR ADMISSIONS",
+        "url": "admissions.html"
+    },
+    "last_updated": 1757802687
+}
